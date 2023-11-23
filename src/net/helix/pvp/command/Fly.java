@@ -21,15 +21,15 @@ public class Fly implements CommandExecutor {
 	         if (target.hasPermission("kombo.cmd.fly")) {
 	            if (!target.getAllowFlight()) {
 	               target.setAllowFlight(true);
-	               target.sendMessage("§aFly on");
+	               target.sendMessage("§aModo voô ativo");
 	               return false;
 	            } else {
 	               target.setAllowFlight(false);
-	               target.sendMessage("§cFly off");
+	               target.sendMessage("§cModo voô inativo");
 	               return false;
 	            }
 	         } else {
-	        	 target.sendMessage("§cYou cant use this command.");
+	        	 target.sendMessage("§cVocê não tem autorização.");
 	            return false;
 	         }
 	     } else {

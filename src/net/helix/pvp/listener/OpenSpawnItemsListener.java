@@ -77,8 +77,16 @@ public void onInteractt(PlayerPickupItemEvent event) {
 		Player player = event.getPlayer();
 		if (HelixWarp.SPAWN.hasPlayer(player.getName()) && EnderMageReal.isSpawn(player.getLocation()) && player.getLocation().getY() > HelixPvP.getInstance().getConfig().getInt("SpawnAltura")) {
 		event.setCancelled(true);
-		HelixActionBar.send(player, ChatColor.RED + "Dont drop this!");
+		HelixActionBar.send(player, ChatColor.RED + "Não drope isto!");
 		}
+	}
+		
+		@EventHandler
+		public void onInteracttgf(PlayerDropItemEvent event) {
+			Player player = event.getPlayer();
+			if (event.getItemDrop().getItemStack().getType() == Material.MUSHROOM_SOUP || event.getItemDrop().getItemStack().getType() == Material.IRON_SWORD || event.getItemDrop().getItemStack().getType() == Material.DIAMOND_SWORD) {
+			event.setCancelled(true);
+			}
 	}
 		@EventHandler
 		public void onInteracttc(ItemSpawnEvent event) {

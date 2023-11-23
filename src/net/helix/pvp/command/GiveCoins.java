@@ -35,7 +35,7 @@ public class GiveCoins implements CommandExecutor {
 				}
 				Player target = Bukkit.getPlayerExact(args[0]);
 				if ((target == null) || (!(target instanceof Player))) {
-					sender.sendMessage( "§c§lThe Player is offline");
+					sender.sendMessage( "§cEsse jogador está offline.");
 					return true;
 				}
 				if (isNumeric(args[1])) {
@@ -44,9 +44,9 @@ public class GiveCoins implements CommandExecutor {
 				    pk.getPvp().addCoins(coins);	    
 					sender.sendMessage( "§eVocê deu para " + target.getName() + " " + coins
 							+ "§bCoins");
-					target.sendMessage( "§eYou received " + coins
+					target.sendMessage( "§eVocê recebeu " + coins
 							+ " §bCoins");
-					target.sendMessage( "§6Your account has been updated!");
+					target.sendMessage( "§6Sua conta foi atualizada!");
 					
 				}
 			}

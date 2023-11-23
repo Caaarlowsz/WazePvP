@@ -48,6 +48,12 @@ public class OneVsOne extends WarpDuoBattleHandle {
 					fastChallenge.remove(p2);
 					return;
 				}
+				if (p1 == p2) {
+                	cancel();
+                	fastChallenge.remove(p1);
+                	p1.sendMessage(ChatColor.RED + "A procura falhou! Tente novamente.");
+                	return;
+                }
 				
 				startBattle(p1, p2);
 			}
@@ -77,7 +83,7 @@ public class OneVsOne extends WarpDuoBattleHandle {
 		finalizeBattle(target);
 
 		HelixWarp.ONE_VS_ONE.send(target);
-		target.sendMessage("§2Your opponent logged out and the battle ended.");
+		target.sendMessage("§2Seu oponente deslogou e a partida foi finalizada.");
 
 	}
 	  @EventHandler
@@ -146,7 +152,7 @@ public class OneVsOne extends WarpDuoBattleHandle {
 		}
 
 		setItems(player);
-		player.sendMessage(fastChallenge.contains(player) ? "§aYou joined 1v1 queue" : "§eYou left 1v1 queue");
+		player.sendMessage(fastChallenge.contains(player) ? "§aVocê entrou na fila do 1v1" : "§eVocê saiu da fila do 1v1");
 	}
 	
 	@EventHandler
@@ -175,13 +181,13 @@ public class OneVsOne extends WarpDuoBattleHandle {
 		}
 		
 		if (HelixCooldown.inCooldown(player.getName(), "1v1-challenge-" + target.getName())) {
-			player.sendMessage("§e§l1V1 §eYou already has invited this player recently");
+			player.sendMessage("§e§l1V1 §eVocê já convidou esse jogador recentemente.");
 			return;
 		}
 		
 		HelixCooldown.create(player.getName(), "1v1-challenge-" + target.getName(), TimeUnit.SECONDS, 15);
-		target.sendMessage("§e§l1V1 §eYou get challenged by " + player.getName() + " to a battle");
-		player.sendMessage("§6§l1V1 §6You invited " + target.getName() + " to a battle");
+		target.sendMessage("§e§l1V1 §eVocê foi desafiado por " + player.getName() + " para um 1v1");
+		player.sendMessage("§6§l1V1 §6Você foi desafiado " + target.getName() + " para um 1v1");
 	}
 	
 	@EventHandler
@@ -200,7 +206,7 @@ public class OneVsOne extends WarpDuoBattleHandle {
 		loserHelixPlayer.getPvp().adddeathsX1(1);
 		loserHelixPlayer.getPvp().setKillstreak(0);
 
-		loser.sendMessage("§cYou lost the 1v1 against " + winner.getName() + "§c.");
+		loser.sendMessage("§cVocê perdeu a batalha contra " + winner.getName() + "§c.");
 		
 		if ((loserHelixPlayer.getPvp().getCoins() - loserWithdrawnCoins) >= 0) {
 			loserHelixPlayer.getPvp().removeCoins(loserWithdrawnCoins);
@@ -226,7 +232,7 @@ public class OneVsOne extends WarpDuoBattleHandle {
 		}.runTaskLater(HelixPvP.getInstance(), 10);
 
 		winner.setHealth(winner.getMaxHealth());
-		winner.sendMessage("§aYou win the 1v1 against " + loser.getName() + " §7(" + (event.isValidKill() ? "Count" : "Dont count") + ")");
+		winner.sendMessage("§aVocê ganhou o 1v1 contra " + loser.getName() + " §7(" + (event.isValidKill() ? "Conta" : "Não Conta") + ")");
 		HelixWarp.ONE_VS_ONE.send(winner, true);
 
 		if (event.isValidKill()) {
@@ -275,14 +281,14 @@ public class OneVsOne extends WarpDuoBattleHandle {
 	public void setItems(Player player) {
 		super.setItems(player);
 
-		player.getInventory().setItem(3, new ItemBuilder("§bChallenge §7(Click)", Material.BLAZE_ROD)
+		player.getInventory().setItem(3, new ItemBuilder("§bChamar 1V1 §7(Click)", Material.BLAZE_ROD)
 				.nbt("cancel-drop")
 				.nbt("cancel-click")
 				.nbt("1v1", "challenge")
 				.toStack()
 		);
 		
-		player.getInventory().setItem(5, new ItemBuilder("§bSearch Players: " + (fastChallenge.contains(player) ? "§aON" : "§cOFF"), Material.INK_SACK, fastChallenge.contains(player) ? 10 : 8)
+		player.getInventory().setItem(5, new ItemBuilder("§bProcurar jogadores: " + (fastChallenge.contains(player) ? "§aON" : "§cOFF"), Material.INK_SACK, fastChallenge.contains(player) ? 10 : 8)
 				.nbt("cancel-drop")
 				.nbt("cancel-click")
 				.nbt("1v1", "fast-challenge")

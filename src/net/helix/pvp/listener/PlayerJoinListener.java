@@ -48,7 +48,7 @@ public class PlayerJoinListener implements Listener {
 		    return api.getUserManager().loadUser(who)
 			        .thenApplyAsync(user -> {
 			            Collection<Group> inheritedGroups = user.getInheritedGroups(user.getQueryOptions());
-			            return inheritedGroups.stream().anyMatch(g -> g.getName().equals("iron") || g.getName().equals("gold") || g.getName().equals("diamond") || g.getName().equals("emerald") || g.getName().equals("beta") || g.getName().equals("yt")  || g.getName().equals("builder")  || g.getName().equals("helper")  || g.getName().equals("mod")  || g.getName().equals("estagiario")  || g.getName().equals("coord")  || g.getName().equals("admin")  || g.getName().equals("diretor")  || g.getName().equals("dono")  || g.getName().equals("miniyt") || g.getName().equals("yt+") || g.getName().equals("streamer") || g.getName().equals("yt+") || g.getName().equals("apoiador"));
+			            return inheritedGroups.stream().anyMatch(g -> g.getName().equals("diretor") || g.getName().equals("gold") || g.getName().equals("diamond") || g.getName().equals("emerald") || g.getName().equals("beta") || g.getName().equals("yt")  || g.getName().equals("builder")  || g.getName().equals("helper")  || g.getName().equals("mod")  || g.getName().equals("estagiario")  || g.getName().equals("coord")  || g.getName().equals("admin")  || g.getName().equals("diretor")  || g.getName().equals("dono")  || g.getName().equals("miniyt") || g.getName().equals("yt+") || g.getName().equals("streamer") || g.getName().equals("yt+") || g.getName().equals("apoiador"));
 			        });
 			}
 		return null;
@@ -79,7 +79,7 @@ public class PlayerJoinListener implements Listener {
 	    		return;
 	    	}
 	      e.setCancelled(true);
-	      p.sendMessage(ChatColor.RED + "You lost spawn protection.");
+	      p.sendMessage(ChatColor.RED + "Você perdeu a proteção do spawn.");
 	      fall.remove(p);
 	      if (!Jump.caiu.containsKey(p.getName())) {
 	    		Jump.caiu.put(p.getName(), true);
@@ -100,7 +100,7 @@ public class PlayerJoinListener implements Listener {
 	    		if (provider != null) {
 	    		    LuckPerms api2 = provider.getProvider();
 	        	HelixPlayer hp = HelixBukkit.getInstance().getPlayerManager().getPlayer(p.getName());
-	          Bukkit.broadcastMessage(api2.getUserManager().getUser(p.getName()).getCachedData().getMetaData().getPrefix().replace("&", "§") + "§7" + p.getName() + " §6joined the server!");
+	          Bukkit.broadcastMessage(api2.getUserManager().getUser(p.getName()).getCachedData().getMetaData().getPrefix().replace("&", "§") + "§7" + p.getName() + " §6entrou no Servidor!");
 	    		}
 	        }});
 	    
@@ -111,15 +111,15 @@ public class PlayerJoinListener implements Listener {
 		Player player = e.getPlayer();
 		Player p = e.getPlayer();
 		   TabAPI apitab = TabAPI.getInstance();
-		   Bukkit.broadcastMessage(ChatColor.GREEN + player.getName() + " joined the server!"); 
+		   Bukkit.broadcastMessage(ChatColor.GREEN + player.getName() + " entrou no Servidor!"); 
 		if (VanishUtil.has(player.getName())) {
 			VanishUtil.remove(player.getName());
-			player.sendMessage("§c§lVANISH §fYou leave the vanish mode.");
+			player.sendMessage("§c§lVANISH §fVocê saiu do vanish.");
 		}
 		
 		if (!playerrealname.containsKey(player)) {
 		playerrealname.put(player, player.getName());
-		player.sendMessage("§c§lINFORMATION: §fYour player info has been saved.");
+		player.sendMessage("§c§lINFORMAÇÕES: §fSuas informações foram salvas.");
 		}
 		ScoreboardManager manager = Bukkit.getScoreboardManager();
         Scoreboard board = manager.getMainScoreboard();
@@ -141,7 +141,7 @@ public class PlayerJoinListener implements Listener {
 	    	    }
 	    	    if (!fall.contains(p)) {
 	    	    	fall.add(p);
-	    	    	p.sendMessage(ChatColor.GREEN + "You received the spawn protection");
+	    	    	p.sendMessage(ChatColor.GREEN + "Você recebeu a proteção do spawn");
 	    	    }
 	    	    HelixWarp.SPAWN.send(player);
 	    	    player.setHealth(player.getMaxHealth());
@@ -149,22 +149,22 @@ public class PlayerJoinListener implements Listener {
 	    	    player.setFireTicks(0);
 	    	    player.setFoodLevel(20);
 	    	    player.getInventory().setHeldItemSlot(0);
-	    	    player.getInventory().setItem(0, (new ItemBuilder("§aPrimary Kits", Material.valueOf(HelixPvP.getInstance().getConfig().getString("KitsItem"))))
+	    	    player.getInventory().setItem(0, (new ItemBuilder("§aKits primários", Material.valueOf(HelixPvP.getInstance().getConfig().getString("KitsItem"))))
 	    	            .nbt("spawn-item", "kits")
 	    	            .nbt("cancel-drop")
 	    	            .nbt("cancel-click")
 	    	            .toStack());
-	    	        player.getInventory().setItem(1, (new ItemBuilder("§aSecondary Kits", Material.CHEST))
+	    	        player.getInventory().setItem(1, (new ItemBuilder("§aKits secundários", Material.CHEST))
 	    	                .nbt("spawn-item", "kits2")
 	    	                .nbt("cancel-drop")
 	    	                .nbt("cancel-click")
 	    	                .toStack());
-	    	        player.getInventory().setItem(2, (new ItemBuilder("§eShop", Material.valueOf(HelixPvP.getInstance().getConfig().getString("ShopItemMAT"))))
+	    	        player.getInventory().setItem(2, (new ItemBuilder("§eLoja", Material.valueOf(HelixPvP.getInstance().getConfig().getString("ShopItemMAT"))))
 	    	            .nbt("spawn-item", "shop")
 	    	            .nbt("cancel-drop")
 	    	            .nbt("cancel-click")
 	    	            .toStack());
-	    	        player.getInventory().setItem(6, (new ItemBuilder("§6Options", Material.valueOf(HelixPvP.getInstance().getConfig().getString("OptionsItem"))))
+	    	        player.getInventory().setItem(6, (new ItemBuilder("§6Opções", Material.valueOf(HelixPvP.getInstance().getConfig().getString("OptionsItem"))))
 	    	                .nbt("spawn-item", "status2")
 	    	                .nbt("cancel-drop")
 	    	                .nbt("cancel-click")
@@ -250,7 +250,7 @@ public class PlayerJoinListener implements Listener {
 	    			}.runTaskLater(HelixPvP.getInstance(), 10L);
 		});
 		player.setFlying(false);
-		player.sendMessage(ChatColor.GREEN + "Welcome to the kitpvp.");
+		player.sendMessage(ChatColor.GREEN + "Bem vindo ao kitpvp.");
 		player.setGameMode(GameMode.SURVIVAL);
 		player.setLevel(0);
 		player.setFireTicks(0);

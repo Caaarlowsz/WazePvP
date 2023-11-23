@@ -20,7 +20,7 @@ public class SoupTypeGUI implements Listener {
 	public static HashMap<String, Boolean> savecocoa = new HashMap();
 	public static HashMap<String, Boolean> compass = new HashMap();
 	public static HashMap<String, Boolean> blood = new HashMap();
-    public static final ItemStack ICON = ItemUtils.getCustomItemStack(Material.valueOf(HelixPvP.getInstance().getConfig().getString("OptionsItem")), "§6Options", (String) null);
+    public static final ItemStack ICON = ItemUtils.getCustomItemStack(Material.valueOf(HelixPvP.getInstance().getConfig().getString("OptionsItem")), "§6Opções", (String) null);
 
 
     
@@ -29,40 +29,40 @@ public class SoupTypeGUI implements Listener {
     private void onInventoryClick(InventoryClickEvent event) {
         Player player = (Player) event.getWhoClicked();
 
-        if (event.getCurrentItem() != null && event.getCurrentItem().getItemMeta() != null && event.getInventory().getName().contains("§6Options")) {
+        if (event.getCurrentItem() != null && event.getCurrentItem().getItemMeta() != null && event.getInventory().getName().contains("§6Opções")) {
             if (event.getCurrentItem().getType() != Material.AIR) {
                 event.setCancelled(true);
                 player.closeInventory();
-                if (event.getCurrentItem().getItemMeta().getDisplayName().contains("Mushroom")) {
+                if (event.getCurrentItem().getItemMeta().getDisplayName().contains("Cogumelos")) {
                     if (!savecocoa.containsKey(player.getName())) {
-                        player.sendMessage("§cYour soup style is already mushroom.");
+                        player.sendMessage("§cSeu estilo de sopa já é cogumelo.");
                     } else {
                         savecocoa.remove(player.getName());
-                        player.sendMessage("§aYou change your style to: §eMUSHROOM§a.");
+                        player.sendMessage("§aVocê mudou seu estilo de sopa para: §eCOGUMELO§a.");
                     }
                 }
                     else if (event.getCurrentItem().getItemMeta().getDisplayName().contains("Cocoa Beans")) {
                     if (savecocoa.containsKey(player.getName())) {
-                        player.sendMessage("§cYour soup style is already cocoa beans.");
+                        player.sendMessage("§cSeu estilo de sopa já é cocoa beans.");
                     } else {
                     	savecocoa.put(player.getName(), true);
-                         player.sendMessage("§aYou change your style to: §eCOCOA BEAN§a.");
+                         player.sendMessage("§aVocê mudou seu estilo de sopa para: §eCOCOA BEAN§a.");
                     }
                     }
-                         else if (event.getCurrentItem().getItemMeta().getDisplayName().contains("Compass")) { 
+                         else if (event.getCurrentItem().getItemMeta().getDisplayName().contains("Bússola")) { 
                 	  if (!compass.containsKey(player.getName())) {
-                		  player.sendMessage("§cThe compass has been disabled.");
+                		  player.sendMessage("§cA bússola foi desativada.");
                 		  compass.put(player.getName(), true);
                 	  } else {
-                		  player.sendMessage("§aThe compass has been enabled.");
+                		  player.sendMessage("§aA bússola foi ativada.");
                 		  compass.remove(player.getName());
                 }
-                         }  else if (event.getCurrentItem().getItemMeta().getDisplayName().contains("Blood")) { 
+                         }  else if (event.getCurrentItem().getItemMeta().getDisplayName().contains("Sangue")) { 
                     	  if (!blood.containsKey(player.getName())) {
-                    		  player.sendMessage("§aThe blood has been enabled.");
+                    		  player.sendMessage("§aO sangue foi ativado.");
                     		  blood.put(player.getName(), true);
                     	  } else {
-                    		  player.sendMessage("§cThe blood has been disabled.");
+                    		  player.sendMessage("§cO sangue foi desativado.");
                     		  blood.remove(player.getName());
                     }
             }
@@ -77,23 +77,23 @@ public class SoupTypeGUI implements Listener {
 
     public static void openGUI(Player player) {
 
-        final Inventory inv = Bukkit.createInventory(null, 9, "§6Options");
+        final Inventory inv = Bukkit.createInventory(null, 9, "§6Opções");
         if (!savecocoa.containsKey(player.getName())) {
-            inv.setItem(3, ItemUtils.getCustomItemStack(Material.RED_MUSHROOM, "§aMushroom", Arrays.asList("§7You will receive mushrooms.", " ", "§a§oSelected")));
-            inv.setItem(5, ItemUtils.editItemStack(ItemUtils.cocoa, "§aCocoa Beans", Arrays.asList("§7You will receive cocoa beans.", " ", "§c§oNot Selected")));
+            inv.setItem(3, ItemUtils.getCustomItemStack(Material.RED_MUSHROOM, "§aCogumelos", Arrays.asList("§7Você receberá cogumelos.", " ", "§a§oSelecionado")));
+            inv.setItem(5, ItemUtils.editItemStack(ItemUtils.cocoa, "§aCocoa Beans", Arrays.asList("§7Você receberá cocoa beans.", " ", "§c§oNão Selecionado")));
         } else {
-            inv.setItem(3, ItemUtils.getCustomItemStack(Material.RED_MUSHROOM, "§cMushroom", Arrays.asList("§7You will receive mushrooms.", " ", "§c§oNot Selected")));
-            inv.setItem(5, ItemUtils.editItemStack(ItemUtils.cocoa, "§aCocoa Beans", Arrays.asList("§7You will receive cocoa beans.", " ", "§a§oSelected")));
+            inv.setItem(3, ItemUtils.getCustomItemStack(Material.RED_MUSHROOM, "§cCogumelos", Arrays.asList("§7Você receberá cogumelos.", " ", "§c§oNão Selecionado")));
+            inv.setItem(5, ItemUtils.editItemStack(ItemUtils.cocoa, "§aCocoa Beans", Arrays.asList("§7Você receberá cocoa beans.", " ", "§a§oSelecionado")));
         }
         if (!compass.containsKey(player.getName())) {
-        	inv.setItem(4, ItemUtils.getCustomItemStack(Material.COMPASS, "§cCompass", Arrays.asList("§7Compass.", " ", "§aEnabled")));
+        	inv.setItem(4, ItemUtils.getCustomItemStack(Material.COMPASS, "§cBússola", Arrays.asList("§7Bússola.", " ", "§aAtivada")));
         } else {
-        	inv.setItem(4, ItemUtils.getCustomItemStack(Material.COMPASS, "§cCompass", Arrays.asList("§7Compass.", " ", "§cDisabled")));
+        	inv.setItem(4, ItemUtils.getCustomItemStack(Material.COMPASS, "§cBússola", Arrays.asList("§7Bússola.", " ", "§cDesativada")));
         }
         if (blood.containsKey(player.getName())) {
-        	inv.setItem(8, ItemUtils.getCustomItemStack(Material.REDSTONE, "§cBlood", Arrays.asList("§7Violence is active.", " ", "§aEnabled")));
+        	inv.setItem(8, ItemUtils.getCustomItemStack(Material.REDSTONE, "§cSangue", Arrays.asList("§7Violence is active.", " ", "§aEnabled")));
         } else {
-        	inv.setItem(8, ItemUtils.getCustomItemStack(Material.YELLOW_FLOWER, "§cBlood", Arrays.asList("§aViolence is not active", " ", "§cDisabled")));
+        	inv.setItem(8, ItemUtils.getCustomItemStack(Material.YELLOW_FLOWER, "§cSangue", Arrays.asList("§aViolence is not active", " ", "§cDisabled")));
         }
         player.openInventory(inv);
     }

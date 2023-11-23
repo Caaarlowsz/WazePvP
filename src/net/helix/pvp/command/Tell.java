@@ -30,7 +30,7 @@ public class Tell extends CommandClass {
 		}
 
 		if (a.length == 0) {
-			player.sendMessage("§3§lTELL §fUse /tell <player> <message>!");
+			player.sendMessage("§3§lTELL §fUse /tell <player> <mensagem>!");
 			return;
 		}
 
@@ -38,16 +38,16 @@ public class Tell extends CommandClass {
 			if (a[0].equalsIgnoreCase("off")) {
 				if (!tell.contains(player.getUniqueId())) {
 					tell.add(player.getUniqueId());
-					player.sendMessage("§a§lTELL §fYou are now with the tell §c§lOFF!");
+					player.sendMessage("§a§lTELL §fVocê agora está com o tell §c§lOFF!");
 				} else {
-					player.sendMessage("§a§lTELL §fYou are already with tell §c§lOFF!");
+					player.sendMessage("§a§lTELL §fVocê já está com o tell §c§lOFF!");
 				}
 			} else if (a[0].equalsIgnoreCase("on")) {
 				if (tell.contains(player.getUniqueId())) {
 					tell.remove(player.getUniqueId());
-					player.sendMessage("§a§lTELL §fYou are now with tell §a§lON!");
+					player.sendMessage("§a§lTELL §fVocê agora está com o tell §a§lON!");
 				} else {
-					player.sendMessage("§a§lTELL §fYou are already with tell §a§lON!");
+					player.sendMessage("§a§lTELL §fVocê já está com o tell §a§lON!");
 				}
 			}
 		}
@@ -61,11 +61,11 @@ public class Tell extends CommandClass {
 			}
 			
 			else if (player == target) {
-					player.sendMessage("§cYou cant talk to yourself!");
+					player.sendMessage("§cVocê não pode falar consigo mesmo!");
 					return;
 				}
 				else if (tell.contains(target.getUniqueId())) {
-					player.sendMessage("§a§lTELL §fThis player is with tell status §c§lOFF!");
+					player.sendMessage("§a§lTELL §fO tell desse jogador está §c§lOFF!");
 					return;
 				}
 					String message = "";
@@ -74,9 +74,9 @@ public class Tell extends CommandClass {
 						message += a[i] + " ";
 					}
 						final String tiCopy = message;
-					player.sendMessage("§a§lTELL §5[§fYou -> " + target.getName() + "§7] §f" + message);
+					player.sendMessage("§a§lTELL §5[§fVocê -> " + target.getName() + "§7] §f" + message);
 					target.sendMessage(
-							"§a§lTELL §f[" + player.getName() + " §7-> §fYou" + "§f] " + message);
+							"§a§lTELL §f[" + player.getName() + " §7-> §fVocê" + "§f] " + message);
 				        
 					
 					Bukkit.getOnlinePlayers().stream()

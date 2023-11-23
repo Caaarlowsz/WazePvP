@@ -50,9 +50,8 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
 	  p.sendMessage("§aStarting MDR event"); 
 	  EventoUtils.evento = true;
 	  EventoUtils.tp = true;
-	  Bukkit.broadcastMessage("§cThe MDR event will start soon.");
-      Bukkit.broadcastMessage("§cUse /event join to join it");
-  	Bukkit.broadcastMessage("§cThe MDR event will start in 5 minutes");
+	  Bukkit.broadcastMessage("§cO evento Mãe da Rua vai começar.");
+      Bukkit.broadcastMessage("§cEscreva /event join para entrar");
       for (Player p1 : Bukkit.getOnlinePlayers()) {
       	p1.playSound(p1.getLocation(), Sound.LEVEL_UP, 1f, 1f);
       }

@@ -14,6 +14,7 @@ import net.helix.pvp.kit.KitManager2;
 import net.helix.pvp.kit.provider.GladiatorListener;
 import net.helix.pvp.warp.HelixWarp;
 import net.helix.pvp.warp.WarpDuoBattleHandle3;
+import net.md_5.bungee.api.ChatColor;
 
 import org.bukkit.GameMode;
 import org.bukkit.Material;
@@ -67,6 +68,12 @@ public class Gladiator extends WarpDuoBattleHandle3 {
 					fastChallenge.remove(p2);
 					return;
 				}
+				if (p1 == p2) {
+                	cancel();
+                	fastChallenge.remove(p1);
+                	p1.sendMessage(ChatColor.RED + "A procura falhou! Tente novamente.");
+                	return;
+                }
 				
 				startBattle(p1, p2);
 				 GladiatorListener.combateGlad.put(p1, p2);
@@ -98,7 +105,7 @@ public class Gladiator extends WarpDuoBattleHandle3 {
 		finalizeBattle(target);
 		GladiatorListener.resetGladiatorListenerByQuit(target, player);
 		HelixWarp.GLADIATOR.send(target);
-		target.sendMessage("§2Your opponent logged out and the battle ended.");
+		target.sendMessage("§2Seu oponente deslogou e a batalha acabou automaticamente.");
 
 	}
 
@@ -135,7 +142,7 @@ public class Gladiator extends WarpDuoBattleHandle3 {
 		}
 
 		setItems(player);
-		player.sendMessage(fastChallenge.contains(player) ? "§aYou enter the queue" : "§eYou left the queue");
+		player.sendMessage(fastChallenge.contains(player) ? "§aVocê entrou na fila" : "§eVocê saiu da fila");
 	}
 	
 	@EventHandler
@@ -153,7 +160,7 @@ public class Gladiator extends WarpDuoBattleHandle3 {
 		Player target = (Player) event.getRightClicked();
 		
 		if (findOpponent(target).isPresent()) {
-			player.sendMessage("§c§lGLAD §cThis player is already fighting");
+			player.sendMessage("§c§lGLAD §cEsse jogador já está lutando");
 			return;
 		}
 		
@@ -165,13 +172,13 @@ public class Gladiator extends WarpDuoBattleHandle3 {
 		}
 		
 		if (HelixCooldown.inCooldown(player.getName(), "1v1g-challenge-" + target.getName())) {
-			player.sendMessage("§e§lGLAD §eYou already invited this player recently");
+			player.sendMessage("§e§lGLAD §eVocê já convidou esse jogador recentemente");
 			return;
 		}
 		
 		HelixCooldown.create(player.getName(), "1v1g-challenge-" + target.getName(), TimeUnit.SECONDS, 15);
-		target.sendMessage("§e§lGLAD §eYou get challenged by " + player.getName() + " to a fight");
-		player.sendMessage("§6§lGLAD §6You challenged " + target.getName() + " to a fight");
+		target.sendMessage("§e§lGLAD §eVocê foi desafiado por " + player.getName() + " para uma luta");
+		player.sendMessage("§6§lGLAD §6Você foi desafiado por " + target.getName() + " para uma luta");
 	}
 	 public static void clearBlocks() {
 	        EventoUtils.blocksV.forEach(blockLoc -> {
@@ -198,7 +205,7 @@ public class Gladiator extends WarpDuoBattleHandle3 {
 		loserHelixPlayer.getPvp().adddeathsX1(1);
 		loserHelixPlayer.getPvp().setKillstreak(0);
 		
-		loser.sendMessage("§cYou lost the battle against " + winner.getName() + "§c.");
+		loser.sendMessage("§cVocê perdeu a batalha contra " + winner.getName() + "§c.");
 		if ((loserHelixPlayer.getPvp().getCoins() - loserWithdrawnCoins) >= 0) {
 			loserHelixPlayer.getPvp().removeCoins(loserWithdrawnCoins);
 			loser.sendMessage("§c§l[-] §c" + loserWithdrawnCoins + " coins");
@@ -226,7 +233,7 @@ public class Gladiator extends WarpDuoBattleHandle3 {
 	GladiatorListener.combateGlad.remove(winner);
 	GladiatorListener.combateGlad.remove(loser);
 	winner.getInventory().clear();
-		winner.sendMessage("§aYou win the battle against " + loser.getName() + " §7(" + (event.isValidKill() ? "Count" : "Dont count") + ")");
+		winner.sendMessage("§aVocê venceu a batalha contra " + loser.getName() + " §7(" + (event.isValidKill() ? "Conta" : "Não conta") + ")");
 
 		if (event.isValidKill()) {
 			HelixPlayer winnerHelixPlayer = HelixBukkit.getInstance().getPlayerManager().getPlayer(winner.getName());
@@ -304,14 +311,14 @@ public class Gladiator extends WarpDuoBattleHandle3 {
 	public void setItems(Player player) {
 		super.setItems(player);
 
-		player.getInventory().setItem(3, new ItemBuilder("§bChallenge §7(Click)", Material.IRON_FENCE)
+		player.getInventory().setItem(3, new ItemBuilder("§bDesafiar §7(Clique)", Material.IRON_FENCE)
 				.nbt("cancel-drop")
 				.nbt("cancel-click")
 				.nbt("1v1g", "challenge")
 				.toStack()
 		);
 		
-		player.getInventory().setItem(5, new ItemBuilder("§bSearch Players: " + (fastChallenge.contains(player) ? "§aON" : "§cOFF"), Material.INK_SACK, fastChallenge.contains(player) ? 10 : 8)
+		player.getInventory().setItem(5, new ItemBuilder("§bProcurar jogadores: " + (fastChallenge.contains(player) ? "§aON" : "§cOFF"), Material.INK_SACK, fastChallenge.contains(player) ? 10 : 8)
 				.nbt("cancel-drop")
 				.nbt("cancel-click")
 				.nbt("1v1g", "fast-challenge")

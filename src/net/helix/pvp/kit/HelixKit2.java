@@ -53,38 +53,38 @@ import net.helixpvp.kit2.WaterBender;
 
 
 public enum HelixKit2  {
-	NENHUM("None2", 0, 0 , new Nenhum() , new ItemStack(Material.BARRIER), "No habilities" , 1),
-	PVP("PvP-2", 0, 0 , new PvP() , new ItemStack(Material.STONE_SWORD), "Has sharp 1 in sword" , 1),
-	ANCHOR("Anchor", 10000, 0, new Anchor() , new ItemStack(Material.ANVIL), "Dont receive knockback" , 1),
-	ANTISTOMPER("AntiStomper", 8000, 0, new AntiStomperReal() , new ItemStack(Material.DIAMOND_HELMET), "Immune to stompers" , 1),
-	NINJA("Ninja", 10000, 0, new Ninja() , new ItemStack(Material.EMERALD), "Teleport to enemies", 1),
-	POSEIDON("Poseidon", 4000, 0, new Poseidon() , new ItemStack(Material.WATER_BUCKET), "Stronger on water", 1),
-	AVATAR("Avatar", 12000, 0, new Avatar() , new ItemStack(Material.BEACON), "Control the four elements", 1),
-	LEECH("Leech", 10000, 0, new Leech() , new ItemStack(Material.REDSTONE), "Steal life from enemies", 1),
-	ARCHER("Archer", 0, 0, new Archer() , new ItemStack(Material.BOW), "Receives bow and arrow!", 1),
-	BOXER("Boxer", 15000, 0, new Boxer() , new ItemStack(Material.QUARTZ), "Gives more damage.", 1),
-    VIPER("Viper", 10000, 0, new Viper() , new ItemStack(Material.SPIDER_EYE), "Gives poison", 1),
-    SIGHT("Sight", 10000, 0, new Sight(), new ItemStack(Material.INK_SACK, 1 , (short)1), "Gives blidness!", 1),
-    NEO("Neo", 8000, 0, new net.helixpvp.kit2.NEO() , new ItemStack(Material.BARRIER), "Immune to various kits", 1),
-	QUICKDROPPER("QuickDropper", 2500, 2500, new QuickDropper() , new ItemStack(Material.BOWL), "Drop bowls automatically", 1),
-	DESHFIRE("Deshfire", 2500, 2500, new Deshfire() , new ItemStack(Material.REDSTONE_BLOCK), "Give a desh and put fire", 1),
-	KANGAROO("Kangaroo", 0, 0, new Kangaroo() , new ItemStack(Material.FIREWORK), "Do doublejumps", 1),
-	VACUUM("Vacuum", 10000, 10000, new EnderMage() , new ItemStack(Material.ENDER_PORTAL_FRAME), "Create a vacuum", 1),
-	CRITICAL("Critical", 9000, 0, new Critical() , new ItemStack(Material.REDSTONE_BLOCK), "Gives critical hits", 1),
-	STOMPER("Stomper", 15000, 0, new Stomper() , new ItemStack(Material.IRON_BOOTS), "Smash your enemies.", 1),
-	THOR("Thor", 2500, 2500, new Thor() , new ItemStack(Material.GOLD_AXE), "Throw thunders.", 1),
-	WATERBENDER("Waterbender", 12000, 0, new WaterBender(), new ItemStack(Material.LAPIS_ORE), "Create a water prison", 1),
-	FIREBENDER("Firebender", 12000, 0, new Firebender(), new ItemStack(Material.REDSTONE_ORE), "Create a fire prison", 1),
-	GLADIATOR("Gladiator", 15000, 0, new GladiatorListener() , new ItemStack(Material.IRON_FENCE), "Challenge your enemy.", 1),
-	CAMEL("Camel", 9000, 9000, new Camel() , new ItemStack(Material.SAND), "Get stronger on deserts.", 1),
-	BARBARIAN("Barbarian", 18000, 0, new Barbarian(), new ItemStack(Material.WOOD_SWORD), "Your sword envolves on each kill!", 1),
-	SNAIL("Snail", 10000, 0, new Snail() , new ItemStack(Material.FERMENTED_SPIDER_EYE), "Gives slowness on each hit.", 1),
-	FIREMAN("Fireman", 10000, 0, new Fireman() , new ItemStack(Material.LAVA_BUCKET), "Gives fire on each hit.", 1),
-	MONK("Monk", 9000, 0, new Monk() , new ItemStack(Material.BLAZE_ROD), "Messes with enemy inventory.", 1),
-	FISHERMAN("Fisherman", 9000, 0, new Fisherman() , new ItemStack(Material.FISHING_ROD), "Pulls players to you wih fishing rod.", 1),
-	SWITCHER("Switcher", 8000, 0, new Switcher() , new ItemStack(Material.SNOW_BALL), "Swith places with enemies.",  1),
-	METEOR("Meteor", 8000, 0, new Meteor() , new ItemStack(Material.FIREBALL), "Be a meteor.",  1),
-	GRAPPLER("Grappler", 10000, 0, new Grappler() , new ItemStack(Material.LEASH), "Fly around", 1);
+	NENHUM("None2", 0, 0 , new Nenhum() , new ItemStack(Material.BARRIER), "Sem habilidades" , 1),
+	PVP("PvP-2", 0, 0 , new PvP() , new ItemStack(Material.STONE_SWORD), "Tenha sharp 1 na espada" , 1),
+	ANCHOR("Anchor", 10000, 0, new Anchor() , new ItemStack(Material.ANVIL), "Não receba ou de knockback" , 1),
+	ANTISTOMPER("AntiStomper", 8000, 0, new AntiStomperReal() , new ItemStack(Material.DIAMOND_HELMET), "Imune a stompers" , 1),
+	NINJA("Ninja", 10000, 0, new Ninja() , new ItemStack(Material.EMERALD), "Teleporte ao ultimo inimigo hitado", 1),
+	POSEIDON("Poseidon", 4000, 0, new Poseidon() , new ItemStack(Material.WATER_BUCKET), "Forte na água", 1),
+	AVATAR("Avatar", 12000, 0, new Avatar() , new ItemStack(Material.BEACON), "Controle os 4 elementos", 1),
+	LEECH("Leech", 10000, 0, new Leech() , new ItemStack(Material.REDSTONE), "Roube vida dos inimigos", 1),
+	ARCHER("Archer", 0, 0, new Archer() , new ItemStack(Material.BOW), "Receba arco e flecha!", 1),
+	BOXER("Boxer", 15000, 0, new Boxer() , new ItemStack(Material.QUARTZ), "De mais dano e leve menos.", 1),
+    VIPER("Viper", 10000, 0, new Viper() , new ItemStack(Material.SPIDER_EYE), "De veneno ao hitar", 1),
+    SIGHT("Sight", 10000, 0, new Sight(), new ItemStack(Material.INK_SACK, 1 , (short)1), "De cegueira ao hitar!", 1),
+    NEO("Neo", 8000, 0, new net.helixpvp.kit2.NEO() , new ItemStack(Material.BARRIER), "Imune a varios kits", 1),
+	QUICKDROPPER("QuickDropper", 2500, 2500, new QuickDropper() , new ItemStack(Material.BOWL), "Drope potes automaticamente", 1),
+	DESHFIRE("Deshfire", 2500, 2500, new Deshfire() , new ItemStack(Material.REDSTONE_BLOCK), "De um desh e bote fogo", 1),
+	KANGAROO("Kangaroo", 0, 0, new Kangaroo() , new ItemStack(Material.FIREWORK), "De doublejumps", 1),
+	VACUUM("Vacuum", 10000, 10000, new EnderMage() , new ItemStack(Material.ENDER_PORTAL_FRAME), "Empurre seus inimigos", 1),
+	CRITICAL("Critical", 9000, 0, new Critical() , new ItemStack(Material.REDSTONE_BLOCK), "De hits críticos", 1),
+	STOMPER("Stomper", 15000, 0, new Stomper() , new ItemStack(Material.IRON_BOOTS), "Esmague seus inimigos.", 1),
+	THOR("Thor", 2500, 2500, new Thor() , new ItemStack(Material.GOLD_AXE), "Invoque raios.", 1),
+	WATERBENDER("Waterbender", 12000, 0, new WaterBender(), new ItemStack(Material.LAPIS_ORE), "Crie uma prisão de água", 1),
+	FIREBENDER("Firebender", 12000, 0, new Firebender(), new ItemStack(Material.REDSTONE_ORE), "Crie uma prisão de fogo", 1),
+	GLADIATOR("Gladiator", 15000, 0, new GladiatorListener() , new ItemStack(Material.IRON_FENCE), "Desafie seu inimigo para 1v1.", 1),
+	CAMEL("Camel", 9000, 9000, new Camel() , new ItemStack(Material.SAND), "Forte em desertos.", 1),
+	BARBARIAN("Barbarian", 18000, 0, new Barbarian(), new ItemStack(Material.WOOD_SWORD), "Sua espada evolue a cada kill!", 1),
+	SNAIL("Snail", 10000, 0, new Snail() , new ItemStack(Material.FERMENTED_SPIDER_EYE), "De lentidão a cada hit", 1),
+	FIREMAN("Fireman", 10000, 0, new Fireman() , new ItemStack(Material.LAVA_BUCKET), "De fogo a cada hit.", 1),
+	MONK("Monk", 9000, 0, new Monk() , new ItemStack(Material.BLAZE_ROD), "Bagunçe o inventario do inimigo.", 1),
+	FISHERMAN("Fisherman", 9000, 0, new Fisherman() , new ItemStack(Material.FISHING_ROD), "Puxe jogadores com sua vara de pesca.", 1),
+	SWITCHER("Switcher", 8000, 0, new Switcher() , new ItemStack(Material.SNOW_BALL), "Troque de lugar com o inimigo.",  1),
+	METEOR("Meteor", 8000, 0, new Meteor() , new ItemStack(Material.FIREBALL), "Seja um meteoro.",  1),
+	GRAPPLER("Grappler", 10000, 0, new Grappler() , new ItemStack(Material.LEASH), "Voe por ai com sua cordinha", 1);
 	
 	private final String name;
 	private final String description;
@@ -127,22 +127,22 @@ public enum HelixKit2  {
 	  		return;
 	  	 }
 		if (KitManager2.getPlayer(player.getName()).getkit2().getName() == KitManager.getPlayer(player.getName()).getKit().getName()) {
-			player.sendMessage("§cYou alreadu has this kit selected was primary!");
+			player.sendMessage("§cVocê já tem esse kit escolhido como secundário!");
 			player.closeInventory();
 			return;
 		}
 		if (KitManager2.getPlayer(player.getName()).getkit2().toString() == KitManager.getPlayer(player.getName()).getKit().toString()) {
 			if (KitManager2.getPlayer(player.getName()).getkit2() == HelixKit2.NENHUM && KitManager.getPlayer(player.getName()).getKit() == HelixKit.NENHUM) {
 				KitManager2.getPlayer(player.getName()).setkit2(this);
-				player.sendMessage("§b" + name + " selected!");
+				player.sendMessage("§b" + name + " selecionado!");
 				return;
 			}
 			if (KitManager2.getPlayer(player.getName()).getkit2() == HelixKit2.PVP && KitManager.getPlayer(player.getName()).getKit() == HelixKit.PVP) {
 				KitManager2.getPlayer(player.getName()).setkit2(this);
-				player.sendMessage("§b" + name + " selected!");
+				player.sendMessage("§b" + name + " selecionado!");
 				return;
 			}
-			player.sendMessage("§cYou alreadu has this kit selected was primary!");
+			player.sendMessage("§cVocê já tem esse kit escolhido como secundário!");
 			player.playSound(player.getLocation(), Sound.GHAST_MOAN, 1f, 1f);
 			player.closeInventory();
 			return;
@@ -150,9 +150,9 @@ public enum HelixKit2  {
 		KitManager2.getPlayer(player.getName()).setkit2(this);
 		if (KitManager2.getPlayer(player.getName()).haskit2(PVP)) {
 		
-		player.sendMessage("§bPvP selected!");
+		player.sendMessage("§bPvP selecionado!");
 		} else {
-			player.sendMessage("§b" + name + " selected!");
+			player.sendMessage("§b" + name + " selecionado!");
 		
 		}
 		

@@ -21,7 +21,7 @@ import net.helix.pvp.kit.KitManager2;
 
 public class KitInventory22 {
 
-	private final static String inventoryName = "Secondary Kits 2";
+	private final static String inventoryName = "KIT SECUNDÁRIO 2/2";
 	public static void open(Player player) {
 		Inventory inventory = Bukkit.createInventory(null, 6 * 9, inventoryName);
 	
@@ -144,10 +144,24 @@ public class KitInventory22 {
 							.toStack()
 					);
 			}
-		inventory.setItem(45, new ItemBuilder("§aReturn", Material.ARROW).nbt("voltar")
+		if (player.hasPermission("kombo.kit2.meteor")) {
+			inventory.setItem(20
+					, new ItemBuilder("§a" + HelixKit2.METEOR.getName(), HelixKit2.METEOR.getIcon())
+					.lore("§f" + HelixKit2.METEOR.getDescription())
+							.addFlags(ItemFlag.HIDE_ATTRIBUTES,
+									ItemFlag.HIDE_DESTROYS,
+									ItemFlag.HIDE_ENCHANTS,
+									ItemFlag.HIDE_PLACED_ON,
+									ItemFlag.HIDE_POTION_EFFECTS,
+									ItemFlag.HIDE_UNBREAKABLE)
+							.nbt("kit-gui2", HelixKit2.METEOR.getName())
+							.toStack()
+					);
+			}
+		inventory.setItem(45, new ItemBuilder("§aRetornar", Material.ARROW).nbt("voltar")
 				.toStack()
 		);
-		inventory.setItem(4, new ItemBuilder("§aView all kits", Material.CHEST).nbt("visuali")
+		inventory.setItem(4, new ItemBuilder("§aVeja todos os kits", Material.CHEST).nbt("visuali")
 				.toStack()
 		);
 		ItemStack i =  new ItemStack(KitManager2.getPlayer(player.getName()).getkit2().getIcon());
@@ -158,7 +172,7 @@ public class KitInventory22 {
 		i2.setDisplayName(KitManager2.getPlayer(player.getName()).getkit2().getName());
 	    }
 		else {
-			i2.setDisplayName("§eNo kits selected.");	
+			i2.setDisplayName("§eSem kits selecionados.");	
 		}
 		i2.setLore(lore);
 		i.setItemMeta(i2);

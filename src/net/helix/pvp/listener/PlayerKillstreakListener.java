@@ -24,14 +24,14 @@ public class PlayerKillstreakListener implements Listener {
 		
 		int killstreak = killerAccount.getPvp().getKillstreak();
 		if (String.valueOf(killstreak).contains("5") || (String.valueOf(killstreak).contains("0")) && killstreak != 0) {
-			Bukkit.broadcastMessage("§6§lKS §e" + killer.getName() + " has a killstreak of §b" + killstreak + "§e!");
+			Bukkit.broadcastMessage("§6§lKS §e" + killer.getName() + " tem um killstreak de §b" + killstreak + "§e!");
 		}
 		
 		Player victim = event.getPlayer();
 		HelixPlayer victimA = HelixBukkit.getInstance().getPlayerManager().getPlayer(victim.getName());
 		int killstreak2 = victimA.getPvp().getKillstreak();
 		if (killstreak2 >= 3) {
-			Bukkit.getOnlinePlayers().forEach(p -> p.sendMessage("§6" + victim.getName() + " §elost his killstreak of §6" + victimA.getPvp().getKillstreak() + " §eto §6" +
+			Bukkit.getOnlinePlayers().forEach(p -> p.sendMessage("§6" + victim.getName() + " §eperdeu seu killstreak de §6" + victimA.getPvp().getKillstreak() + " §epara §6" +
 	                killer.getName() + "§e!"));
 		}
 		victimA.getPvp().setKillstreak(0);

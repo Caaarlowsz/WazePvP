@@ -61,8 +61,8 @@ public class Barbarian extends KitHandler {
             } else {
             	 k.setItemInHand(new ItemStack(Material.WOOD_SWORD));
                  k.playSound(k.getLocation(), Sound.LEVEL_UP, 1.0F, 1.0F);
-              k.sendMessage(ChatColor.GOLD + "You are on max level!");
-              k.sendMessage(ChatColor.GOLD + "Your sword reseted!");
+              k.sendMessage(ChatColor.GOLD + "Você está no nível máximo!");
+              k.sendMessage(ChatColor.GOLD + "Sua espada resetou!");
             } 
           } else {
             k.getInventory().getItemInHand().addEnchantment(Enchantment.DAMAGE_ALL, 1);

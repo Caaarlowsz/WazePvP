@@ -6,12 +6,13 @@ import org.bukkit.entity.Player;
 
 public enum PlayerGroup {
 
-    DONO("DONO", 0, "Dono", "helix.tag.dono", ChatColor.DARK_RED, 1),
-    ADMIN("SUBDONO", 1, "S-DonoB", "tag.admin", ChatColor.RED, 2),
-    COORD("DEVELOPERVF", 2, "DevVB", "helix.tag.mod+", ChatColor.DARK_AQUA, 3),
-    MOD("DEVELOPER4", 2, "DevV", "helix.tag.mod", ChatColor.DARK_GREEN, 3),
-   HELPER("DEVELOPER", 2, "DevA", "helix.tag.helper", ChatColor.YELLOW, 3),
-   ESTAGIO("DEVELOPER2", 2, "DevM", "helix.tag.estagiario", ChatColor.LIGHT_PURPLE, 3),
+    DONO("DONO", 0, "Dono", "helix.tag.diretor", ChatColor.DARK_AQUA, 1),
+    GERENTE("SUBDONO2F", 1, "S-DonoBV", "helix.tag.gerente", ChatColor.DARK_RED, 2),
+    ADMIN("SUBDONO", 2, "S-DonoB", "helix.tag.admin", ChatColor.RED, 2),
+    COORD("DEVELOPERVF", 3, "DevVB", "helix.tag.coord", ChatColor.DARK_PURPLE, 3),
+    MOD("DEVELOPER4", 4, "DevV", "helix.tag.mod", ChatColor.DARK_GREEN, 3),
+   HELPER("DEVELOPER", 5, "DevA", "helix.tag.ajudante", ChatColor.LIGHT_PURPLE, 3),
+   ESTAGIO("DEVELOPER2", 6, "DevM", "helix.tag.estagiario", ChatColor.YELLOW, 3),
     BUGHUNTER("BUG", 18, "Booster", "helix.tag.bughunter", ChatColor.DARK_GRAY, 4),
     BOOSTER("BOOSTER", 18, "Booster", "helix.tag.booster", ChatColor.BLACK, 5),
     TOP1("TOP1", 18, "Top1", "helix.tag.top1", ChatColor.BLUE, 5),
@@ -21,7 +22,7 @@ public enum PlayerGroup {
     YT4("YT4", 18, "YT", "helix.tag.yt+", ChatColor.AQUA, 9),
     YT5("YT4", 18, "YT", "helix.tag.miniyt", ChatColor.AQUA, 10),
     STREAM("STREAM", 17, "EMERALD", "helix.tag.streamer", ChatColor.AQUA, 111),  
-    BETA("STREAM", 17, "EMERALD", "helix.tag.beta", ChatColor.GREEN, 111), 
+    BETA("STREAM", 17, "EMERALD", "helix.tag.beta", ChatColor.GOLD, 111), 
     EMERALD2("EMERALD2", 18, "EMERALD2", "helix.tag.diamond", ChatColor.GREEN, 11),
     EMERALD("EMERALD", 18, "EMERALD", "helix.tag.emerald", ChatColor.GREEN, 11),
     GOLD("GOLD", 18, "Gold", "helix.tag.gold", ChatColor.GREEN, 12),

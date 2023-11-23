@@ -28,7 +28,7 @@ public class TPALL
         p2.sendMessage("§7 " + p.getName() + " puxou todos ate ele !");
       }
     }
-    p.sendMessage("§aEveryone is at your location !");
+    p.sendMessage("§aTodos está na sua localização !");
     return false;
   }
 }

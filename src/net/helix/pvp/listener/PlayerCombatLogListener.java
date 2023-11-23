@@ -56,13 +56,13 @@ public class PlayerCombatLogListener implements Listener {
 		if (victim.getGameMode().equals(GameMode.CREATIVE) || damager.getGameMode().equals(GameMode.CREATIVE)) {
 			return;
 		}
-		
+		if (!HelixCooldown.has(victim.getName(), "combat")) {
+		damager.sendMessage(ChatColor.RED + "Você agora está em combate com " + victim.getName());
+		victim.sendMessage(ChatColor.RED + "Você agora está em combate com " + damager.getName());
+		}
+
 		HelixCooldown.create(victim.getName(), "combat", timeUnit, time);
 		HelixCooldown.create(damager.getName(), "combat", timeUnit, time);
-		if (!HelixCooldown.has(victim.getName(), "combat")) {
-		damager.sendMessage(ChatColor.RED + "You are now in combat with " + victim.getName());
-		victim.sendMessage(ChatColor.RED + "You are now in combat with " + damager.getName());
-		}
 		if (victim.isFlying()) {
 		victim.setAllowFlight(victim.hasPermission("kombo.cmd.report"));
 		victim.setFlying(victim.hasPermission("kombo.cmd.report"));
@@ -75,7 +75,7 @@ public class PlayerCombatLogListener implements Listener {
 		String command = event.getMessage().split(" ")[0].toLowerCase();
 		if (HelixCooldown.inCooldown(player.getName(), "combat") && !allowCommands.contains(command) && !player.hasPermission("kombo.cmd.report")) {
 			event.setCancelled(true);
-			player.sendMessage("§cWait " + HelixCooldown.getTime(player.getName(), "combat") + " seconds to use this command again");
+			player.sendMessage("§cEspere " + HelixCooldown.getTime(player.getName(), "combat") + " segundos para usar comandos novamente!");
 		}
 	}
 	@EventHandler
@@ -124,7 +124,7 @@ public class PlayerCombatLogListener implements Listener {
 		String command = event.getMessage().split(" ")[0].toLowerCase();
 		if (command.contains("admin") && VanishUtil.has(player.getName())) {
 			event.setCancelled(true);
-			player.sendMessage("§cLeave the vanish before entering admin mode!");
+			player.sendMessage("§csaia do vanish antes de entrar no modo admin!");
 		}
 	}
 	
@@ -146,7 +146,7 @@ public class PlayerCombatLogListener implements Listener {
 			HelixCooldown.delete(player.getName(), "combat");
 			player.setHealth(0);
 			HelixWarp.SPAWN.send(player);
-			Bukkit.broadcastMessage(ChatColor.RED + player.getName() + " logged out in combat.");
+			Bukkit.broadcastMessage(ChatColor.RED + player.getName() + " deslogou em combate e levou kill.");
 		}
 	
 	}

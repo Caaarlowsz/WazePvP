@@ -52,7 +52,7 @@ public class EventoListeners implements Listener {
         if (!HelixWarp.GLADIATOR.hasPlayer(event.getPlayer().getName())) return;       
         if (event.getBlock().getType() == Material.GLASS) {
         	event.setCancelled(true);
-        	event.getPlayer().sendMessage(ChatColor.RED + "Dont break gladiator glass!");
+        	event.getPlayer().sendMessage(ChatColor.RED + "Não quebre o vidro do gladiator!");
         }
     }
     @EventHandler
@@ -82,8 +82,8 @@ public class EventoListeners implements Listener {
         event.getPlayer().sendMessage("");
         event.getPlayer().sendMessage("");
         event.getPlayer().sendMessage("");
-        event.getPlayer().sendMessage("§aA event is occouring!");
-        event.getPlayer().sendMessage("§aUse §b/event join §ato join");
+        event.getPlayer().sendMessage("§aUm evento está ocorrendo!");
+        event.getPlayer().sendMessage("§aUse §b/event join §apara entrar");
     }
 
 

@@ -52,7 +52,7 @@ public class Tornado extends KitHandler {
 				return;
 			}
 			if (p.getLocation().getY() > HelixPvP.getInstance().getConfig().getInt("SpawnAltura")) {
-				p.sendMessage("DONT USE THE TORNADO HERE.");
+				p.sendMessage("NÃO USE O TORNADO AQUI.");
 				return;
 			}
 float max_height = 15;
@@ -61,7 +61,7 @@ float lines = 4;
 int angle = 0;
 float height_increasement = (float)0.5;
 float radius_increasement = max_radius / max_height; {
-	Bukkit.broadcastMessage(ChatColor.BLUE + p.getName() + " Spawned a tornado!");
+	Bukkit.broadcastMessage(ChatColor.BLUE + p.getName() + " Invocou um tornado!");
 for (int l = 0; l < lines; l++) {
       for (float y = 0; y < max_height; y+=height_increasement ) {
           float radius = y * radius_increasement;
@@ -69,9 +69,7 @@ for (int l = 0; l < lines; l++) {
           double z = Math.sin(Math.toRadians(360/lines*l + y*25 - angle)) * radius;
           Location location = p.getLocation();
 
-          for (Player p1 : Bukkit.getOnlinePlayers()) {
-          p1.playSound(p1.getLocation(), Sound.GHAST_SCREAM, 1.0f, 1.0f);
-          }
+          
           location.getWorld().playEffect(location, Effect.CLOUD, 10);
           location.getWorld().playEffect(location.clone().add(x,y,z), Effect.CLOUD, 10);
           location.getWorld().playEffect(location.clone().add(1,2,3), Effect.CLOUD, 10);

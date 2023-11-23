@@ -46,7 +46,7 @@ public class KitHandler2 implements Listener {
 			 Habilidade.removeAbility(player);
 			}
 		 if (!SoupTypeGUI.compass.containsKey(p.getName())) {
-		player.getInventory().setItem(8, new ItemBuilder("§9Compass", Material.COMPASS)
+		player.getInventory().setItem(8, new ItemBuilder("§9Bússola", Material.COMPASS)
 				.nbt("kit-handler", "search-players")
 				.nbt("cancel-drop")
 				.toStack()

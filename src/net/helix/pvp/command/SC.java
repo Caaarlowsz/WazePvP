@@ -106,7 +106,7 @@ public class SC
 		}
 		if (!ChatCommand.chat) {
 			if (!player.hasPermission("kombo.cmd.report")) {
-				player.sendMessage("§fThe chat is currently §cdisabled§f!");
+				player.sendMessage("§fO chat do servidor está atualmente §cdesativado§f!");
 				event.setCancelled(true);
 				return;
 			}

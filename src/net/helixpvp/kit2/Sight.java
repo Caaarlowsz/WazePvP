@@ -33,7 +33,7 @@ public class Sight extends KitHandler2 {
 		
 		if (percentage < 27) {
 			victim.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 4 * 20, 1));
-			victim.sendMessage(ChatColor.RED + "A sight gives you blindness");
+			victim.sendMessage(ChatColor.RED + "Uma pessoa de kit sight te deu cegueira");
 		}
 	}
 }

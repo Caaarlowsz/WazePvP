@@ -25,11 +25,11 @@ public class EventoComando implements CommandExecutor {
 
     private static void sendHelp(Player player) {
         if (player.hasPermission("kombo.cmd.evento")) {
-            player.sendMessage("§5§lKITPVP §7- §eEvent system");
+            player.sendMessage("§5§lKITPVP §7- §eSistema de eventos");
             player.sendMessage(" ");
-            player.sendMessage("§e/event join §7- §fJoin a event.");
-            player.sendMessage("§e/event leave §7- §fLeave the event.");
-            player.sendMessage("§e/event spec §7- §fSpectate the event.");
+            player.sendMessage("§e/event join §7- §fEntre no evento.");
+            player.sendMessage("§e/event leave §7- §fSaia do evento.");
+            player.sendMessage("§e/event spec §7- §fEspecte o evento.");
             player.sendMessage(" ");
             player.sendMessage("§e/event build §7- §fToggles build.");
             player.sendMessage("§e/event cleararena §7- §fClear the arena.");
@@ -50,11 +50,11 @@ public class EventoComando implements CommandExecutor {
             player.sendMessage("§e/event whitelist <add/remove/list> <player> §7- §fRelease players to join the event one by one.");
             player.sendMessage(" ");
         } else {
-            player.sendMessage("§5§lKITPVP §7- §eEvent system");
+            player.sendMessage("§5§lKITPVP §7- §eSistema de eventos");
             player.sendMessage(" ");
-            player.sendMessage("§e/event join §7- §fJoin a event.");
-            player.sendMessage("§e/event leave §7- §fLeave the event.");
-            player.sendMessage("§e/event spec §7- §fSpectate the event.");
+            player.sendMessage("§e/event join §7- §fEntre no evento.");
+            player.sendMessage("§e/event leave §7- §fSaia do evento.");
+            player.sendMessage("§e/event spec §7- §fEspecte o evento.");
             player.sendMessage(" ");
         }
     }
@@ -65,7 +65,7 @@ public class EventoComando implements CommandExecutor {
             return true;
         }
         Player player = (Player) sender;
-        if (command.getName().equalsIgnoreCase("event")) {
+        if (command.getName().equalsIgnoreCase("event") || command.getName().equalsIgnoreCase("evento")) {
             if (args.length == 0) {
                 sendHelp(player);
                 return false;
@@ -73,22 +73,22 @@ public class EventoComando implements CommandExecutor {
 
             if (!player.hasPermission("kombo.cmd.evento")) {
                 if (!EventoUtils.evento) {
-                    player.sendMessage("§cThe event room is closed.");
+                    player.sendMessage("§cA sala de eventos está fechada.");
                     return true;
                 }
                 switch (args[0].toLowerCase()) {
                     case "join":
                         if (EventoUtils.game.contains(player.getName())) {
-                            player.sendMessage("§cYou are already on event.");
+                            player.sendMessage("§cVocê já está no evento.");
                             return true;
                         }
                         if (!HelixWarp.SPAWN.hasPlayer(player.getName())) {
-                            player.sendMessage("§cYou need to be on spawn to join the event.");
-                            player.sendMessage("§cWrite /spawn.");
+                            player.sendMessage("§cVocê precisa estar no spawn para entrar no evento.");
+                            player.sendMessage("§cEscreva /spawn.");
                             return true;
                         }
                         if (VanishUtil.has(player.getName()) || AdminUtil.has(player.getName())) {
-                        	player.sendMessage("§cLeave the admin or vanish before entering the event.");
+                        	player.sendMessage("§cSaia do admin ou vanish antes de entrar no evento.");
                 
                             return true;
                         }
@@ -103,7 +103,7 @@ public class EventoComando implements CommandExecutor {
                                 KitManager2.getPlayer(player.getName()).removekit2();
                                 Habilidade.removeAbility(player);
                             } else {
-                                player.sendMessage("§cThe event room is closed for now. But can open at any time");
+                                player.sendMessage("§cA sala de eventos está fechada por agora. mas pode abrir a qualquer momento");
                             }
                             return true;
                         }
@@ -113,44 +113,44 @@ public class EventoComando implements CommandExecutor {
                         player.teleport(EventoUtils.mainArena);
                         player.getInventory().clear();
                         player.getInventory().setArmorContents(null);
-                        player.sendMessage("§aYou joined the event.");
+                        player.sendMessage("§aVocê entrou no evento.");
                         KitManager.getPlayer(player.getName()).removeKit();
                         Habilidade.removeAbility(player);
                         break;
                     case "leave":
                         if (!EventoUtils.game.contains(player.getName())) {
-                            player.sendMessage("§cYou are not in event.");
+                            player.sendMessage("§cVocê não está no evento.");
                             return true;
                         }
                         EventoUtils.setEvento(false, player); // OLHA DC
                         HelixWarp.SPAWN.send(player);
-                        player.sendMessage("§cYou leave the event.");
+                        player.sendMessage("§cVocê saiu do evento.");
                         break;
                     case "spec":
                         if (EventoUtils.game.contains(player.getName())) {
-                            player.sendMessage("§cYou are in the event.");
+                            player.sendMessage("§cVocê já está no evento.");
                             return true;
                         }
                         if (!(KitManager.getPlayer(player.getName()).hasKit()) || Habilidade.ContainsAbility(player)) {
-                            player.sendMessage("§cRemove your kit to join the event.");
+                            player.sendMessage("§cRemova seu kit para entrar no evento.");
                             return true;
                         }
                         if (!EventoUtils.specs) {
-                            player.sendMessage("§cSpectators is disabled for now.");
+                            player.sendMessage("§cEspectadores estão desativados.");
                             return true;
                         }
                         player.teleport(EventoUtils.specLoc);
                         player.sendMessage("§aVocê está espectando o evento.");
                         break;
                     default:
-                        player.sendMessage("§cCant find the option §e" + args[0] + "§c.");
+                        player.sendMessage("§cComando não encontrado §e" + args[0] + "§c.");
                         break;
                 }
             }
             else {
                 if (args[0].equalsIgnoreCase("start")) {
                     if (EventoUtils.evento) {
-                        player.sendMessage("§cThe event room is already open.");
+                        player.sendMessage("§cA sala já está aberta.");
                         return true;
                     }
                     EventoUtils.evento = true;
@@ -163,9 +163,9 @@ public class EventoComando implements CommandExecutor {
                     player.sendMessage("§aYou joined the event.");
                     KitManager.getPlayer(player.getName()).removeKit();
                     KitManager2.getPlayer(player.getName()).removekit2();
-                    Bukkit.broadcastMessage("§cA event started.");
+                    Bukkit.broadcastMessage("§cUm evento iniciou.");
                     Bukkit.broadcastMessage("§cUse /event join");
-                    Bukkit.broadcastMessage("§cTo join.");
+                    Bukkit.broadcastMessage("§cPara entrar.");
                     for (Player p : Bukkit.getOnlinePlayers()) {
                     	p.playSound(p.getLocation(), Sound.LEVEL_UP, 1f, 1f);
                     }
@@ -173,15 +173,15 @@ public class EventoComando implements CommandExecutor {
                 }
                 else if (args[0].equalsIgnoreCase("stop")) {
                     if (!EventoUtils.evento) {
-                        player.sendMessage("§cThe event room is already closed.");
+                        player.sendMessage("§cA sala já está fechada.");
                         return true;
                     }
                     EventoUtils.evento = false;
-                    player.sendMessage("§aYou closed the event room.");
+                    player.sendMessage("§aVocê fechou a sala.");
                     EventoUtils.getEventoPlayers().forEach(p -> {
                     	net.helix.pvp.evento.EventoUtils.setEvento(false, p);
                         HelixWarp.SPAWN.send(p);
-                        p.sendMessage("§cThe event ended.");
+                        p.sendMessage("§cO evento foi finalizado.");
                         p.chat("/spawn");
                         p.getActivePotionEffects().forEach(ef -> p.removePotionEffect(ef.getType()));
                     });
@@ -189,22 +189,22 @@ public class EventoComando implements CommandExecutor {
                 }
                 else {
                     if (!EventoUtils.evento) {
-                        player.sendMessage("§cThe event room is not open.");
+                        player.sendMessage("§cA sala de eventos não está aberta.");
                         return true;
                     }
                     switch (args[0].toLowerCase()) {
                         case "join":
                             if (EventoUtils.game.contains(player.getName())) {
-                                player.sendMessage("§cYou are already in the event.");
+                                player.sendMessage("§cVocê já está no evento.");
                                 return true;
                             }
                             if (!HelixWarp.SPAWN.hasPlayer(player.getName())) {
-                                player.sendMessage("§cYou need to be in the spawn to join.");
-                                player.sendMessage("§cWrite /spawn.");
+                                player.sendMessage("§cVocê precisa estar no evenyo para entrar.");
+                                player.sendMessage("§cEscreva /spawn.");
                                 return true;
                             }
                             if (VanishUtil.has(player.getName()) || AdminUtil.has(player.getName())) {
-                            	player.sendMessage("§cLeave the admin or vanish before entering the event.");
+                            	player.sendMessage("§cSaia do modo admin ou vanish para entrar no evento.");
                     
                                 return true;
                             }
@@ -225,7 +225,7 @@ public class EventoComando implements CommandExecutor {
                             EventoUtils.setEvento(true, player);
                             player.teleport(EventoUtils.mainArena);
                             player.getInventory().clear();
-                            player.sendMessage("§aYou joined the event.");
+                            player.sendMessage("§aVocê entrou no evento.");
                             KitManager.getPlayer(player.getName()).removeKit();
                             KitManager2.getPlayer(player.getName()).removekit2();
                             break;

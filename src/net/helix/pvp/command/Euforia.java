@@ -27,7 +27,7 @@ public class Euforia implements CommandExecutor {
                 }
             if (!HelixPvP.euforia) {
             	 for (Player player : Bukkit.getOnlinePlayers()) {
-				DarKit.sendTitle(player, "§c§lEUFORIA", "§fEveryone get stronger");
+				DarKit.sendTitle(player, "§c§lFÚRIA", "§fTodos estão fortes");
 				player.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 120*20, 0));
 				player.playSound(player.getLocation(), Sound.ANVIL_BREAK, 1F, 10F);
             	 }
@@ -37,9 +37,9 @@ public class Euforia implements CommandExecutor {
 				Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp group default permission settemp kombo.kit2.* true 30m");
 			    Bukkit.getWorld("spawn").setTime(18000);
 			    Bukkit.broadcast("§4§lEUFORIA §7Ativado manualmente por " + player2.getName(), "kombo.cmd.report");
-			    Bukkit.broadcastMessage("§cThe §4§lEUFORIA event §cstarted");
-				Bukkit.broadcastMessage("§cFor two minutes everyone will get strenght 2");
-				Bukkit.broadcastMessage("§cAll kits released during the event");
+			    Bukkit.broadcastMessage("§cO evento Fúria começou");
+				Bukkit.broadcastMessage("§cPor dois minutos todos estaram fortes");
+				Bukkit.broadcastMessage("§cTodos os kits liberados durante o evento");
             	 }
          else {
         	
@@ -47,11 +47,11 @@ public class Euforia implements CommandExecutor {
 					HelixPvP.euforia = false;
 					
 					 Bukkit.getWorld("spawn").setTime(100);
-					    Bukkit.broadcast("§4§lEUFORIA §7Desativado manualmente por " + player2.getName(), "kombo.cmd.report");
+					    Bukkit.broadcast("§4§lFÚRIA §7Desativado manualmente por " + player2.getName(), "kombo.cmd.report");
 						Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp group default permission unsettemp kombo.kit.*");
 						Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp group default permission unsettemp kombo.kit2.*");
 					 for (Player p1 : Bukkit.getOnlinePlayers()) {
-						 DarKit.sendTitle(p1, "§c§lEUFORIA", "§aFinished!");
+						 DarKit.sendTitle(p1, "§c§lFÚRIA", "§aFinalizado!");
 						 BossBarAPI.removeAllBars(p1);
 					      	p1.playSound(p1.getLocation(), Sound.LEVEL_UP, 1f, 1f);
 					        p1.getActivePotionEffects().forEach(potion -> p1.removePotionEffect(potion.getType()));

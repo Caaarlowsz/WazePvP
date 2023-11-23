@@ -59,7 +59,7 @@ public class PlayerDieArenaListener implements Listener {
 			Player killer = event.getKiller();
 			if (player == killer) {
 				HelixPlayer victimHelixPlayer2 = HelixBukkit.getInstance().getPlayerManager().getPlayer(player.getName());
-				player.sendMessage("§cYou commited suicide and dont gain any coins or kills.");
+				player.sendMessage("§cVocê se matou e não ganhou kills e nem coins.");
 				victimHelixPlayer2.getPvp().addDeaths(1);
 				victimHelixPlayer2.getPvp().removeCoins(15);
 				if ((victimHelixPlayer2.getPvp().getCoins()) >= 15) {
@@ -100,7 +100,7 @@ public class PlayerDieArenaListener implements Listener {
 			}
 			HelixPlayer killerHelixPlayer = HelixBukkit.getInstance().getPlayerManager().getPlayer(killer.getName());
 			killer.playSound(killer.getLocation(), Sound.LEVEL_UP, 10.0f, 10.0f);
-			killer.sendMessage("§3You killed " + player.getName() + ". §8(" + (event.isValidKill() ? "Count" : "Dont Count" + ")"));
+			killer.sendMessage("§3Você matou " + player.getName() + ". §8(" + (event.isValidKill() ? "Conta" : "Não conta" + ")"));
 			if (event.isValidKill()) {
 				int killerAddCoins = !killer.hasPermission("kombo.doublexp") ? random.nextInt(15) + 15 : random.nextInt(30) + 20;
 				killerHelixPlayer.getPvp().addKills(1);
@@ -127,12 +127,12 @@ public class PlayerDieArenaListener implements Listener {
 				player.sendMessage("§c§l[-] " + victimHelixPlayer.getPvp().getXp() + " XP");
 			}
 			victimHelixPlayer.getPvp().addDeaths(1);
-			player.sendMessage("§cYou died to the player " + killer.getName());
+			player.sendMessage("§cVocê morreu para o jogador " + killer.getName());
 			player.playSound(player.getLocation(), Sound.BAT_DEATH, 10f, 10f);
 					HelixBukkit.getInstance().getPlayerManager().getController().save(victimHelixPlayer);
 					HelixBukkit.getInstance().getPlayerManager().getController().save(killerHelixPlayer);
 		}else {
-			player.sendMessage("§cYou died for unknown reasons and your stats dont get altered.");
+			player.sendMessage("§cVocê morreu por razões desconhecidas e seus status não foram alterados.");
 		}
 		
 		Location spawnLocation = HelixBukkit.getInstance().getWarpManager().findWarp("spawn").isPresent() ?
@@ -169,7 +169,7 @@ public class PlayerDieArenaListener implements Listener {
 			Player killer = event.getKiller();
 			if (player == killer) {
 				HelixPlayer victimHelixPlayer2 = HelixBukkit.getInstance().getPlayerManager().getPlayer(player.getName());
-				player.sendMessage("You commited suicide and dont gain any coins or kills.");
+				player.sendMessage("Você se matou e não ganhou kills e nem coins.");
 				victimHelixPlayer2.getPvp().addDeaths(1);
 				victimHelixPlayer2.getPvp().removeCoins(15);
 				if ((victimHelixPlayer2.getPvp().getCoins()) >= 15) {
@@ -207,7 +207,7 @@ public class PlayerDieArenaListener implements Listener {
 			}
 			HelixPlayer killerHelixPlayer = HelixBukkit.getInstance().getPlayerManager().getPlayer(killer.getName());
 			killer.playSound(killer.getLocation(), Sound.LEVEL_UP, 10.0f, 10.0f);
-			killer.sendMessage("§3You killed " + player.getName() + ". §8(" + (event.isValidKill() ? "Count" : "Dont Count" + ")"));
+			killer.sendMessage("§3Você matou " + player.getName() + ". §8(" + (event.isValidKill() ? "Conta" : "Não conta" + ")"));
 			if (event.isValidKill()) {
 				int killerAddCoins = !killer.hasPermission("kombo.doublexp") ? random.nextInt(15) + 15 : random.nextInt(30) + 20;
 				killerHelixPlayer.getPvp().addKills(1);
@@ -234,12 +234,12 @@ public class PlayerDieArenaListener implements Listener {
 				player.sendMessage("§c§l[-] " + victimHelixPlayer.getPvp().getXp() + " XP");
 			}
 			victimHelixPlayer.getPvp().addDeaths(1);
-			player.sendMessage("§cYou died to the player " + killer.getName());
+			player.sendMessage("§cVocê morreu para o jogador " + killer.getName());
 			player.playSound(player.getLocation(), Sound.BAT_DEATH, 10f, 10f);
 					HelixBukkit.getInstance().getPlayerManager().getController().save(victimHelixPlayer);
 					HelixBukkit.getInstance().getPlayerManager().getController().save(killerHelixPlayer);
 		}else {
-			player.sendMessage("§cYou died for unknown reasons and your stats dont get altered.");
+			player.sendMessage("§cVocê morreu por razões desconhecidas e seus status não foram alterados.");
 		}
 		
 		Location spawnLocation = HelixBukkit.getInstance().getWarpManager().findWarp("spawn").isPresent() ?
@@ -277,7 +277,7 @@ public class PlayerDieArenaListener implements Listener {
 			Player killer = event.getKiller();
 			if (player == killer) {
 				HelixPlayer victimHelixPlayer2 = HelixBukkit.getInstance().getPlayerManager().getPlayer(player.getName());
-				player.sendMessage("You commited suicide and dont gain any coins or kills.");
+				player.sendMessage("Você se matou e não ganhou kills e nem coins.");
 				victimHelixPlayer2.getPvp().addDeaths(1);
 				victimHelixPlayer2.getPvp().removeCoins(15);
 				if ((victimHelixPlayer2.getPvp().getCoins()) >= 15) {
@@ -322,7 +322,7 @@ public class PlayerDieArenaListener implements Listener {
 			}
 			HelixPlayer killerHelixPlayer = HelixBukkit.getInstance().getPlayerManager().getPlayer(killer.getName());
 			killer.playSound(killer.getLocation(), Sound.LEVEL_UP, 10.0f, 10.0f);
-			killer.sendMessage("§3You killed " + player.getName() + ". §8(" + (event.isValidKill() ? "Count" : "Dont Count" + ")"));
+			killer.sendMessage("§3Você matou " + player.getName() + ". §8(" + (event.isValidKill() ? "Conta" : "Não conta" + ")"));
 			if (event.isValidKill()) {
 				int killerAddCoins = !killer.hasPermission("kombo.doublexp") ? random.nextInt(15) + 15 : random.nextInt(30) + 20;
 				killerHelixPlayer.getPvp().addKillsFPS(1);
@@ -351,12 +351,12 @@ public class PlayerDieArenaListener implements Listener {
 			}
 			killerHelixPlayer.getPvp().addKills(1);
 			victimHelixPlayer.getPvp().addDeaths(1);
-			player.sendMessage("§cYou died to the player " + killer.getName());
+			player.sendMessage("§cVocê morreu para o jogador " + killer.getName());
 			player.playSound(player.getLocation(), Sound.BAT_DEATH, 10f, 10f);
 					HelixBukkit.getInstance().getPlayerManager().getController().save(victimHelixPlayer);
 					HelixBukkit.getInstance().getPlayerManager().getController().save(killerHelixPlayer);
 		}else {
-			player.sendMessage("§cYou died for unknown reasons and your stats dont get altered.");
+			player.sendMessage("§cVocê morreu por razões desconhecidas e seus status não foram alterados.");
 		}
 	}
 	@EventHandler
@@ -390,7 +390,7 @@ public class PlayerDieArenaListener implements Listener {
 			Player killer = event.getKiller();
 			if (player == killer) {
 				HelixPlayer victimHelixPlayer2 = HelixBukkit.getInstance().getPlayerManager().getPlayer(player.getName());
-				player.sendMessage("You commited suicide and dont gain any coins or kills.");
+				player.sendMessage("Você se matou e não ganhou kills e nem coins.");
 				victimHelixPlayer2.getPvp().addDeaths(1);
 				victimHelixPlayer2.getPvp().removeCoins(15);
 				if ((victimHelixPlayer2.getPvp().getCoins()) >= 15) {
@@ -432,7 +432,7 @@ public class PlayerDieArenaListener implements Listener {
 			}
 			HelixPlayer killerHelixPlayer = HelixBukkit.getInstance().getPlayerManager().getPlayer(killer.getName());
 			killer.playSound(killer.getLocation(), Sound.LEVEL_UP, 10.0f, 10.0f);
-			killer.sendMessage("§3You killed " + player.getName() + ". §8(" + (event.isValidKill() ? "Count" : "Dont Count" + ")"));
+			killer.sendMessage("§3Você matou " + player.getName() + ". §8(" + (event.isValidKill() ? "Conta" : "Não conta" + ")"));
 			if (event.isValidKill()) {
 				int killerAddCoins = !killer.hasPermission("kombo.doublexp") ? random.nextInt(15) + 15 : random.nextInt(30) + 20;
 				killerHelixPlayer.getPvp().addKillsFPS(1);
@@ -466,7 +466,7 @@ public class PlayerDieArenaListener implements Listener {
 					HelixBukkit.getInstance().getPlayerManager().getController().save(victimHelixPlayer);
 					HelixBukkit.getInstance().getPlayerManager().getController().save(killerHelixPlayer);
 		}else {
-			player.sendMessage("§cYou died for unknown reasons and your stats dont get altered.");
+			player.sendMessage("§cVocê morreu por razões desconhecidas e seus status não foram alterados.");
 		}
 	}
 	@EventHandler
@@ -500,7 +500,7 @@ public class PlayerDieArenaListener implements Listener {
 			Player killer = event.getKiller();
 			if (player == killer) {
 				HelixPlayer victimHelixPlayer2 = HelixBukkit.getInstance().getPlayerManager().getPlayer(player.getName());
-				player.sendMessage("You commited suicide and dont gain any coins or kills.");
+				player.sendMessage("Você se matou e não ganhou kills e nem coins.");
 				victimHelixPlayer2.getPvp().addDeaths(1);
 				victimHelixPlayer2.getPvp().removeCoins(15);
 				if ((victimHelixPlayer2.getPvp().getCoins()) >= 15) {
@@ -529,7 +529,7 @@ public class PlayerDieArenaListener implements Listener {
 			}
 			HelixPlayer killerHelixPlayer = HelixBukkit.getInstance().getPlayerManager().getPlayer(killer.getName());
 			killer.playSound(killer.getLocation(), Sound.LEVEL_UP, 10.0f, 10.0f);
-			killer.sendMessage("§3You killed " + player.getName() + ". §8(" + (event.isValidKill() ? "Count" : "Dont Count" + ")"));
+			killer.sendMessage("§3Você matou " + player.getName() + ". §8(" + (event.isValidKill() ? "Conta" : "Não conta" + ")"));
 			if (event.isValidKill()) {
 				int killerAddCoins = !killer.hasPermission("kombo.doublexp") ? random.nextInt(15) + 15 : random.nextInt(30) + 20;
 				killerHelixPlayer.getPvp().addKills(1);
@@ -561,7 +561,7 @@ public class PlayerDieArenaListener implements Listener {
 					HelixBukkit.getInstance().getPlayerManager().getController().save(victimHelixPlayer);
 					HelixBukkit.getInstance().getPlayerManager().getController().save(killerHelixPlayer);
 		}else {
-			player.sendMessage("§cYou died for unknown reasons and your stats dont get altered.");
+			player.sendMessage("§cVocê morreu por razões desconhecidas e seus status não foram alterados.");
 		}
 	}
 

@@ -135,8 +135,8 @@ public static void init() {
 					objective.setDisplaySlot(DisplaySlot.SIDEBAR);
 					
 					String l12 = "§3";
-					String l11 = "§a❚ §fKills: §a";
-					String l10 = "§c❚ §fDeaths: §c";
+					String l11 = "§a❚ §fMatou: §a";
+					String l10 = "§c❚ §fMorreu: §c";
 					String l9 = "§3❚ §fKillstreak: §3";
 					
 				
@@ -179,11 +179,11 @@ public static void init() {
 					objective2.setDisplayName(text2);
 					objective2.setDisplaySlot(DisplaySlot.SIDEBAR);
 					String l9 = "§a";
-					String l8 = "§bYou are in the event";
+					String l8 = "§bSala de Eventos";
 					String ll = "§c";
-					String l7 = "§fRoom open: ";
+					String l7 = "§fSala aberta: ";
 					String l6 = "§fPvP: ";
-					String l5 = "§fDamage: ";
+					String l5 = "§fDano: ";
 					String l4 = "§fCoins: §a";
 					String l3 = "§fRank: ";
 					String l2 = "§0";
@@ -215,7 +215,7 @@ public static void init() {
 					objective2.setDisplayName(text3);
 					objective2.setDisplaySlot(DisplaySlot.SIDEBAR);
 					
-					String l10 = "§eStats of FPS";
+					String l10 = "§eStatus da FPS";
 					String l9 = "§c";
 					String l8 = "§fKills: §a";
 					String l7 = "§fDeaths: §c";
@@ -256,7 +256,7 @@ public static void init() {
 					
 					String l10 = "§eGladiator";
 					String l9 = "§c";
-					String l8 = "§fOponnent:";
+					String l8 = "§fOponente:";
 					String l7 = "§fPing:";
 					String l5 = "§fCoins: §a";
 					String l4 = "§fRank: ";
@@ -368,7 +368,7 @@ public static void init() {
 					
 					String l10 = "§eLava Challenge";
 					String l9 = "§c";
-					String l8 = "§fHealth: §c";
+					String l8 = "§fVida: §c";
 					String l5 = "§fCoins: §a";
 					String l4 = "§fRank: ";
 					String l3 = "§fXP: §a";
@@ -400,8 +400,8 @@ public static void init() {
 					objective2.setDisplaySlot(DisplaySlot.SIDEBAR);
 					
 					String l9 = "§c";
-					String l8 = "§fWins: §a";
-					String l5 = "§fLoses: §c";
+					String l8 = "§fGanhou: §a";
+					String l5 = "§fPerdeu: §c";
 					String l4 = "§fWinStreak: §3";
 					String l3 = "§fXP: §a";
 					String l22 = "§fRank: ";
@@ -434,8 +434,8 @@ public static void init() {
 					objective2.setDisplaySlot(DisplaySlot.SIDEBAR);
 					
 					String l9 = "§c";
-					String l8 = "§fWins: §a";
-					String l5 = "§fLoses: §c";
+					String l8 = "§fGanhou: §a";
+					String l5 = "§fPerdeu: §c";
 					String l4 = "§fWinStreak: §3";
 					String l3 = "§fXP: §a";
 					String l22 = "§fRank: ";

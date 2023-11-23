@@ -46,9 +46,9 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
 	  p.sendMessage("§aStarting staff vs players event"); 
 	  EventoUtils.evento = true;
 	  EventoUtils.tp = true;
-	  Bukkit.broadcastMessage("§cThe Staff vs Players event will start soon.");
-      Bukkit.broadcastMessage("§cUse /event join to join it");
-  	Bukkit.broadcastMessage("§cThe arena event will start in 5 minutes");
+	  Bukkit.broadcastMessage("§cO evento Staff vs Players vai começar em breve.");
+      Bukkit.broadcastMessage("§cUse /event para entrar");
+  	Bukkit.broadcastMessage("§cO evento vai começar em 5 minutos");
       for (Player p1 : Bukkit.getOnlinePlayers()) {
       	p1.playSound(p1.getLocation(), Sound.LEVEL_UP, 1f, 1f);
       }
@@ -127,9 +127,9 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
      	EventoUtils.build = true;
      	EventoUtils.staff = true;
      	EventoUtils.tp = false;
-     	ItemStack helmet = new ItemStack(Material.IRON_HELMET);
+     	ItemStack helmet = new ItemStack(Material.LEATHER_HELMET);
 		ItemStack chest = new ItemStack(Material.IRON_CHESTPLATE);
-		ItemStack leg = new ItemStack(Material.IRON_LEGGINGS);
+		ItemStack leg = new ItemStack(Material.LEATHER_LEGGINGS);
 		ItemStack boost = new ItemStack(Material.IRON_BOOTS);
 		ItemStack helmet2 = new ItemStack(Material.DIAMOND_HELMET);
 		ItemStack chest2 = new ItemStack(Material.DIAMOND_CHESTPLATE);
@@ -231,7 +231,7 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
 	}
   Bukkit.getScheduler().scheduleSyncDelayedTask(HelixPvP.getInstance(), new Runnable() {
 		public void run() {
-			if (!EventoUtils.evento || !EventoUtils.started) {
+			if (!EventoUtils.evento || !EventoUtils.started || !EventoUtils.staff) {
 				  return;
 			  }
 			EventoUtils.getEventoPlayers().forEach(p ->  {

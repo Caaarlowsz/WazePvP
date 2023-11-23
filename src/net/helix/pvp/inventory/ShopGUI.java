@@ -16,7 +16,7 @@ import net.helix.core.bukkit.item.ItemBuilder;
 
 public class ShopGUI implements Listener {
 
-	private final static String inventoryName = "SHOP";
+	private final static String inventoryName = "Categorias - Loja";
 	private static ItemStack randomGlass() {
 		int randomId = new Random().nextInt(14);
 		return new ItemStack(Material.VINE, 1);
@@ -25,13 +25,13 @@ public class ShopGUI implements Listener {
 		Inventory inventory = Bukkit.createInventory(player, InventoryType.HOPPER, inventoryName);
 		
 
-		inventory.setItem(1, new ItemBuilder("§cPrimary kits shop", Material.CHEST).nbt("shop")
+		inventory.setItem(1, new ItemBuilder("§cLoja de kit 1", Material.CHEST).nbt("shop")
 				.toStack()
 		);
-		inventory.setItem(3, new ItemBuilder("§cSecondary kits shop", Material.CHEST).nbt("shop2")
+		inventory.setItem(3, new ItemBuilder("§cLoja de kit 2", Material.CHEST).nbt("shop2")
 				.toStack()
 		);
-		inventory.setItem(2, new ItemBuilder("§cReset your kdr", Material.NETHER_STAR).nbt("shop3")
+		inventory.setItem(2, new ItemBuilder("§cResetar seu kdr", Material.NETHER_STAR).nbt("shop3")
 				.toStack()
 		);
 		

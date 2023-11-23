@@ -75,12 +75,12 @@ public void flash(PlayerInteractEvent e) {
       	  if (pertos instanceof Player) {
         if (KitManager.getPlayer(pertos.getName()).hasKit())	{
         Player per = (Player)pertos;
-      	  pertos.setVelocity(new Vector(10 , 1 , 13));
+        pertos.setVelocity(new Vector(4 , 1 , 6));
         per.damage(12);
         pertos.setFireTicks(55);
         e.setCancelled(true);
-        p.sendMessage(ChatColor.GREEN + "You used the vacuum!");
-        per.sendMessage(ChatColor.RED + "You get hit by vacuum of " + p.getName());
+        p.sendMessage(ChatColor.GREEN + "Players arrastados por seu vacuum!");
+        per.sendMessage(ChatColor.RED + "Você foi atingido pelo vacuum de " + p.getName());
         p.playSound(p.getLocation(), Sound.ENDERMAN_TELEPORT, 10.0F, 10.0F);
         addCooldown(p, 45);
         return;

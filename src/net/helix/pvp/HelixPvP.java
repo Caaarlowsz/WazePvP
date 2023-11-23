@@ -88,8 +88,6 @@ import net.helix.pvp.command.RankCMD;
 import net.helix.pvp.command.Regras;
 import net.helix.pvp.command.RemoveKit;
 import net.helix.pvp.command.RemoverGlads;
-import net.helix.pvp.command.Report;
-import net.helix.pvp.command.ReportToggle;
 import net.helix.pvp.command.ResetKDR;
 import net.helix.pvp.command.SC;
 import net.helix.pvp.command.ScoreboardCMD;
@@ -270,7 +268,7 @@ new BukkitRunnable() {
 				
 			
 					BossBar bossBar = BossBarAPI.addBar(player, // The receiver of the BossBar
-						      new TextComponent("§4§lEUFORIA §f" + "Primary/Secondary kits released!"), // Displayed message
+						      new TextComponent("§4§lFÚRIA §f" + "Kits Primários/Secundários liberados!"), // Displayed message
 						      BossBarAPI.Color.RED, // Color of the bar
 						      BossBarAPI.Style.NOTCHED_20, // Bar style
 						      1.0f, // Progress (0.0 - 1.0)
@@ -333,13 +331,13 @@ new BukkitRunnable() {
 							return;
 						}
 
-						DarKit.sendTitle(player, "§c§lEUFORIA", "§fEveryone is stronger");
+						DarKit.sendTitle(player, "§c§lFÚRIA", "§fTodos ficaram fortes");
 						
 						player.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 120*20, 0));
 						player.playSound(player.getLocation(), Sound.ANVIL_BREAK, 1F, 10F);
-						Bukkit.broadcastMessage("§cThe §4§lEUFORIA event §cstarted");
-						Bukkit.broadcastMessage("§cFor two minutes everyone will get strength 2");
-						Bukkit.broadcastMessage("§cAll kits released during the event");
+						Bukkit.broadcastMessage("§cO evento §4§lFÚRIA §ccomeçou");
+						Bukkit.broadcastMessage("§cPor dois minutos todos teram força 2");
+						Bukkit.broadcastMessage("§cTodos os kits liberados durante o evento");
 						euforia = true;
 						Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp group default permission settemp kombo.kit.* true 2m");
 						Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp group default permission settemp kombo.kit2.* true 2m");
@@ -353,13 +351,13 @@ new BukkitRunnable() {
 										  return;
 									  }
 									
-									Bukkit.broadcastMessage("§aThe euforia event ended!");
+									Bukkit.broadcastMessage("§aO evento fúria foi finalizado!");
 									euforia = false;
 									
 									 Bukkit.getWorld("spawn").setTime(100);
 									 for (Player p1 : Bukkit.getOnlinePlayers()) {
 										 BossBarAPI.removeAllBars(p1);
-										 DarKit.sendTitle(p1, "§c§lEUFORIA", "§aEvent ended!");
+										 DarKit.sendTitle(p1, "§c§lFÚRIA", "§aEvento finalizado!");
 									      	p1.playSound(p1.getLocation(), Sound.LEVEL_UP, 1f, 1f);
 									        p1.getActivePotionEffects().forEach(potion -> p1.removePotionEffect(potion.getType()));
 									      }
@@ -478,7 +476,7 @@ new BukkitRunnable() {
 	
 	public void onDisable() {
 		for (Player p : Bukkit.getOnlinePlayers()) {
-			p.kickPlayer("§cServer is restarting.");
+			p.kickPlayer("§cServidor está reiniciando.");
 		}
 		for (Player p : Bukkit.getOnlinePlayers()) {
 			if (GladiatorListener.combateGlad.containsKey(p)) {
@@ -555,7 +553,6 @@ new BukkitRunnable() {
 		getCommand("fakelist").setExecutor(new FakeList());
 		getCommand("fake").setExecutor(new Fake());
 		getCommand("medalhas").setExecutor(new Medal());
-		getCommand("report").setExecutor(new Report());
 		getCommand("pinfo").setExecutor(new Info());
 		getCommand("requisitos").setExecutor(new Youtuber());
 		getCommand("req").setExecutor(new Youtuber());
@@ -588,8 +585,10 @@ new BukkitRunnable() {
 		getCommand("aplicar").setExecutor(new Aplicar());
 		getCommand("sendtitle").setExecutor(new AvisoT());
 		getCommand("event").setExecutor(new EventoComando());
+		getCommand("evento").setExecutor(new EventoComando());
 		getCommand("1v1iniciar").setExecutor(new OneVsOneIniciar());
 		getCommand("event").setTabCompleter(new EventoTabComplete());
+		getCommand("evento").setTabCompleter(new EventoTabComplete());
 	}
 	public void loadListeners() {
 		PluginManager pm = Bukkit.getPluginManager();

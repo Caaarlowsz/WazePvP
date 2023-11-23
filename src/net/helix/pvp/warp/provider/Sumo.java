@@ -9,6 +9,7 @@ import net.helix.pvp.kit.KitManager2;
 import net.helix.pvp.warp.HelixWarp;
 import net.helix.pvp.warp.WarpDuoBattleHandle;
 import net.helix.pvp.warp.WarpDuoBattleHandle2;
+import net.md_5.bungee.api.ChatColor;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -53,6 +54,12 @@ public class Sumo extends WarpDuoBattleHandle2 {
                     fastChallenge.remove(p2);
                     return;
                 }
+                if (p1 == p2) {
+                	cancel();
+                	fastChallenge.remove(p1);
+                	p1.sendMessage(ChatColor.RED + "A procura falhou! Tente novamente.");
+                	return;
+                }
 
                 startBattle(p1, p2);
             }
@@ -70,8 +77,8 @@ public class Sumo extends WarpDuoBattleHandle2 {
     @Override
     public void setItems(Player player) {
         super.setItems(player);
-        player.getInventory().setItem(3, new ItemBuilder("§cChallenge §7(Click)", Material.APPLE)
-                .lore("§fClick a player to challenge")
+        player.getInventory().setItem(3, new ItemBuilder("§cDesafiar §7(Clique)", Material.APPLE)
+                .lore("§fClique em um jogador para desafiar")
                 .nbt("cancel-drop")
                 .nbt("cancel-click")
                 .nbt("sumo", "challenge")
@@ -79,8 +86,8 @@ public class Sumo extends WarpDuoBattleHandle2 {
         );
 
         boolean searchPlayers = fastChallenge.contains(player);
-        player.getInventory().setItem(5, new ItemBuilder("§bSearch Opponent: " + (searchPlayers ? "§aON" : "§cOFF"), Material.INK_SACK, searchPlayers ? 10 : 8)
-                .lore("§fClick to search")
+        player.getInventory().setItem(5, new ItemBuilder("§bProcurar jogador: " + (searchPlayers ? "§aON" : "§cOFF"), Material.INK_SACK, searchPlayers ? 10 : 8)
+                .lore("§fClique para procurar")
                 .nbt("cancel-drop")
                 .nbt("cancel-click")
                 .nbt("sumo", "fast-challenge")
@@ -135,7 +142,7 @@ public class Sumo extends WarpDuoBattleHandle2 {
             fastChallenge.add(player);
         }
         setItems(player);
-        player.sendMessage(fastChallenge.contains(player) ? "§6You joined sumo queue" : "§eYou left sumo queue");
+        player.sendMessage(fastChallenge.contains(player) ? "§6Você entrou na fila do sumô" : "§eVocê saiu da fila do sumô");
     }
 
     @EventHandler
@@ -154,7 +161,7 @@ public class Sumo extends WarpDuoBattleHandle2 {
         Player target = (Player) event.getRightClicked();
 
         if (battlingPlayers.containsKey(target)) {
-            player.sendMessage("§cThis player is already fighting");
+            player.sendMessage("§cEsse jogador já está lutando");
             return;
         }
 
@@ -202,7 +209,7 @@ public class Sumo extends WarpDuoBattleHandle2 {
             if(block.getType().equals(Material.CHEST) || block.getType().equals(Material.TRAPPED_CHEST))  {
             	if (!block.hasMetadata("PlacedBlock")) {
                 event.setCancelled(true);
-                event.getPlayer().sendMessage("You can only open the feast!");
+                event.getPlayer().sendMessage("Você só pode abrir o báu do Feast!");
             }
             }
         }
@@ -223,7 +230,7 @@ public class Sumo extends WarpDuoBattleHandle2 {
         if (!findOpponent(player).isPresent()) {
             return;
         }
-        if (!(player.getLocation().getY() <= 34 && player.getLocation().getX() < 1615500)) {
+        if (!(player.getLocation().getY() <= 62)) {
         	return;
         }
         Player target = findOpponent(player).get();
@@ -252,7 +259,7 @@ public class Sumo extends WarpDuoBattleHandle2 {
         int winnerCoins = random.nextInt(80 + 1 - 25) + 25;
         HelixWarp.SUMO.send(target);
         target.playSound(target.getLocation(), Sound.LEVEL_UP, 10.0f, 10.0f);
-        target.sendMessage("§6§lSUMO §eYou win the fight against " + player.getName());
+        target.sendMessage("§6§lSUMO §eVocê ganhou a luta contra " + player.getName());
         killerUser.getPvp().addCoins(winnerCoins);
         killerUser.getPvp().addWinsSumo(1);;
         killerUser.getPvp().addWinstreakSumo(1);
@@ -262,17 +269,17 @@ public class Sumo extends WarpDuoBattleHandle2 {
         target.sendMessage("§6§l[+] §a25XP");
         
         loserUser.getPvp().addDeathsSumo(1);
-        player.sendMessage("§4§lSUMO §4You lost the fight against " + target.getName());
+        player.sendMessage("§4§lSUMO §4Você perdeu a luta contra " + target.getName());
 HelixPlayer killerAccount = HelixBukkit.getInstance().getPlayerManager().getPlayer(target.getName());
 		
 		int killstreak = killerAccount.getPvp().getWinstreaksumo();
 		if (String.valueOf(killstreak).contains("5") || (String.valueOf(killstreak).contains("0") || (String.valueOf(killstreak).contains("3")) && killstreak != 0)) {
-			Bukkit.broadcastMessage("§6§lWINS §e" + target.getName() + " has a winstreak of §b" + killstreak + "§e in Sumo!");
+			Bukkit.broadcastMessage("§6§lWINS §e" + target.getName() + " tem um killstreak de §b" + killstreak + "§e no Sumo!");
 		}
 		HelixPlayer victimA = HelixBukkit.getInstance().getPlayerManager().getPlayer(player.getName());
 		int killstreak2 = victimA.getPvp().getWinstreaksumo();
 		if (killstreak2 >= 3) {
-			Bukkit.getOnlinePlayers().forEach(p -> p.sendMessage("§6" + victimA.getName() + " §elost is winstreak of §6" + victimA.getPvp().getWinstreaksumo() + " §e in Sumo to §6" +
+			Bukkit.getOnlinePlayers().forEach(p -> p.sendMessage("§6" + victimA.getName() + " §eperdeu seu winstreak de §6" + victimA.getPvp().getWinstreaksumo() + " §e no Sumo para §6" +
 	                killerAccount.getName() + "§e!"));
 			victimA.getPvp().setWinstreaksumo(0);
 		}
@@ -320,7 +327,7 @@ HelixPlayer killerAccount = HelixBukkit.getInstance().getPlayerManager().getPlay
         HelixWarp.SUMO.send(target);
         target.playSound(target.getLocation(), Sound.LEVEL_UP, 10.0f, 10.0f);
 
-        target.sendMessage("§a§lSUMO §aYou win the fight against " + player.getName());
+        target.sendMessage("§a§lSUMO §aVocê ganhou a luta contra " + player.getName());
         killerUser.getPvp().addCoins(winnerCoins);
         killerUser.getPvp().addWinsSumo(1);;
         killerUser.getPvp().addWinstreakSumo(1);
@@ -330,17 +337,17 @@ HelixPlayer killerAccount = HelixBukkit.getInstance().getPlayerManager().getPlay
         target.sendMessage("§6§l[+] §a25XP");
         
         loserUser.getPvp().addDeathsSumo(1);
-        player.sendMessage("§c§lSUMO §cYou lost the fight against " + target.getName());
+        player.sendMessage("§c§lSUMO §cVocê perdeu a luta contra " + target.getName());
 HelixPlayer killerAccount = HelixBukkit.getInstance().getPlayerManager().getPlayer(target.getName());
 		
 		int killstreak = killerAccount.getPvp().getWinstreaksumo();
 		if (String.valueOf(killstreak).contains("5") || (String.valueOf(killstreak).contains("0") || (String.valueOf(killstreak).contains("3")) && killstreak != 0)) {
-			Bukkit.broadcastMessage("§6§lWINS §e" + target.getName() + " has a winstreak of §b" + killstreak + "§e in Sumo!");
+			Bukkit.broadcastMessage("§6§lWINS §e" + target.getName() + " tem um winstreak de §b" + killstreak + "§e no Sumo!");
 		}
 		HelixPlayer victimA = HelixBukkit.getInstance().getPlayerManager().getPlayer(player.getName());
 		int killstreak2 = victimA.getPvp().getWinstreaksumo();
 		if (killstreak2 >= 3) {
-			Bukkit.getOnlinePlayers().forEach(p -> p.sendMessage("§6" + victimA.getName() + " §elost his winstreak of §6" + victimA.getPvp().getWinstreaksumo() + " §e in Sumo to §6" +
+			Bukkit.getOnlinePlayers().forEach(p -> p.sendMessage("§6" + victimA.getName() + " §eperdeu seu winstreak de §6" + victimA.getPvp().getWinstreaksumo() + " §e no Sumo para §6" +
 	                killerAccount.getName() + "§e!"));
 			victimA.getPvp().setWinstreaksumo(0);
         HelixBukkit.getInstance().getPlayerManager().getController().save(loserUser);
@@ -360,6 +367,6 @@ HelixPlayer killerAccount = HelixBukkit.getInstance().getPlayerManager().getPlay
         finalizeBattle(player);
 
         HelixWarp.SUMO.send(target);
-        target.sendMessage("§2Your oponnent logged out");
+        target.sendMessage("§2Seu oponente deslogou");
     }
 }

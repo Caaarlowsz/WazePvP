@@ -138,6 +138,9 @@ import net.md_5.bungee.api.ChatColor;
 	    if (indentifier.equals("player_ks")) {
 		      return String.valueOf(helixPlayer.getPvp().getKillstreak());
 		    }
+	    if (indentifier.equals("player_winssumo")) {
+		      return String.valueOf(helixPlayer.getPvp().getWinssumo());
+		    }
 	    if (indentifier.equals("player_color")) {
 	    	  PlayerGroup medal = PlayerGroup.getGroup(p);
 	    	  if (p.getName() == "Rafael_Melo") {

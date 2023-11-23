@@ -93,7 +93,7 @@ import net.helix.core.bukkit.account.provider.PlayerPvP;
 	      if (e.getCurrentItem().isSimilar(tag)) {
 	        if (playerData.getPvp().getCoins() < 4000)
 	        {
-	          p.sendMessage( "You dont have enought money");
+	          p.sendMessage( "Você não tem dinheiro");
 	        }
 	        else
 	        {
@@ -108,7 +108,7 @@ import net.helix.core.bukkit.account.provider.PlayerPvP;
 	      if (e.getCurrentItem().isSimilar(randomkit2)) {
 	        if (playerData.getPvp().getCoins() < 5000)
 	        {
-	          p.sendMessage("§a§lCRATE §fNo sufficient funds");
+	          p.sendMessage("§a§lCAIXA §fSem dinheiro o bastante");
 	        }
 	        else
 	        {
@@ -120,7 +120,7 @@ import net.helix.core.bukkit.account.provider.PlayerPvP;
 	      if (e.getCurrentItem().isSimilar(randomkit3)) {
 	        if (playerData.getPvp().getCoins() < 8000)
 	        {
-	          p.sendMessage("§a§lCRATE §fNo sufficient funds");
+	          p.sendMessage("§a§lCAIXA §fSem dinheiro o bastante");
 	        }
 	        else
 	        {
@@ -132,7 +132,7 @@ import net.helix.core.bukkit.account.provider.PlayerPvP;
 	      if (e.getCurrentItem().isSimilar(randomkit)) {
 	        if (playerData.getPvp().getCoins() < 3000)
 	        {
-	          p.sendMessage("§a§lCRATE §fNo sufficient funds");
+	          p.sendMessage("§a§lCAIXA §fSem dinheiro o bastante");
 	        }
 	        else
 	        {
@@ -165,17 +165,17 @@ import net.helix.core.bukkit.account.provider.PlayerPvP;
 	      
 	      randomkit = new ItemStack(Material.getMaterial(336));
 	      randomkitmeta = randomkit.getItemMeta();
-	      randomkitmeta.setDisplayName("§6Bronze Crate §2Coins >> §a3000");
+	      randomkitmeta.setDisplayName("§6Caixa de Bronze §2Coins >> §a3000");
 	      randomkit.setItemMeta(randomkitmeta);
 	      
 	      randomkit2 = new ItemStack(Material.IRON_INGOT);
 	      randomkit2meta = randomkit2.getItemMeta();
-	      randomkit2meta.setDisplayName("§7Silver Crate §2Coins >> §a5000");
+	      randomkit2meta.setDisplayName("§7Caixa de Prata §2Coins >> §a5000");
 	      randomkit2.setItemMeta(randomkit2meta);
 	      
 	      randomkit3 = new ItemStack(Material.GOLD_INGOT);
 	      randomkit3meta = randomkit3.getItemMeta();
-	      randomkit3meta.setDisplayName("§eGold Crate §2Coins >> §a8000");
+	      randomkit3meta.setDisplayName("§eCaixa de Ouro §2Coins >> §a8000");
 	      randomkit3.setItemMeta(randomkit3meta);
 	      for (int i = 0; i != 27; i++)
 	      {
@@ -202,79 +202,79 @@ import net.helix.core.bukkit.account.provider.PlayerPvP;
 	    int o = r.nextInt(14);
 	    HelixPlayer playerData = HelixBukkit.getInstance().getPlayerManager().getPlayer(p.getName());
 	    PlayerPvP p3 = playerData.getPvp();
-	    Bukkit.broadcastMessage(ChatColor.GREEN + p.getName() + " OPENED A BRONZE CRATE!");
+	    Bukkit.broadcastMessage(ChatColor.GREEN + p.getName() + " ABRIU UMA CAIXA DE BRONZE!");
 	    p.playSound(p.getLocation(), Sound.LEVEL_UP, 10, 10);
 	    if (o == 0)
 	    {
-	      p.sendMessage("§a§lCRATE §fYou received the kit Ninja");
+	      p.sendMessage("§a§lCRATE §fVocê recebeu o kit Ninja");
 	      Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission set kombo.kit.ninja");
 	    }
 	    else if (o == 1)
 	    {
-	      p.sendMessage("§a§lCRATES §fYou received §a500§f Coins");
+	      p.sendMessage("§a§lCRATES §fVocê recebeu §a500§f Coins");
 	      p3.addCoins(500);
 	    }
 	    else if (o == 2)
 	    {
-	      p.sendMessage("§a§lCAIXA  §fYou received §a600§f Coins");
+	      p.sendMessage("§a§lCAIXA  §fVocê recebeu §a600§f Coins");
 	      p3.addCoins(600);
 	    }
 	    else if (o == 3)
 	    {
-	      p.sendMessage("§a§lCRATE §fYou win the kit Barbarian");
+	      p.sendMessage("§a§lCRATE §fVocê recebeu o kit Barbarian");
 	      Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission set kombo.kit.barbarian");
 	    }
 	    else if (o == 4)
 	    {
-	      p.sendMessage("§a§lCRATE  §fYou win the kit Endermage");
+	      p.sendMessage("§a§lCRATE  §fVocê recebeu o kit Endermage");
 	      Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission set kombo.kit.endermage");
 	    }
 	    else if (o == 5)
 	    {
-	      p.sendMessage("§a§lCRATE §fYou win the Kit Thresh and §a500§f Coins");
+	      p.sendMessage("§a§lCRATE §fVocê recebeu o Kit Thresh e §a500§f Coins");
 	      Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission set kombo.kit.thresh");
 	      p3.addCoins( 500);
 	    }
 	    else if (o == 6)
 	    {
-	      p.sendMessage("§a§lCRATE §fYou win the kit sonic");
+	      p.sendMessage("§a§lCRATE §fVocê recebeu o kit sonic");
 	      Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission set kombo.kit.sonic");
 	      
 	    }
 	    else if (o == 7)
 	    {
-	      p.sendMessage("§a§lCRATE §fYou win the kit Anchor");
+	      p.sendMessage("§a§lCRATE §fVocê recebeu o kit Anchor");
 	      Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission set kombo.kit.anchor");
 	    }
 	    else if (o == 8)
 	    {
-	      p.sendMessage("§a§lCRATE §fYou win §a1000§f Coins");
+	      p.sendMessage("§a§lCRATE §fVocê recebeu §a1000§f Coins");
 	      p3.addCoins(1000);
 	    }
 	    else if (o == 9)
 	    {
-	      p.sendMessage("§a§lCRATE §fYou win §a900§f Coins");
+	      p.sendMessage("§a§lCRATE §fVocê recebeu §a900§f Coins");
 	      p3.addCoins(900);
 	    }
 	    else if (o == 10)
 	    {
-	      p.sendMessage("§a§lCRATE §fYou win 300 XP");
+	      p.sendMessage("§a§lCRATE §fVocê recebeu 300 XP");
 	      p3.addXP(300);
 	    }
 	    else if (o == 11)
 	    {
-	      p.sendMessage("§a§lCRATE §fYou win the secondary kit stomper");
+	      p.sendMessage("§a§lCRATE §fVocê recebeu kit secundário stomper");
 	      Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission set kombo.kit2.stomper");
 	    }
 	    else if (o == 12)
 	    {
-	      p.sendMessage("§a§lCRATE §fYou win the kit snail");
+	      p.sendMessage("§a§lCRATE §fVocê recebeu kit snail");
 	      Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission set kombo.kit.snail");
 	    }
 	      else if (o == 13)
 		    {
-		      p.sendMessage("§a§lCRATE §cYou win nothing");
-		      p.sendMessage("§c§lMore luck next time!");
+		      p.sendMessage("§a§lCRATE §cVocê não ganhou nada");
+		      p.sendMessage("§c§lMais sorte na próxima!");
 		      
 	      if ((o == 7) || 
 	        (o == 8) || 
@@ -287,103 +287,103 @@ import net.helix.core.bukkit.account.provider.PlayerPvP;
 	  public void randomprata(Player p)
 	  {
 	    Random r = new Random();
-	    Bukkit.broadcastMessage(ChatColor.GREEN + p.getName() + " OPENED A SILVER CRATE!");
+	    Bukkit.broadcastMessage(ChatColor.GREEN + p.getName() + " ABRIU UMA CAIXA DE BRONZE!");
 	    p.playSound(p.getLocation(), Sound.LEVEL_UP, 10, 10);
 	    HelixPlayer playerData = HelixBukkit.getInstance().getPlayerManager().getPlayer(p.getName());
 	    PlayerPvP p3 = playerData.getPvp();
 	    int o = r.nextInt(16);
 	    if (o == 0)
 	    {
-	      p.sendMessage("§a§lCRATE §fYou received kit Grappler");
+	      p.sendMessage("§a§lCRATE §fVocê recebeu o kit Grappler");
 	      Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission set kombo.kit.grappler");
 	    }
 	    else if (o == 1)
 	    {
-	      p.sendMessage("§a§lCRATE §fYou win §a7000§f Coins");
+	      p.sendMessage("§a§lCRATE §fVocê recebeu §a7000§f Coins");
 	      p3.addCoins(7000);
 	    }
 	    else if (o == 2)
 	    {
-	      p.sendMessage("§a§lCRATE §fYou win §a6000§f Coins");
+	      p.sendMessage("§a§lCRATE §fVocê recebeu §a6000§f Coins");
 	      p3.addCoins(6000);
 	    }
 	    else if (o == 3)
 	    {
-	      p.sendMessage("§a§lCRATE §fYou win the kit gladiator");
+	      p.sendMessage("§a§lCRATE §fVocê recebeu o kit gladiator");
 	      Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission set kombo.kit.gladiator");
 	    }
 	    else if (o == 4)
 	    {
-	      p.sendMessage("§a§lCRATE §fYou win permission to talk in colours and doublexp/doublecoins");
+	      p.sendMessage("§a§lCRATE §fVocê recebeu permissão para falar em cores e duplo xp");
 	      Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission set kombo.doublexp");
 	    }
 	    else if (o == 5)
 	    {
-	      p.sendMessage("§a§lCRATE §fYou win kit Deshfire and §a500§f Coins");
+	      p.sendMessage("§a§lCRATE §fVocê recebeu kit deshfire e §a500§f Coins");
 	      Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission set kombo.kit.deshfire");
 	      p3.addCoins(500);
 	    }
 	    else if (o == 6)
 	    {
-	      p.sendMessage("§a§lCRATE §f§lYou win kit Viper and §a1000§f Coins");
+	      p.sendMessage("§a§lCRATE §f§lVocê recebeu kit Viper e §a1000§f Coins");
 	      Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission set kombo.kit.viper");
 	      p3.addCoins(500);
 	    }
 	    else if (o == 7)
 	    {
-	        p.sendMessage("§a§lCRATE §f§lYou win kit Gladiator");
+	        p.sendMessage("§a§lCRATE §f§lVocê recebeu o kit Gladiator");
 	    	 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission set kombo.kit.gladiator");
 		    
 	    }
 	    else if (o == 8)
 	    {
-	        p.sendMessage("§a§lCRATE §f§lYou win kit MilkMan");
+	        p.sendMessage("§a§lCRATE §f§lVocê recebeu o kit MilkMan");
 	    	 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission set kombo.kit.milkman");
 	    }
 	    else if (o == 9)
 	    {
-	        p.sendMessage("§a§lCRATE §f§lYou win kit secondary Gladiator");
+	        p.sendMessage("§a§lCRATE §f§lVocê recebeu o kit secundário Gladiator");
 	    	 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission set kombo.kit2.gladiator");
 	    }
 	    else if (o == 10)
 	    {
-	        p.sendMessage("§a§lCRATE §f§lYou win kit Meteor");
+	        p.sendMessage("§a§lCRATE §f§lVocê recebeu o kit Meteor");
 	    	 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission set kombo.kit.meteor");
 	    }
 	    else if (o == 11)
 	    {
-	    	 p.sendMessage("§a§lCRATE §f§lYou win kit Sonic and Deshfire");
+	    	 p.sendMessage("§a§lCRATE §f§lVocê recebeu o kit Sonic e Deshfire");
 	    	 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission set kombo.kit.sonic");
 	    	 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission set kombo.kit.deshfire");	    }
 	    else if (o == 12)
 	    {
-	    	 p.sendMessage("§a§lCRATE §f§lYou win kit Anchor");
+	    	 p.sendMessage("§a§lCRATE §f§lVocê recebeu o kit Anchor");
 	    	 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission set kombo.kit.anchor");
 	      
 	    }
 	    else if (o == 13)
 	    {
-	    	 p.sendMessage("§a§lCRATE §f§lYou win kit Barbarian");
+	    	 p.sendMessage("§a§lCRATE §f§lVocê recebeu o kit Barbarian");
 	    	 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission set kombo.kit.barbarian");
 	    }
 	    else if (o == 14)
 	    {
-	    	 p.sendMessage("§a§lCRATE §f§lYou win 550XP");
+	    	 p.sendMessage("§a§lCRATE §f§lVocê recebeu 550XP");
 p3.addXP(550);
 	    }
 	    else if (o == 15)
 	    {
-	    	 p.sendMessage("§a§lCRATE §f§lYou win 750XP");
+	    	 p.sendMessage("§a§lCRATE §f§lVocê recebeu 750XP");
 	    	 p3.addXP(750);
 	    }
 	    else if (o == 16)
 	    {
-	    	 p.sendMessage("§a§lCRATE §f§lYou win 300XP");
+	    	 p.sendMessage("§a§lCRATE §f§lVocê recebeu 300XP");
 	    	 p3.addXP(300);
 	    }
 	    else if (o == 17)
 	    {
-	      p.sendMessage("§a§lCRATE §f§l You win Kit Monk");
+	      p.sendMessage("§a§lCRATE §f§lVocê recebeu o Kit Monk");
 	    }
 	    Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission set kombo.kit.monk");
 	    
@@ -404,106 +404,106 @@ p3.addXP(550);
 	    int o = r.nextInt(17);
 	    HelixPlayer playerData = HelixBukkit.getInstance().getPlayerManager().getPlayer(p.getName());
 	    PlayerPvP p3 = playerData.getPvp();
-	    Bukkit.broadcastMessage(ChatColor.YELLOW + p.getName() + " OPENED A GOLD CRATE!");
+	    Bukkit.broadcastMessage(ChatColor.YELLOW + p.getName() + " ABRIU UMA CAIXA DE OURO!");
 	    p.playSound(p.getLocation(), Sound.LEVEL_UP, 10, 10);
 	    if (o == 0)
 	    {
-	      p.sendMessage("§a§lCRATE §fYou win kit secondary WaterBender");
+	      p.sendMessage("§a§lCRATE §fVocê recebeu o kit WaterBender");
 	      Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission set kombo.kit2.waterbender");
 	    }
 	    else if (o == 1)
 	    {
-		      p.sendMessage("§a§lCRATE §fYou win kit secondary Anchor");
+		      p.sendMessage("§a§lCRATE §fVocê recebeu o kit Anchor");
 		      Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission set kombo.kit2.anchor");
 	    }
 	    else if (o == 2)
 	    {
-		      p.sendMessage("§a§lCRATE §fYou win kit secondary Leech");
+		      p.sendMessage("§a§lCRATE §fVocê recebeu o kit Leech secundário");
 		      Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission set kombo.kit2.leech");
 	    }
 	    else if (o == 3)
 	    {
-		      p.sendMessage("§a§lCRATE §fYou win permission to talk in colours and doublexp/doublecoins");
+		      p.sendMessage("§a§lCRATE §fVocê recebeu permissão para falar em cores e doublexp/doublecoins");
 		      Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission set kombo.doublexp");
 	    }
 	    else if (o == 4)
 	    {
-		      p.sendMessage("§a§lCRATE §fYou win all primary kits for 1 week");
+		      p.sendMessage("§a§lCRATE §fVocê recebeu todos os kits primários por 1 semana");
 		      Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission settemp kombo.kit.* true 7d");
 	    }
 	    else if (o == 5)
 	    {
-	      p.sendMessage("§a§lCRATE §fYou win 900XP");
+	      p.sendMessage("§a§lCRATE §fVocê recebeu 900XP");
 	      p3.addXP(900);
 	    }
 	    else if (o == 6)
 	    {
-	    	p.sendMessage("§a§lCRATE §fYou win all secondary kits for 1 week");
+	    	p.sendMessage("§a§lCRATE §fVocê recebeu todos os kits secundários por 1 semana");
 		      Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission settemp kombo.kit2.* true 7d");
 	    }
 	    else if (o == 7)
 	    {
-	      p.sendMessage("§a§lCRATE §fYou win the secondary kit NEO");
+	      p.sendMessage("§a§lCRATE §fVocê recebeu o kit secundário NEO");
 
 	      Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission set kombo.kit2.neo");
 	    }
 	    else if (o == 8)
 	    {
-	    	 p.sendMessage("§a§lCRATE §fYou win the secondary kit Avatar");
+	    	 p.sendMessage("§a§lCRATE §fVocê recebeu o kit secundário Avatar");
 
 		      Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission set kombo.kit2.avatar");
 	    }
 	    else if (o == 9)
 	    {
-	    	 p.sendMessage("§a§lCRATE §fYou win the secondary kit Boxer");
+	    	 p.sendMessage("§a§lCRATE §fVocê recebeu o kit Boxer");
 
 		      Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission set kombo.kit2.boxer");
 	    }
 	    else if (o == 10)
 	    {
-	    	 p.sendMessage("§a§lCRATE §fYou win the secondary kit Ninja");
+	    	 p.sendMessage("§a§lCRATE §fVocê recebeu o kit Ninja");
 
 		      Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission set kombo.kit2.ninja");
 	    }
 	    else if (o == 11)
 	    {
-	    	 p.sendMessage("§a§lCRATE §fYou win the secondary kit Ninja");
+	    	 p.sendMessage("§a§lCRATE §fVocê recebeu o kit Ninja secundário");
 
 		      Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission set kombo.kit2.ninja");
 	    }
 	    else if (o == 12)
 	    {
-	    	 p.sendMessage("§a§lCRATE §fYou win the kit Timelord");
+	    	 p.sendMessage("§a§lCRATE §fVocê recebeu o kit secundário Timelord");
 
 		      Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission set kombo.kit.timelord");
 	    }
 	    else if (o == 13)
 	    {
-	    	 p.sendMessage("§a§lCRATE §fYou win the secondary kit Grappler");
+	    	 p.sendMessage("§a§lCRATE §fVocê recebeu o kit secundário Grappler");
 
 		      Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission set kombo.kit2.grappler");
 	    }
 	    else if (o == 14)
 	    {
-	    	 p.sendMessage("§a§lCRATE §fYou win the kit Fisherman");
+	    	 p.sendMessage("§a§lCRATE §fVocê recebeu o kit Fisherman");
 
 		      Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission set kombo.kit.fisherman");
 	    }
 	    else if (o == 15)
 	    {
-	      p.sendMessage("§a§lYou win 6000 of XP");
+	      p.sendMessage("§a§lVocê recebeu 6000 de XP");
 	      p3.addXP(6000);
 	      
 	    }
 	    else if (o == 16)
 	    {
-	    	p.sendMessage("§a§lYou win 4000 of XP");
+	    	p.sendMessage("§a§lVocê recebeu 4000 de XP");
 		      p3.addXP(4000);
 	      
 	    }
 	    else if (o == 17)
 	    {
-	      p.sendMessage("§a§lYou win a permanent Group Winner!");
+	      p.sendMessage("§a§lVocê recebeu o grupo Winner permanentemente!");
 	      
 	      
 	      Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " parent add winner");
@@ -512,10 +512,10 @@ p3.addXP(550);
 	    }
 	    else if (o == 18)
 	    {
-		      p.sendMessage("§a§lYou win the tag Iron (Only the tag, no perks)!");
+		      p.sendMessage("§a§lVocê recebeu a tag 2024 (Apenas a tag)!");
 		      
 		      
-		      Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission set helix.tag.iron");
+		      Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission set helix.tag.2024");
 	      if ((o == 7) || 
 	        (o == 8) || 
 	        (o == 9) || 

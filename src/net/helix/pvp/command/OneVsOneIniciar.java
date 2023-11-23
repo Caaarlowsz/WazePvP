@@ -49,9 +49,9 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
 	  p.sendMessage("§aStarting event 1v1"); 
 	  EventoUtils.evento = true;
 	  EventoUtils.tp = true;
-	  Bukkit.broadcastMessage("§cThe 1v1 event started.");
-      Bukkit.broadcastMessage("§cUse /event join to join");
-      Bukkit.broadcastMessage("§cThe event will start on 5 minutes");
+	  Bukkit.broadcastMessage("§cO evento 1v1 foi iniciado.");
+      Bukkit.broadcastMessage("§cUse /event join para entrar");
+      Bukkit.broadcastMessage("§cO evento começara em 2 minutos.");
       for (Player p1 : Bukkit.getOnlinePlayers()) {
       	p1.playSound(p1.getLocation(), Sound.LEVEL_UP, 1f, 1f);
       }
@@ -67,12 +67,12 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
 			      for (Player p1 : Bukkit.getOnlinePlayers()) {
 			        	p1.playSound(p1.getLocation(), Sound.LEVEL_UP, 1f, 1f);
 			        }
-			      p2.sendMessage("Event will start");
+			      p2.sendMessage("O evento vai começar");
 			});
-			 	Bukkit.broadcastMessage("§cTeleporting people to the event!");
+			 	Bukkit.broadcastMessage("§cTeleportando pessoas para o evento!");
 			 	EventoType evento = EventoType.getEventoByName("1v1");
 			 
-			    Bukkit.broadcastMessage("§aStarting explanation of the event §e" + evento.getName().toUpperCase() + "§a...");
+			    Bukkit.broadcastMessage("§aIniciando explicação do evento §e" + evento.getName().toUpperCase() + "§a...");
                 EventoType.explicarEvento(evento);
                 EventoUtils.started = true;
 			}}, 1200L);
@@ -85,8 +85,8 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
 				 EventoUtils.damage = true;
 				 EventoUtils.build = false;
 				 EventoUtils.tp = false;
-				Bukkit.broadcastMessage("§c§lThe event will start!");
-				Bukkit.broadcastMessage("§c§lGood luck!");
+				Bukkit.broadcastMessage("§c§lO evento vai começar!");
+				Bukkit.broadcastMessage("§c§lBoa sorte!");
 			 	HelixPvP.getInstance().getEventManager().setRdmAutomatic(new RDMAutomatic());	
 		 		Bukkit.getConsoleSender().sendMessage("RDM Automatic iniciado");
 			 	 EventoUtils.getEventoPlayers().forEach(p2 -> {
@@ -118,13 +118,13 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
                 p.getActivePotionEffects().forEach(ef -> p.removePotionEffect(ef.getType()));
                 
                 if (EventoUtils.getEventoPlayers().size() == 1) {
-                	Bukkit.broadcastMessage("§aEvent winner: " + EventoUtils.getEventoPlayersNames());
-                	Bukkit.broadcastMessage("§aEvent winner: " + EventoUtils.getEventoPlayersNames());
-                	Bukkit.broadcastMessage("§aEvent winner: " + EventoUtils.getEventoPlayersNames());
-                	Bukkit.broadcastMessage("§aEvent winner: " + EventoUtils.getEventoPlayersNames());
-                	Bukkit.broadcastMessage("§aEvent winner: " + EventoUtils.getEventoPlayersNames());
-                	Bukkit.broadcastMessage("§aEvent winner: " + EventoUtils.getEventoPlayersNames());
-                	Bukkit.broadcastMessage("§aEvent winner: " + EventoUtils.getEventoPlayersNames());
+                	Bukkit.broadcastMessage("§aGanhador: " + EventoUtils.getEventoPlayersNames());
+                	Bukkit.broadcastMessage("§aGanhador: " + EventoUtils.getEventoPlayersNames());
+                	Bukkit.broadcastMessage("§aGanhador: " + EventoUtils.getEventoPlayersNames());
+                	Bukkit.broadcastMessage("§aGanhador: " + EventoUtils.getEventoPlayersNames());
+                	Bukkit.broadcastMessage("§aGanhador: " + EventoUtils.getEventoPlayersNames());
+                	Bukkit.broadcastMessage("§aGanhador: " + EventoUtils.getEventoPlayersNames());
+                	Bukkit.broadcastMessage("§aGanhador: " + EventoUtils.getEventoPlayersNames());
                 	p.setHealth(20);
                 	p.getWorld().strikeLightning(p.getLocation());
             		p.getWorld().strikeLightning(p.getLocation());
@@ -134,8 +134,8 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
                 if (HelixPvP.getInstance().getEventManager().isRunningRDM()) {
                 	HelixPvP.getInstance().getEventManager().setRdmAutomatic(null);
                 }
-                p.sendMessage("§cThe event ended automatically because timer runs out.");
-                p.sendMessage("§cThe event runs for: §a1 hour and 20 minutes");
+                p.sendMessage("§cO evento acabou porque o tempo expirou.");
+                p.sendMessage("§cDuração: §a1 hora e 20 minutos");
 			}
             });;
             EventoUtils.resetEventoClass();

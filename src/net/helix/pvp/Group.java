@@ -16,7 +16,7 @@ public class Group implements CommandExecutor {
   
   public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
     if (!sender.hasPermission("cmd.group")) {
-      sender.sendMessage(ChatColor.RED + "You do not have perms to manage groups.");
+      sender.sendMessage(ChatColor.RED + "Você não tem autorização para gerenciar grupos.");
       return true;
     } 
     if (args.length < 2) {
@@ -25,25 +25,25 @@ public class Group implements CommandExecutor {
     } 
     net.luckperms.api.model.group.Group group = api.getGroupManager().getGroup(args[1]);
     if (group == null) {
-      sender.sendMessage(ChatColor.RED + "Group not found.");
-      sender.sendMessage(ChatColor.RED + "Use default to the group Member.");
+      sender.sendMessage(ChatColor.RED + "Group não encontrado.");
+      sender.sendMessage(ChatColor.RED + "Use default para o grupo Membro.");
       return true;
     } 
     if (!sender.hasPermission("cmd.group." + args[1])) {
-      sender.sendMessage(ChatColor.RED + "You dont have permission to set this group");
+      sender.sendMessage(ChatColor.RED + "Você não pode dar esse grupo para outras pessoas.");
       return true;
     } 
     String target = args[0];
     Bukkit.getServer().dispatchCommand((CommandSender)Bukkit.getConsoleSender(), "lp user " + target + " parent set " + args[1]);
     Player targetPlayer;
     if ((targetPlayer = Bukkit.getPlayer(target)) != null)
-      targetPlayer.sendMessage(ChatColor.RED + "Your group gets changed to " + args[1]); 
+      targetPlayer.sendMessage(ChatColor.RED + "Seu grupo foi alterado para " + args[1]); 
     for (Player p4 : Bukkit.getOnlinePlayers()) {
-    	DarKit.sendTitle(p4, "§c§lGROUP CHANGED", "§f" + target + " gets his/her group changed to " + args[1].toUpperCase());
+    	DarKit.sendTitle(p4, "§c§lGRUPO ALTERADO", "§f " + target + " teve seu grupo alterado para " + args[1].toUpperCase());
     	p4.playSound(p4.getLocation(), Sound.GHAST_SCREAM, 10, 10);
-    	p4.sendMessage("§c§lGROUP CHANGED" + "§f" + target + " gets his/her group changed to " + args[1].toUpperCase());
+    	p4.sendMessage("§c§lGROUP CHANGED" + "§f" + target + " teve o grupo alterado para " + args[1].toUpperCase());
     }
-    sender.sendMessage(ChatColor.RED + "You updated the group of the player " + target + " to " + args[1] + " !");
+    sender.sendMessage(ChatColor.RED + "Você atualizou o grupo de " + target + " para " + args[1] + " !");
     return true;
   }
 }

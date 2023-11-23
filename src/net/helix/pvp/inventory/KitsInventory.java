@@ -22,7 +22,7 @@ import net.helix.pvp.warp.HelixWarp;
 
 public class KitsInventory {
 
-	private final static String inventoryName = "Primary Kits 1";
+	private final static String inventoryName = "KIT PRIMÁRIO 1/3";
 	public static void open(Player player) {
 		Inventory inventory = Bukkit.createInventory(null, 6 * 9, inventoryName);
 		ItemStack visualItem = new ItemStack(randomGlass());
@@ -305,10 +305,10 @@ public class KitsInventory {
 						.toStack()
 				);
 		
-		inventory.setItem(53, new ItemBuilder("§aNext", Material.ARROW).nbt("prox")
+		inventory.setItem(53, new ItemBuilder("§aProxímo", Material.ARROW).nbt("prox")
 				.toStack()
 		);
-		inventory.setItem(4, new ItemBuilder("§aView all kits", Material.CHEST).nbt("visuali")
+		inventory.setItem(4, new ItemBuilder("§aTodos os kits", Material.CHEST).nbt("visuali")
 				.toStack()
 		);
 		ItemStack i =  new ItemStack(KitManager.getPlayer(player.getName()).getKit().getIcon());
@@ -322,7 +322,7 @@ public class KitsInventory {
 			i2.setDisplayName(KitManager.getPlayer(player.getName()).getKit().getName());
 		    }
 			else {
-				i2.setDisplayName("§eNo kits selected.");	
+				i2.setDisplayName("§eSem kits selecionados.");	
 			}
 		inventory.setItem(49, new ItemBuilder(i).nbt("visual")
 				.toStack()

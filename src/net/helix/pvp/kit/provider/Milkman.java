@@ -41,6 +41,6 @@ public class Milkman extends KitHandler {
         event.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.ABSORPTION, 5 * 20, 0));
         event.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 10 * 20, 0));
         event.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 5 * 20, 0));
-        event.getPlayer().sendMessage("§aMilkman applied!");
+        event.getPlayer().sendMessage("§aMilkman aplicado!");
     }
 }

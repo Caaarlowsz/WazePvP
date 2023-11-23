@@ -20,7 +20,7 @@ public class Vanish implements CommandExecutor {
         Player player = (Player) sender;
         if (command.getName().equalsIgnoreCase("vanish") || command.getName().equalsIgnoreCase("v")) {
             if (!player.hasPermission("kombo.cmd.report")) {
-                player.sendMessage("§cYou dont have permission");
+                player.sendMessage("§cVocê não tem permissão");
                 return true;
             }
             if (!VanishUtil.has(player.getName())) {
@@ -29,10 +29,10 @@ public class Vanish implements CommandExecutor {
                 player.setGameMode(GameMode.SURVIVAL);
                     String modo = "admin.";
                     player.updateInventory();
-                    player.sendMessage("§cYou leave the mode " + modo);
+                    player.sendMessage("§cVocê saiu do modo " + modo);
                     AdminUtil.remove(player.getName());
                 }
-                player.sendMessage("§aYou are now vanished.");
+                player.sendMessage("§aVocê agora está invisível.");
                 VanishUtil.add(player.getName());
                 player.setAllowFlight(true);
                 Bukkit.getOnlinePlayers().forEach(players -> {
@@ -40,7 +40,7 @@ public class Vanish implements CommandExecutor {
                         players.hidePlayer(player);
                 });
             } else {
-                player.sendMessage("§cYou are no longer vanished.");
+                player.sendMessage("§cVocê não está mais invisível.");
                 VanishUtil.remove(player.getName());
                 player.setAllowFlight(false);
                 Bukkit.getOnlinePlayers().forEach(players -> {
