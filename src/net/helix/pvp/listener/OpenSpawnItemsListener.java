@@ -75,7 +75,7 @@ public void onInteractt(PlayerPickupItemEvent event) {
 	@EventHandler
 	public void onInteracttf(PlayerDropItemEvent event) {
 		Player player = event.getPlayer();
-		if (HelixWarp.SPAWN.hasPlayer(player.getName()) && EnderMageReal.isSpawn(player.getLocation()) && player.getLocation().getY() > HelixPvP.getInstance().getConfig().getInt("SpawnAltura")) {
+		if (HelixWarp.SPAWN.hasPlayer(player.getName()) && EnderMageReal.isSpawn(player.getLocation()) && player.getLocation().getY() > HelixPvP.getInstance().getConfig().getInt("SpawnAltura") && PlayerJoinListener.fall.contains(player)) {
 		event.setCancelled(true);
 		HelixActionBar.send(player, ChatColor.RED + "Não drope isto!");
 		}
