@@ -1,5 +1,7 @@
 package net.helix.pvp.command;
 
+import java.io.IOException;
+
 import org.bukkit.Bukkit;
 import org.bukkit.DyeColor;
 import org.bukkit.GameMode;
@@ -50,6 +52,7 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
       for (Player p1 : Bukkit.getOnlinePlayers()) {
       	p1.playSound(p1.getLocation(), Sound.LEVEL_UP, 1f, 1f);
       }
+	  
       Bukkit.getScheduler().scheduleSyncDelayedTask(HelixPvP.getInstance(), new Runnable() {
 			public void run() {
 				  if (!EventoUtils.evento) {

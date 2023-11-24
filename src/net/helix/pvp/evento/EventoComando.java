@@ -12,7 +12,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
-
+import java.io.IOException;
 import net.helix.core.bukkit.util.AdminUtil;
 import net.helix.pvp.command.VanishUtil;
 import net.helix.pvp.kit.Habilidade;
@@ -57,7 +57,8 @@ public class EventoComando implements CommandExecutor {
             player.sendMessage("§e/event spec §7- §fEspecte o evento.");
             player.sendMessage(" ");
         }
-    }
+    
+}
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player)) {
@@ -171,6 +172,9 @@ public class EventoComando implements CommandExecutor {
                     }
                     player.setGameMode(GameMode.CREATIVE);
                 }
+                
+            }
+        }
                 else if (args[0].equalsIgnoreCase("stop")) {
                     if (!EventoUtils.evento) {
                         player.sendMessage("§cA sala já está fechada.");
@@ -487,8 +491,8 @@ public class EventoComando implements CommandExecutor {
                             break;
                     }
                 }
-            }
-        }
+            
+        
         return false;
     }
 }

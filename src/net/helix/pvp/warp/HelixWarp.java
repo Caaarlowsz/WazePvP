@@ -97,8 +97,8 @@ public enum HelixWarp {
 		player.getScoreboard().clearSlot(DisplaySlot.SIDEBAR);
 		HelixPvP.getInstance().getScoreboardBuilder().build(player);
 		if (!silent) {
-			player.sendMessage("§7Teleported to the warp §b" + this.name);
-			player.sendMessage("§ePS: Status of warps is counted in your profile menu on spawn");
+			player.sendMessage("§7Teleportado a warp §b" + this.name);
+			player.sendMessage("§eOBS: Status das warps são contabilizadas no seu perfil no spawn");
 		}
 	}
 	

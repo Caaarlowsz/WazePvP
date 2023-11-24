@@ -9,15 +9,17 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-
 import net.helix.pvp.HelixPvP;
 import net.helix.pvp.evento.EventoType;
 import net.helix.pvp.evento.EventoUtils;
 import net.helix.pvp.warp.HelixWarp;
+import java.io.IOException;
 
 public class LavaIniciar
 implements CommandExecutor
 {
+
+	
 public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args)
 {
   Player p = (Player)sender;

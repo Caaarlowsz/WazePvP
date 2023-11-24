@@ -88,6 +88,7 @@ import net.helix.pvp.command.RankCMD;
 import net.helix.pvp.command.Regras;
 import net.helix.pvp.command.RemoveKit;
 import net.helix.pvp.command.RemoverGlads;
+import net.helix.pvp.command.ResetEventoClass;
 import net.helix.pvp.command.ResetKDR;
 import net.helix.pvp.command.SC;
 import net.helix.pvp.command.ScoreboardCMD;
@@ -586,6 +587,7 @@ new BukkitRunnable() {
 		getCommand("sendtitle").setExecutor(new AvisoT());
 		getCommand("event").setExecutor(new EventoComando());
 		getCommand("evento").setExecutor(new EventoComando());
+		getCommand("reseteventoclass").setExecutor(new ResetEventoClass());
 		getCommand("1v1iniciar").setExecutor(new OneVsOneIniciar());
 		getCommand("event").setTabCompleter(new EventoTabComplete());
 		getCommand("evento").setTabCompleter(new EventoTabComplete());

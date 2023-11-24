@@ -21,6 +21,7 @@ commands:
    svpiniciar:
    mdriniciar:
    evento:
+   reseteventoclass:
    stats:
    sendcredits:
    1v1iniciar:

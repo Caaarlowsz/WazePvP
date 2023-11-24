@@ -1,6 +1,8 @@
 package net.helix.pvp.command;
 
 
+import java.io.IOException;
+
 import org.bukkit.Bukkit;
 import org.bukkit.DyeColor;
 import org.bukkit.GameMode;
@@ -18,7 +20,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.material.Dye;
-
 import net.helix.core.bukkit.item.ItemBuilder;
 import net.helix.pvp.HelixPvP;
 import net.helix.pvp.evento.EventoType;
@@ -28,6 +29,7 @@ import net.helix.pvp.warp.HelixWarp;
 public class OneVsOneIniciar
 implements CommandExecutor, Listener
 {
+
 public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args)
 {
   Player p = (Player)sender;
@@ -55,6 +57,7 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
       for (Player p1 : Bukkit.getOnlinePlayers()) {
       	p1.playSound(p1.getLocation(), Sound.LEVEL_UP, 1f, 1f);
       }
+     
 		Bukkit.getScheduler().scheduleSyncDelayedTask(HelixPvP.getInstance(), new Runnable() {
 			public void run() {
 				if (!EventoUtils.evento) {

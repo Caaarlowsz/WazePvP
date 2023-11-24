@@ -377,20 +377,7 @@ public static void applyFake(String fake, Player playerData) {
   }
   
   
-  private static boolean logWebhook(Player playerData, String fake) {
-    Player player = playerData.getPlayer();
-    DiscordWebhook webhook = new DiscordWebhook("https://discord.com/api/webhooks/974384437611626526/S1AfsIclqOP94xKM3NtS-yKAuDQV9XDkEGtWXpLjzWxdIDninboop6MFot07SjCsjEzo");
-    webhook.setContent("O player **" + playerData.getName() + "** mudou seu nick para ``" + fake + "``.");
-    try {
-      webhook.execute();
-    } catch (IOException e) {
-      player.sendMessage("ao registrar log, cancelando aa equipe de desenvolvimento)");
-      e.printStackTrace();
-      return false;
-    } 
-    return true;
-  }
-  
+   
 
   
   public static boolean isUsernamePremium(String username) throws IOException {
