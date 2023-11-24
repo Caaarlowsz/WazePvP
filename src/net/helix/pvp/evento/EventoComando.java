@@ -172,9 +172,6 @@ public class EventoComando implements CommandExecutor {
                     }
                     player.setGameMode(GameMode.CREATIVE);
                 }
-                
-            }
-        }
                 else if (args[0].equalsIgnoreCase("stop")) {
                     if (!EventoUtils.evento) {
                         player.sendMessage("§cA sala já está fechada.");
@@ -203,7 +200,7 @@ public class EventoComando implements CommandExecutor {
                                 return true;
                             }
                             if (!HelixWarp.SPAWN.hasPlayer(player.getName())) {
-                                player.sendMessage("§cVocê precisa estar no evenyo para entrar.");
+                                player.sendMessage("§cVocê precisa estar no spawn para entrar.");
                                 player.sendMessage("§cEscreva /spawn.");
                                 return true;
                             }
@@ -496,3 +493,5 @@ public class EventoComando implements CommandExecutor {
         return false;
     }
 }
+		return false;
+    }}
