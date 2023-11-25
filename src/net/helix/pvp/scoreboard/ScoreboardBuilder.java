@@ -47,12 +47,12 @@ private static WaveAnimation waveAnimation8;
 private static WaveAnimation waveAnimation9;
 public static void init() {
 	
-    waveAnimation = new WaveAnimation("KITPVP" , "§6§l" , "§f§l" , "§e§l");
+    waveAnimation = new WaveAnimation("KITPVP" , "§5§l" , "§f§l" , "§e§l");
     waveAnimation2 = new WaveAnimation("EVENTO" , "§b§l" , "§3§l" , "§f§l");
-    waveAnimation3 = new WaveAnimation("FPS" , "§6§l" , "§f§l" , "§e§l");
-    waveAnimation4 = new WaveAnimation("1V1" , "§6§l" , "§f§l" , "§e§l");
-    waveAnimation5 = new WaveAnimation("LAVA" , "§6§l" , "§f§l" , "§e§l");
-    waveAnimation6 = new WaveAnimation("SUMO" , "§6§l" , "§f§l" , "§e§l");
+    waveAnimation3 = new WaveAnimation("FPS" , "§5§l" , "§f§l" , "§e§l");
+    waveAnimation4 = new WaveAnimation("1V1" , "§5§l" , "§f§l" , "§e§l");
+    waveAnimation5 = new WaveAnimation("LAVA" , "§5§l" , "§f§l" , "§e§l");
+    waveAnimation6 = new WaveAnimation("SUMO" , "§5§l" , "§f§l" , "§e§l");
     waveAnimation7 = new WaveAnimation("KNOCKBACK" , "§3§l" , "§f§l" , "§b§l");
     waveAnimation8 = new WaveAnimation("GLADIATOR" , "§3§l" , "§f§l" , "§b§l");
     waveAnimation9 = new WaveAnimation("POTIONPVP" , "§4§l" , "§f§l" , "§c§l");
@@ -135,15 +135,15 @@ public static void init() {
 					objective.setDisplaySlot(DisplaySlot.SIDEBAR);
 					
 					String l12 = "§3";
-					String l11 = "§a❚ §fMatou: §a";
-					String l10 = "§c❚ §fMorreu: §c";
-					String l9 = "§3❚ §fKillstreak: §3";
+					String l11 = " §fMatou: §a";
+					String l10 = " §fMorreu: §c";
+					String l9 = " §fKillstreak: §3";
 					
 				
 					String l5 = "§1";
-					String l4 = "§fCoins: §a";
-					String l3 = "§fRank: ";
-					String lx = "§fXP: §a";
+					String l4 = " §fCoins: §a";
+					String l3 = " §fRank: ";
+					String lx = " §fXP: §a";
 					String l2 = "§0";
 					String l1 = HelixPvP.getInstance().getConfig().getString("IPScore").replace("&", "§");
 					
@@ -478,8 +478,8 @@ public static void init() {
 				PlayerPvP pvp = helixPlayer.getPvp();
 				Scoreboard scoreboard = player.getScoreboard();
 				String l8 = "§2";
-				String l7 = "§fKit 1: §a";
-				String l6 = "§fKit 2: §a";
+				String l7 = " §fKit 1: §a";
+				String l6 = " §fKit 2: §a";
 				Objective objective = scoreboard.getObjective("pvp");
 				if (KitManager.getPlayer(player.getName()).hasKit()) {
 					objective.getScore(l7).setScore(7);

@@ -42,7 +42,7 @@ public class BloodGun extends KitHandler {
 		      }
 
 	       else if (p.getLocation().getY() > HelixPvP.getInstance().getConfig().getInt("SpawnAltura") && EnderMageReal.isSpawn(p.getLocation())) {
-	        	p.sendMessage("§cDont use your power on spawn !");
+	        	p.sendMessage("§cNão use seu poder no spawn !");
 	    		return;
 	       }
 	        Vector velo1 = p.getLocation().getDirection().normalize().multiply(10);
@@ -61,7 +61,7 @@ public class BloodGun extends KitHandler {
 	        }
 	          Bukkit.getScheduler().scheduleSyncDelayedTask(HelixPvP.getInstance(), new Runnable() {
 	                public void run() {
-	               p.sendMessage(ChatColor.GREEN + "The Bloodgun cooldown ended");
+	               p.sendMessage(ChatColor.GREEN + "O cooldown do bloodgun acabou.");
 	                }
 	              },  200L);
 	      } 
@@ -73,7 +73,7 @@ public class BloodGun extends KitHandler {
 	  	    {
 	  	      Fireball s = (Fireball)e.getDamager();
 	  	      if (s.hasMetadata("hadouken")) {
-	  	        e.setDamage(e.getDamage() + 3.5D);
+	  	        e.setDamage(e.getDamage() + 4.5D);
 	  	      }
 	      }
 	    }
