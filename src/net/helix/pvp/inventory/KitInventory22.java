@@ -50,21 +50,8 @@ public class KitInventory22 {
 						.nbt("kit-gui2", HelixKit2.THOR.getName())
 						.toStack()
 				);
-		if (player.hasPermission("kombo.kit2.vacuum")) {
-		inventory.setItem(12 , new ItemBuilder("§a" + HelixKit2.VACUUM.getName(), HelixKit2.VACUUM.getIcon())
-				.lore("§f" + HelixKit2.VACUUM.getDescription())
-						.addFlags(ItemFlag.HIDE_ATTRIBUTES,
-								ItemFlag.HIDE_DESTROYS,
-								ItemFlag.HIDE_ENCHANTS,
-								ItemFlag.HIDE_PLACED_ON,
-								ItemFlag.HIDE_POTION_EFFECTS,
-								ItemFlag.HIDE_UNBREAKABLE)
-						.nbt("kit-gui2", HelixKit2.VACUUM.getName())
-						.toStack()
-				);
-		}
 		if (player.hasPermission("kombo.kit2.viper")) {
-		inventory.setItem(13 , new ItemBuilder("§a" + HelixKit2.VIPER.getName(), HelixKit2.VIPER.getIcon())
+		inventory.setItem(12 , new ItemBuilder("§a" + HelixKit2.VIPER.getName(), HelixKit2.VIPER.getIcon())
 				.lore("§f" + HelixKit2.VIPER.getDescription())
 						.addFlags(ItemFlag.HIDE_ATTRIBUTES,
 								ItemFlag.HIDE_DESTROYS,
@@ -77,7 +64,7 @@ public class KitInventory22 {
 				);
 		}
 		if (player.hasPermission("kombo.kit2.waterbender")) {
-		inventory.setItem(14 , new ItemBuilder("§a" + HelixKit2.WATERBENDER.getName(), HelixKit2.WATERBENDER.getIcon())
+		inventory.setItem(13 , new ItemBuilder("§a" + HelixKit2.WATERBENDER.getName(), HelixKit2.WATERBENDER.getIcon())
 				.lore("§f" + HelixKit2.WATERBENDER.getDescription())
 						.addFlags(ItemFlag.HIDE_ATTRIBUTES,
 								ItemFlag.HIDE_DESTROYS,
@@ -90,7 +77,7 @@ public class KitInventory22 {
 				);
 		}
 		if (player.hasPermission("kombo.kit2.antistomper")) {
-			inventory.setItem(15 , new ItemBuilder("§a" + HelixKit2.ANTISTOMPER.getName(), HelixKit2.ANTISTOMPER.getIcon())
+			inventory.setItem(14 , new ItemBuilder("§a" + HelixKit2.ANTISTOMPER.getName(), HelixKit2.ANTISTOMPER.getIcon())
 					.lore("§f" + HelixKit2.ANTISTOMPER.getDescription())
 							.addFlags(ItemFlag.HIDE_ATTRIBUTES,
 									ItemFlag.HIDE_DESTROYS,
@@ -103,7 +90,7 @@ public class KitInventory22 {
 					);
 			}
 		if (player.hasPermission("kombo.kit2.meteor")) {
-			inventory.setItem(16
+			inventory.setItem(15
 					, new ItemBuilder("§a" + HelixKit2.METEOR.getName(), HelixKit2.METEOR.getIcon())
 					.lore("§f" + HelixKit2.METEOR.getDescription())
 							.addFlags(ItemFlag.HIDE_ATTRIBUTES,

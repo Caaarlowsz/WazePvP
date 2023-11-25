@@ -214,9 +214,9 @@ public class OneVsOne extends WarpDuoBattleHandle {
 		}else {
 			loserHelixPlayer.getPvp().setCoins(0);
 		}
-		if ((victimHelixPlayer.getPvp().getXp() - 8) >= 0) {
-			victimHelixPlayer.getPvp().setXp(victimHelixPlayer.getPvp().getXp() - 8);
-			loser.sendMessage("§c§l[-] §c8 XP");
+		if ((victimHelixPlayer.getPvp().getXp() - 18) >= 0) {
+			victimHelixPlayer.getPvp().setXp(victimHelixPlayer.getPvp().getXp() - 18);
+			loser.sendMessage("§c§l[-] §c18 XP");
 		}else {
 			victimHelixPlayer.getPvp().setXp(0);
 			loser.sendMessage("§c§l[-] " + victimHelixPlayer.getPvp().getXp() + " XP");
@@ -244,9 +244,9 @@ public class OneVsOne extends WarpDuoBattleHandle {
 			winnerHelixPlayer.getPvp().addwinsX1(1);
 			winnerHelixPlayer.getPvp().addWinstreakX1(1);
 			winnerHelixPlayer.getPvp().addCoins(winnerAddCoins);
-			winnerHelixPlayer.getPvp().setXp(winnerHelixPlayer.getPvp().getXp() + 10);
+			winnerHelixPlayer.getPvp().setXp(winnerHelixPlayer.getPvp().getXp() + 22);
 			winner.sendMessage("§6§l[+] §6" + winnerAddCoins + " coins");
-			winner.sendMessage("§6§l[+] §a10XP");
+			winner.sendMessage("§6§l[+] §a22XP");
 			HelixBukkit.getInstance().getPlayerManager().getController().save(winnerHelixPlayer);
 		}
 	}

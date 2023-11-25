@@ -119,9 +119,9 @@ public class PlayerDieArenaListener implements Listener {
 			}else {
 				victimHelixPlayer.getPvp().setCoins(0);
 			}
-			if ((victimHelixPlayer.getPvp().getXp() - 10) >= 0) {
-				victimHelixPlayer.getPvp().setXp(victimHelixPlayer.getPvp().getXp() - 10);
-				player.sendMessage("§c§l[-] §c10 XP");
+			if ((victimHelixPlayer.getPvp().getXp() - 20) >= 0) {
+				victimHelixPlayer.getPvp().setXp(victimHelixPlayer.getPvp().getXp() - 20);
+				player.sendMessage("§c§l[-] §c20 XP");
 			}else {
 				victimHelixPlayer.getPvp().setXp(0);
 				player.sendMessage("§c§l[-] " + victimHelixPlayer.getPvp().getXp() + " XP");
@@ -226,9 +226,9 @@ public class PlayerDieArenaListener implements Listener {
 			}else {
 				victimHelixPlayer.getPvp().setCoins(0);
 			}
-			if ((victimHelixPlayer.getPvp().getXp() - 10) >= 0) {
-				victimHelixPlayer.getPvp().setXp(victimHelixPlayer.getPvp().getXp() - 10);
-				player.sendMessage("§c§l[-] §c10 XP");
+			if ((victimHelixPlayer.getPvp().getXp() - 20) >= 0) {
+				victimHelixPlayer.getPvp().setXp(victimHelixPlayer.getPvp().getXp() - 20);
+				player.sendMessage("§c§l[-] §c20 XP");
 			}else {
 				victimHelixPlayer.getPvp().setXp(0);
 				player.sendMessage("§c§l[-] " + victimHelixPlayer.getPvp().getXp() + " XP");
@@ -342,9 +342,9 @@ public class PlayerDieArenaListener implements Listener {
 			}else {
 				victimHelixPlayer.getPvp().setCoins(0);
 			}
-			if ((victimHelixPlayer.getPvp().getXp() - 10) >= 0) {
-				victimHelixPlayer.getPvp().setXp(victimHelixPlayer.getPvp().getXp() - 10);
-				player.sendMessage("§c§l[-] §c10 XP");
+			if ((victimHelixPlayer.getPvp().getXp() - 20) >= 0) {
+				victimHelixPlayer.getPvp().setXp(victimHelixPlayer.getPvp().getXp() - 20);
+				player.sendMessage("§c§l[-] §c20 XP");
 			}else {
 				victimHelixPlayer.getPvp().setXp(0);
 				player.sendMessage("§c§l[-] " + victimHelixPlayer.getPvp().getXp() + " XP");
@@ -549,9 +549,9 @@ public class PlayerDieArenaListener implements Listener {
 			}else {
 				victimHelixPlayer.getPvp().setCoins(0);
 			}
-			if ((victimHelixPlayer.getPvp().getXp() - 10) >= 0) {
-				victimHelixPlayer.getPvp().setXp(victimHelixPlayer.getPvp().getXp() - 10);
-				player.sendMessage("§c§l[-] §c10 XP");
+			if ((victimHelixPlayer.getPvp().getXp() - 20) >= 0) {
+				victimHelixPlayer.getPvp().setXp(victimHelixPlayer.getPvp().getXp() - 20);
+				player.sendMessage("§c§l[-] §c20 XP");
 			}else {
 				victimHelixPlayer.getPvp().setXp(0);
 				player.sendMessage("§c§l[-] " + victimHelixPlayer.getPvp().getXp() + " XP");

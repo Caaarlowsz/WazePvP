@@ -59,55 +59,55 @@ public class EntityCalculateDamageListener implements Listener {
 	                event.setDamage(1.0);
 	            }
 	            else if (item.getType().equals((Object)Material.WOOD_SWORD)) {
-	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() - 4.4) : (event.getDamage() - 3.0));
+	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() - 5.0) : (event.getDamage() - 3.5));
 	            }
 	            else if (item.getType().equals((Object)Material.STONE_SWORD)) {
-	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() - 5.5) : (event.getDamage() - 3.0));
+	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() - 6.1) : (event.getDamage() - 3.5));
 	            }
 	            else if (item.getType().equals((Object)Material.IRON_SWORD)) {
-	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() - 5.5) : (event.getDamage() - 2.5));
+	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() - 6.5) : (event.getDamage() - 4.0));
 	            }
 	            else if (item.getType().equals((Object)Material.DIAMOND_SWORD)) {
-	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() - 6.4) : (event.getDamage() - 3.0));
+	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() - 6.9) : (event.getDamage() - 4.5));
 	            }
 	            else if (item.getType().equals((Object)Material.GOLD_SWORD)) {
-	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() - 4.4) : (event.getDamage() - 2.0));
+	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() - 5.1) : (event.getDamage() - 4.0));
 	            }
 	            else if (item.getType().name().contains("WOOD_AXE")) {
-	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() - 4.4) : (event.getDamage() - 3.0));
+	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() - 5.0) : (event.getDamage() - 3.5));
 	            }
 	            else if (item.getType().name().contains("STONE_AXE")) {
-	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() - 4.4) : (event.getDamage() - 3.0));
+	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() - 5.5) : (event.getDamage() - 3.5));
 	            }
 	            else if (item.getType().name().contains("IRON_AXE")) {
-	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() - 4.4) : (event.getDamage() - 3.0));
+	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() - 5.9) : (event.getDamage() - 3.5));
 	            }
 	            else if (item.getType().name().contains("DIAMOND_AXE")) {
-	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() - 4.4) : (event.getDamage() - 2.0));
+	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() - 6.7) : (event.getDamage() - 4.0));
 	            }
 	            else if (item.getType().name().contains("GOLD_AXE")) {
-	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() - 4.4) : (event.getDamage() - 2.0));
+	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() - 4.4) : (event.getDamage() - 4.0));
 	            }
 	            else if (item.getType().name().contains("WOOD_PICKAXE")) {
-	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() - 4.4) : (event.getDamage() - 2.0));
+	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() - 4.4) : (event.getDamage() - 4.5));
 	            }
 	            else if (item.getType().name().contains("STONE_PICKAXE")) {
-	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() - 4.4) : (event.getDamage() - 2.0));
+	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() - 4.4) : (event.getDamage() - 4.5));
 	            }
 	            else if (item.getType().name().contains("IRON_PICKAXE")) {
-	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() - 4.4) : (event.getDamage() - 2.0));
+	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() - 4.4) : (event.getDamage() - 4.5));
 	            }
 	            else if (item.getType().name().contains("DIAMOND_PICKAXE")) {
-	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() - 4.4) : (event.getDamage() - 2.0));
+	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() - 4.4) : (event.getDamage() - 4.5));
 	            }
 	            else if (item.getType().name().contains("GOLD_PICKAXE")) {
-	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() - 4.4) : (event.getDamage() - 2.0));
+	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() - 4.4) : (event.getDamage() - 4.5));
 	            }
 	            else if (item.getType().equals((Object)Material.IRON_SPADE)) {
-	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() - 5.5) : (event.getDamage() - 2.0));
+	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() - 5.5) : (event.getDamage() - 4.5));
 	            }
 	            else if (item.getType().equals((Object)Material.DIAMOND_SPADE)) {
-	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() - 5.5) : (event.getDamage() - 2.0));
+	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() - 5.5) : (event.getDamage() - 4.5));
 	            }
 	            else if (item.getType().equals((Object)Material.DIAMOND_HOE)) {
 	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() - 4.4) : (event.getDamage() - 2.0));

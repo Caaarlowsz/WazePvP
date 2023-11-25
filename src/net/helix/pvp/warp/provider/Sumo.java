@@ -263,10 +263,10 @@ public class Sumo extends WarpDuoBattleHandle2 {
         killerUser.getPvp().addCoins(winnerCoins);
         killerUser.getPvp().addWinsSumo(1);;
         killerUser.getPvp().addWinstreakSumo(1);
-        killerUser.getPvp().addXP(25);
+        killerUser.getPvp().addXP(15);
         killerUser.getPvp().addKills(1);
         target.sendMessage("§6§l[+] §6" + winnerCoins + " coins");
-        target.sendMessage("§6§l[+] §a25XP");
+        target.sendMessage("§6§l[+] §a15XP");
         
         loserUser.getPvp().addDeathsSumo(1);
         player.sendMessage("§4§lSUMO §4Você perdeu a luta contra " + target.getName());
@@ -331,10 +331,10 @@ HelixPlayer killerAccount = HelixBukkit.getInstance().getPlayerManager().getPlay
         killerUser.getPvp().addCoins(winnerCoins);
         killerUser.getPvp().addWinsSumo(1);;
         killerUser.getPvp().addWinstreakSumo(1);
-        killerUser.getPvp().addXP(25);
+        killerUser.getPvp().addXP(15);
         killerUser.getPvp().addKills(1);
         target.sendMessage("§6§l[+] §6" + winnerCoins + " coins");
-        target.sendMessage("§6§l[+] §a25XP");
+        target.sendMessage("§6§l[+] §a15XP");
         
         loserUser.getPvp().addDeathsSumo(1);
         player.sendMessage("§c§lSUMO §cVocê perdeu a luta contra " + target.getName());

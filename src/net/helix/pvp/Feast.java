@@ -127,7 +127,7 @@ public class Feast extends BukkitRunnable {
             	
                 Bukkit.broadcastMessage(ChatColor.GREEN +"Feast nasceu!");
                 // Durado feast (em segundos)
-                int spawnDurationSeconds = 20;
+                int spawnDurationSeconds = 35;
                 world.strikeLightning(new Location(world, HelixPvP.getInstance().getConfig().getInt("RaioX"), HelixPvP.getInstance().getConfig().getInt("RaioY"), HelixPvP.getInstance().getConfig().getInt("RaioZ")));
                 time = (long) spawnDurationSeconds;
                 spawned = true;

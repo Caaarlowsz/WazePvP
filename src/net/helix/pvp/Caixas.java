@@ -106,37 +106,37 @@ import net.helix.core.bukkit.account.provider.PlayerPvP;
 	        }
 	      }
 	      if (e.getCurrentItem().isSimilar(randomkit2)) {
-	        if (playerData.getPvp().getCoins() < 5000)
+	        if (playerData.getPvp().getCoins() < 1200)
 	        {
 	          p.sendMessage("§a§lCAIXA §fSem dinheiro o bastante");
 	        }
 	        else
 	        {
-	        	playerData.getPvp().removeCoins( 5000);
+	        	playerData.getPvp().removeCoins( 1200);
 	          
 	          randomprata(p);
 	        }
 	      }
 	      if (e.getCurrentItem().isSimilar(randomkit3)) {
-	        if (playerData.getPvp().getCoins() < 8000)
+	        if (playerData.getPvp().getCoins() < 2500)
 	        {
 	          p.sendMessage("§a§lCAIXA §fSem dinheiro o bastante");
 	        }
 	        else
 	        {
-	        	 playerData.getPvp().removeCoins( 8000);
+	        	 playerData.getPvp().removeCoins( 2500);
 	          
 	          randomouro(p);
 	        }
 	      }
 	      if (e.getCurrentItem().isSimilar(randomkit)) {
-	        if (playerData.getPvp().getCoins() < 3000)
+	        if (playerData.getPvp().getCoins() < 600)
 	        {
 	          p.sendMessage("§a§lCAIXA §fSem dinheiro o bastante");
 	        }
 	        else
 	        {
-	          playerData.getPvp().removeCoins(3000);
+	          playerData.getPvp().removeCoins(600);
 	          randombronze(p);
 	        }
 	      }
@@ -165,17 +165,17 @@ import net.helix.core.bukkit.account.provider.PlayerPvP;
 	      
 	      randomkit = new ItemStack(Material.getMaterial(336));
 	      randomkitmeta = randomkit.getItemMeta();
-	      randomkitmeta.setDisplayName("§6Caixa de Bronze §2Coins >> §a3000");
+	      randomkitmeta.setDisplayName("§6Caixa de Bronze §2Coins >> §a600");
 	      randomkit.setItemMeta(randomkitmeta);
 	      
 	      randomkit2 = new ItemStack(Material.IRON_INGOT);
 	      randomkit2meta = randomkit2.getItemMeta();
-	      randomkit2meta.setDisplayName("§7Caixa de Prata §2Coins >> §a5000");
+	      randomkit2meta.setDisplayName("§7Caixa de Prata §2Coins >> §a1200");
 	      randomkit2.setItemMeta(randomkit2meta);
 	      
 	      randomkit3 = new ItemStack(Material.GOLD_INGOT);
 	      randomkit3meta = randomkit3.getItemMeta();
-	      randomkit3meta.setDisplayName("§eCaixa de Ouro §2Coins >> §a8000");
+	      randomkit3meta.setDisplayName("§eCaixa de Ouro §2Coins >> §a2500");
 	      randomkit3.setItemMeta(randomkit3meta);
 	      for (int i = 0; i != 27; i++)
 	      {

@@ -102,11 +102,6 @@ public class SelectKitListener implements Listener {
 							player.closeInventory();
 							return;
 						}
-						if (KitManager2.getPlayer(player.getName()).getkit2() == HelixKit2.KANGAROO && (kitName22 == "Archer")) {
-							player.sendMessage("§c" + kitName2 + " é incompatível com Kangaroo");
-							player.closeInventory();
-							return;
-						}
 						if (KitManager2.getPlayer(player.getName()).getkit2() == HelixKit2.METEOR && (kitName22 == "Stomper")) {
 							player.sendMessage("§c" + kitName2 + " é incompatível com Meteor");
 							player.closeInventory();
@@ -444,6 +439,11 @@ public class SelectKitListener implements Listener {
 			}
 			if (KitManager.getPlayer(player.getName()).getKit() == HelixKit.BLOODGUN && (kitName2 == "Vacuum" || kitName2 == "Avatar")) {
 				player.sendMessage("§c" + kitName2 + " é incompatível com Bloodgun");
+				player.closeInventory();
+				return;
+			}
+			if (KitManager.getPlayer(player.getName()).getKit() == HelixKit.BOXER && (kitName2 == "Anchor")) {
+				player.sendMessage("§c" + kitName2 + " é incompatível com Boxer");
 				player.closeInventory();
 				return;
 			}
