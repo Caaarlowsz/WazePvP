@@ -84,7 +84,7 @@ public void onInteractt(PlayerPickupItemEvent event) {
 		@EventHandler
 		public void onInteracttgf(PlayerDropItemEvent event) {
 			Player player = event.getPlayer();
-			if (event.getItemDrop().getItemStack().getType() == Material.MUSHROOM_SOUP || event.getItemDrop().getItemStack().getType() == Material.IRON_SWORD || event.getItemDrop().getItemStack().getType() == Material.DIAMOND_SWORD) {
+			if (event.getItemDrop().getItemStack().getType() == Material.IRON_SWORD || event.getItemDrop().getItemStack().getType() == Material.DIAMOND_SWORD) {
 			event.setCancelled(true);
 			}
 	}
