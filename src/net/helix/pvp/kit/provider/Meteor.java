@@ -137,8 +137,8 @@ else if (p.getLocation().getY() > HelixPvP.getInstance().getConfig().getInt("Spa
 	return;
  }
 if (!subiu.contains(p)) {
-	  if (HelixCooldown.has(p.getName(), "meteor")) {
-		  p.sendMessage(ChatColor.RED + "Aguarde " + HelixCooldown.getTime(p.getName(), "meteor") +  " segundos para dar o boost novamente");
+	  if (HelixCooldown.has(p.getName(), "meteor") && KitManager.getPlayer(p.getName()).hasKit(this)) {
+		  p.sendMessage(ChatColor.DARK_RED + "Aguarde " + HelixCooldown.getTime(p.getName(), "meteor") +  " segundos para dar o boost novamente");
 		  return;
 	  }
 HelixCooldown.create(p.getName(), "meteor", TimeUnit.SECONDS, 15);
@@ -151,13 +151,14 @@ Bukkit.getScheduler().scheduleSyncDelayedTask(HelixPvP.getInstance() , new Bukki
 , 15 * 20);
 /*  94 */       Vector vector = p.getEyeLocation().getDirection();
 /*  95 */       vector.multiply(0.0F);
-/*  96 */       vector.setY(6.0F);
+/*  96 */       vector.setY(4.0F);
 /*  97 */       p.setVelocity(vector);
 /*  98 */       Location loc = p.getLocation();
 /*  99 */       p.playSound(loc, Sound.FIREWORK_BLAST, 1.0F, 1.0F);
 Location location = p.getLocation();
 for (final Entity pertos : p.getNearbyEntities(20, 20 , 20)) {
 	  if (pertos instanceof Player) {
+		  location.getWorld().playEffect(location, Effect.FIREWORKS_SPARK, 15);
 		  ((Player) pertos).playSound((Location)pertos.getLocation(), Sound.FIREWORK_LAUNCH, 1f, 1f);
 }
 

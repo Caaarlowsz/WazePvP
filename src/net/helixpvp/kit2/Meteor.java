@@ -161,6 +161,7 @@ Location location = p.getLocation();
 for (final Entity pertos : p.getNearbyEntities(20, 20 , 20)) {
 	  if (pertos instanceof Player) {
 		  ((Player) pertos).playSound((Location)pertos.getLocation(), Sound.FIREWORK_LAUNCH, 1f, 1f);
+		  location.getWorld().playEffect(location, Effect.FIREWORKS_SPARK, 15);
 }
 
 location.getWorld().playEffect(location, Effect.FIREWORKS_SPARK, 15);
