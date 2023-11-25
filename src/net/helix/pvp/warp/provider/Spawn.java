@@ -59,42 +59,13 @@ public class Spawn extends WarpHandle {
     player.getActivePotionEffects().forEach(potion -> player.removePotionEffect(potion.getType()));
     player.setFireTicks(0);
     player.setFoodLevel(20);
-    player.getInventory().setHeldItemSlot(0);
-    player.getInventory().setItem(0, (new ItemBuilder("§aKits primários", Material.valueOf(HelixPvP.getInstance().getConfig().getString("KitsItem"))))
+    player.getInventory().setHeldItemSlot(4);
+    player.getInventory().setItem(4, (new ItemBuilder("§aMenu Geral", Material.valueOf(HelixPvP.getInstance().getConfig().getString("KitsItem"))))
         .nbt("spawn-item", "kits")
         .nbt("cancel-drop")
         .nbt("cancel-click")
         .toStack());
-    player.getInventory().setItem(1, (new ItemBuilder("§aKits secundários", Material.CHEST))
-            .nbt("spawn-item", "kits2")
-            .nbt("cancel-drop")
-            .nbt("cancel-click")
-            .toStack());
-    player.getInventory().setItem(2, (new ItemBuilder("§eLoja", Material.valueOf(HelixPvP.getInstance().getConfig().getString("ShopItemMAT"))))
-        .nbt("spawn-item", "shop")
-        .nbt("cancel-drop")
-        .nbt("cancel-click")
-        .toStack());
-    player.getInventory().setItem(6, (new ItemBuilder("§6Opções", Material.valueOf(HelixPvP.getInstance().getConfig().getString("OptionsItem"))))
-            .nbt("spawn-item", "status2")
-            .nbt("cancel-drop")
-            .nbt("cancel-click")
-            .toStack());
-    player.getInventory().setItem(7, (new ItemBuilder("§eStatus", Material.SKULL_ITEM)
-            .nbt("spawn-item", "status")
-            .nbt("cancel-drop")
-            .nbt("cancel-click")
-            .toStack()));
-    player.getInventory().setItem(4, (new ItemBuilder("§eCaixas", Material.STORAGE_MINECART)
-            .nbt("spawn-item", "crates")
-            .nbt("cancel-drop")
-            .nbt("cancel-click")
-            .toStack()));
-    player.getInventory().setItem(8, (new ItemBuilder("§eWarps", Material.COMPASS))
-            .nbt("spawn-item", "1v1")
-            .nbt("cancel-drop")
-            .nbt("cancel-click")
-            .toStack());
+    
     if (PlayerDeathListener.lastKit.containsKey(player.getName())) {
     	KitManager.getPlayer(player.getName()).setKit(PlayerDeathListener.lastKit.get(player.getName()));
     	KitManager2.getPlayer(player.getName()).setkit2(PlayerDeathListener.lastKit2.get(player.getName()));

@@ -66,7 +66,7 @@ ArrayList<Player> subiu = new ArrayList();
 			p2.getWorld().strikeLightning(p2.getLocation());
 			p2.setFireTicks(80);
 			addCooldown(p , 40);
-			p2.sendMessage(ChatColor.RED + "You get targeted by a Meteor!");
+			p2.sendMessage(ChatColor.RED + "Você foi atingido por um meteor!");
 			danometeor.remove(e.getEntity().getName());
 		}
 	}
@@ -86,7 +86,7 @@ ArrayList<Player> subiu = new ArrayList();
 	}
 	int l = (int)p.getEyeLocation().getDirection().multiply(6).add(new Vector(0, 0, 0)).getY();
 	if(p.getLocation().getPitch() >= -90 && p.getLocation().getPitch() <= -10) {
-        p.sendMessage(ChatColor.RED + "You can use meteor looking below");
+        p.sendMessage(ChatColor.RED + "Você só pode usar o meteor para baixo");
         return;
     }
 	if (hasCooldown(p))
@@ -95,7 +95,7 @@ ArrayList<Player> subiu = new ArrayList();
 	/*  92 */         return;
 	/*     */       }
 	 p.playSound(p.getLocation(), Sound.FIREWORK_BLAST, 1.0F, 1.0F);
-	/*  76 */       p.setVelocity(p.getEyeLocation().getDirection().multiply(6).add(new Vector(0, 0, 0)));
+	/*  76 */       p.setVelocity(p.getEyeLocation().getDirection().multiply(4).add(new Vector(0, 0, 0)));
 	danometeor.add(p.getName());
 	subiu.remove(p);
 
@@ -105,7 +105,7 @@ ArrayList<Player> subiu = new ArrayList();
 /*     */         {
 /* 106 */           if (KitManager.getPlayer(p.getName()).hasKit()) {
     p.playSound(p.getLocation(), Sound.LEVEL_UP, 1.0F, 1.0F);
-/* 107 */           p.sendMessage(ChatColor.GREEN + "You can use the meteor again");
+/* 107 */           p.sendMessage(ChatColor.GREEN + "Você pode usar o meteor novamente");
 /*     */         }
 /*     */         }
 
@@ -133,7 +133,7 @@ ArrayList<Player> subiu = new ArrayList();
 /*  92 */         return;
 /*     */       }
 else if (p.getLocation().getY() > HelixPvP.getInstance().getConfig().getInt("SpawnAltura") && KitManager.getPlayer(e.getPlayer().getName()).hasKit(this)  && EnderMageReal.isSpawn(p.getLocation())) {
-	p.sendMessage("§cDont use your power on spawn!");
+	p.sendMessage("§cNão use seu poder no spawn!");
 	return;
  }
 if (!subiu.contains(p)) {
@@ -274,7 +274,7 @@ subiu.add(p);
 	}
 	int l = (int)p.getEyeLocation().getDirection().multiply(6).add(new Vector(0, 0, 0)).getY();
 	if(p.getLocation().getPitch() >= -90 && p.getLocation().getPitch() <= -10) {
-        p.sendMessage(ChatColor.RED + "You can use the meteor looking below");
+        p.sendMessage(ChatColor.RED + "Você só pode usar o meteor olhando para baixo");
         return;
     }
 	if (hasCooldown(p))
@@ -293,7 +293,7 @@ subiu.add(p);
 /*     */         {
 /* 106 */            if (KitManager.getPlayer(p.getName()).hasKit()) {
     p.playSound(p.getLocation(), Sound.LEVEL_UP, 1.0F, 1.0F);
-/* 107 */           p.sendMessage(ChatColor.GREEN + "You can use the meteor again");
+/* 107 */           p.sendMessage(ChatColor.GREEN + "Você pode usar o meteor novamente!");
 /*     */         }
 }
 }

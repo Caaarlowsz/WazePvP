@@ -120,6 +120,8 @@ import net.helix.pvp.evento.EventoListeners;
 import net.helix.pvp.evento.EventoTabComplete;
 import net.helix.pvp.evento.EventoUtils;
 import net.helix.pvp.evento.SoupTypeGUI;
+import net.helix.pvp.inventory.ALL;
+import net.helix.pvp.inventory.Extras;
 import net.helix.pvp.inventory.ShopGUI;
 import net.helix.pvp.inventory.ShopKDRGUI;
 import net.helix.pvp.inventory.StatusGUI;
@@ -597,6 +599,8 @@ new BukkitRunnable() {
 		pm.registerEvents(new ShowPlayerInfoListener(), this);
 		pm.registerEvents(new StatusGUI(), this);
 		pm.registerEvents(new Boxer(), this);
+		pm.registerEvents(new ALL(), this);
+		pm.registerEvents(new Extras(), this);
 		pm.registerEvents(new TimeLord(), this);
 		pm.registerEvents(new Flash(), this);
 		pm.registerEvents(new RecraftGeral(), this);

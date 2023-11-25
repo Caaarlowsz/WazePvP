@@ -39,7 +39,7 @@ ArrayList<Player> subiu = new ArrayList();
 		return;
 	}
 	Player p = (Player)e.getEntity();
-	if (!KitManager2.getPlayer(p.getName()).haskit2()) {
+	if (!KitManager2.getPlayer(p.getName()).haskit2(this)) {
 		return;
 	}
 	if (!danometeor.contains(e.getEntity().getName())) {
@@ -57,7 +57,7 @@ ArrayList<Player> subiu = new ArrayList();
 			return;
 		}
 			Player p2 = (Player)ent;
-			if (!KitManager2.getPlayer(p2.getName()).haskit2()) {
+			if (!KitManager2.getPlayer(p2.getName()).haskit2(this)) {
 				return;
 			}
 			 else if (p2.getLocation().getY() > HelixPvP.getInstance().getConfig().getInt("SpawnAltura")  && EnderMageReal.isSpawn(p2.getLocation())) {
@@ -67,7 +67,7 @@ ArrayList<Player> subiu = new ArrayList();
 			p2.getWorld().strikeLightning(p2.getLocation());
 			p2.setFireTicks(80);
 			addCooldown(p , 40);
-			p2.sendMessage(ChatColor.RED + "You get it by a meteor!");
+			p2.sendMessage(ChatColor.RED + "Você foi atingido por um meteor!");
 			danometeor.remove(e.getEntity().getName());
 		}
 	}
@@ -87,7 +87,7 @@ ArrayList<Player> subiu = new ArrayList();
 	}
 	int l = (int)p.getEyeLocation().getDirection().multiply(6).add(new Vector(0, 0, 0)).getY();
 	if(p.getLocation().getPitch() >= -90 && p.getLocation().getPitch() <= -10) {
-        p.sendMessage(ChatColor.RED + "You can use the meteor looking below");
+        p.sendMessage(ChatColor.RED + "Você so pode usar o meteor olhando para baixo");
         return;
     }
 	if (hasCooldown(p))
@@ -106,7 +106,7 @@ ArrayList<Player> subiu = new ArrayList();
 /*     */         {
 /* 106 */           if (KitManager2.getPlayer(p.getName()).haskit2()) {
     p.playSound(p.getLocation(), Sound.LEVEL_UP, 1.0F, 1.0F);
-/* 107 */           p.sendMessage(ChatColor.GREEN + "You can use the meteor again");
+/* 107 */           p.sendMessage(ChatColor.GREEN + "Você pode usar o meteor novamente!");
 /*     */         }
 /*     */         }
 
@@ -134,13 +134,13 @@ ArrayList<Player> subiu = new ArrayList();
 /*  92 */         return;
 /*     */       }
 else if (p.getLocation().getY() > HelixPvP.getInstance().getConfig().getInt("SpawnAltura") && KitManager2.getPlayer(p.getName()).haskit2()  && EnderMageReal.isSpawn(p.getLocation())) {
-	p.sendMessage("§cDont use your power on spawn!");
+	p.sendMessage("§cNão use seu poder no spawn!");
 	return;
  }
 e.setCancelled(true);
 if (!subiu.contains(p)) {
-	  if (HelixCooldown.has(p.getName(), "meteor")) {
-		  p.sendMessage(ChatColor.RED + "Wait " + HelixCooldown.getTime(p.getName(), "meteor") +  " to use the meteor boost again");
+	  if (HelixCooldown.has(p.getName(), "meteor") && KitManager2.getPlayer(p.getName()).haskit2(this)) {
+		  p.sendMessage(ChatColor.RED + "Espere " + HelixCooldown.getTime(p.getName(), "meteor") +  " para usar o boost do meteor novamente");
 		  return;
 	  }
 HelixCooldown.create(p.getName(), "meteor", TimeUnit.SECONDS, 15);
@@ -276,7 +276,7 @@ subiu.add(p);
 	}
 	int l = (int)p.getEyeLocation().getDirection().multiply(6).add(new Vector(0, 0, 0)).getY();
 	if(p.getLocation().getPitch() >= -90 && p.getLocation().getPitch() <= -10) {
-        p.sendMessage(ChatColor.RED + "You can use the meteor looking below");
+        p.sendMessage(ChatColor.RED + "Você só pode usar o meteor olhando para baixo!");
         return;
     }
 	if (hasCooldown(p))
@@ -295,7 +295,7 @@ subiu.add(p);
 /*     */         {
 /* 106 */           if (KitManager2.getPlayer(p.getName()).haskit2()) {
     p.playSound(p.getLocation(), Sound.LEVEL_UP, 1.0F, 1.0F);
-/* 107 */           p.sendMessage(ChatColor.GREEN + "You can use the meteor again");
+/* 107 */           p.sendMessage(ChatColor.GREEN + "Você pode usar o meteor novamente");
 /*     */         }
 }
 }

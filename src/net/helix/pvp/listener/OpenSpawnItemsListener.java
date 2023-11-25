@@ -3,6 +3,7 @@ package net.helix.pvp.listener;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.Sound;
 import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -18,6 +19,7 @@ import net.helix.core.bukkit.item.ItemBuilder;
 import net.helix.core.bukkit.util.BuildUtil;
 import net.helix.pvp.HelixPvP;
 import net.helix.pvp.evento.SoupTypeGUI;
+import net.helix.pvp.inventory.ALL;
 import net.helix.pvp.inventory.KitsInventory;
 import net.helix.pvp.inventory.KitsInventory2;
 import net.helix.pvp.inventory.ShopGUI;
@@ -41,25 +43,8 @@ public class OpenSpawnItemsListener implements Listener {
 		}
 		switch (ItemBuilder.getString(event.getItem(), "spawn-item")) {
 			case "kits":
-				KitsInventory.open(player);
-				break;
-			case "kits2":
-				KitsInventory2.open(player);
-				break;
-			case "shop":
-				ShopGUI.open(player);
-				break;
-			case "status":
-				StatusGUI.openGUI(player, player);
-				break;
-			case "status2":
-			     SoupTypeGUI.openGUI(player);
-				break;
-			case "crates":
-			     Bukkit.dispatchCommand(player, "crates");
-				break;
-			case "1v1":
-				WarpsInventory.open(player);
+				ALL.open(player);
+				player.playSound(player.getLocation(), Sound.CLICK, 2F, 2F);
 				break;
 		}
 	}

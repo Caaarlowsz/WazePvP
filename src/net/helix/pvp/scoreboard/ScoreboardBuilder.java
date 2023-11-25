@@ -157,7 +157,7 @@ public static void init() {
 					scoreboard.registerNewTeam("coins").addEntry(l4);
 					scoreboard.registerNewTeam("rank").addEntry(l3);
 					objective.getScore(l12).setScore(12);
-					objective.getScore(l11).setScore(12);
+					objective.getScore(l11).setScore(11);
 					objective.getScore(l10).setScore(10);
 					objective.getScore(l9).setScore(9);
 					
