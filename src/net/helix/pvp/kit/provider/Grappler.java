@@ -62,7 +62,7 @@ public void usarbbf(PlayerMoveEvent e) {
 	 
  				Player target = p;
  				for (ItemStack is : p.getInventory().getContents()) {
- 				if (Jump.recebeu.containsKey(p.getName()) && EnderMageReal.isSpawn(p.getLocation()) && is.getAmount() > 1) {
+ 				if (Jump.recebeu.containsKey(p.getName()) && EnderMageReal.isSpawn(p.getLocation()) && is.getAmount() > 1 && p.getLocation().getY() > 156 && !GladiatorListener.combateGlad.containsKey(target) && !net.helixpvp.kit2.GladiatorListener.combateGlad.containsKey(target) && p.getInventory().contains(new ItemStack(Material.MUSHROOM_SOUP))) {
  					HelixWarp.SPAWN.send(p , true);
  					 KitManager.getPlayer(p.getName()).removeKit();
                      KitManager2.getPlayer(target.getName()).removekit2();
