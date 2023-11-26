@@ -1,5 +1,6 @@
 package net.helixpvp.kit2;
 
+
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
@@ -32,6 +33,7 @@ public class Meteor extends KitHandler2 {
 
 ArrayList<String> danometeor = new ArrayList();
 ArrayList<Player> subiu = new ArrayList();
+ArrayList<Player> usou = new ArrayList();
 @EventHandler
 /*     */   public void BotaStomper2(EntityDamageEvent e)
 /*     */   {
@@ -57,7 +59,7 @@ ArrayList<Player> subiu = new ArrayList();
 			return;
 		}
 			Player p2 = (Player)ent;
-			if (!KitManager2.getPlayer(p2.getName()).haskit2(this)) {
+			if (!KitManager2.getPlayer(p.getName()).haskit2(this)) {
 				return;
 			}
 			 else if (p2.getLocation().getY() > HelixPvP.getInstance().getConfig().getInt("SpawnAltura")  && EnderMageReal.isSpawn(p2.getLocation())) {
@@ -69,6 +71,7 @@ ArrayList<Player> subiu = new ArrayList();
 			addCooldown(p , 40);
 			p2.sendMessage(ChatColor.RED + "Você foi atingido por um meteor!");
 			danometeor.remove(e.getEntity().getName());
+			usou.remove(p);
 		}
 	}
 @EventHandler
@@ -78,7 +81,7 @@ ArrayList<Player> subiu = new ArrayList();
 	if (!subiu.contains(p)) {
 		return;
 	}
-	if (!KitManager2.getPlayer(p.getName()).haskit2()) {
+	if (!KitManager2.getPlayer(p.getName()).haskit2(this)) {
 		return;
 	}
 	
@@ -119,10 +122,10 @@ ArrayList<Player> subiu = new ArrayList();
 /*     */   public void BotaStomper(PlayerInteractEvent e)
 /*     */   {
 /*  84 */     final Player p = e.getPlayer();
-/*  85 */     if (!KitManager2.getPlayer(p.getName()).haskit2()) {
+/*  85 */     if (!KitManager2.getPlayer(p.getName()).haskit2(this)) {
 	return;
 }
-/*     */     
+/*     */ 
 	if ((e.getPlayer().getItemInHand().getType() != Material.FIREBALL)) {
 		return;
 	}
@@ -133,21 +136,26 @@ ArrayList<Player> subiu = new ArrayList();
 /*  91 */         sendMessageCooldown(p);
 /*  92 */         return;
 /*     */       }
-else if (p.getLocation().getY() > HelixPvP.getInstance().getConfig().getInt("SpawnAltura") && KitManager2.getPlayer(p.getName()).haskit2()  && EnderMageReal.isSpawn(p.getLocation())) {
+if (usou.contains(p)) {
+	return;
+}
+if (HelixCooldown.has(p.getName(), "meteor") && KitManager2.getPlayer(p.getName()).haskit2(this)) {
+	  p.sendMessage(ChatColor.BLUE + "Espere " + HelixCooldown.getTime(p.getName(), "meteor") +  " segundos para usar o boost do meteor novamente");
+	  p.sendMessage(ChatColor.RED + "APERTE SHIFT PARA DAR O IMPULSO!");
+	  e.setCancelled(true);
+	  return;
+}
+else if (p.getLocation().getY() > HelixPvP.getInstance().getConfig().getInt("SpawnAltura") && KitManager2.getPlayer(p.getName()).haskit2(this)  && EnderMageReal.isSpawn(p.getLocation())) {
 	p.sendMessage("§cNão use seu poder no spawn!");
 	return;
  }
 e.setCancelled(true);
 if (!subiu.contains(p)) {
-	  if (HelixCooldown.has(p.getName(), "meteor") && KitManager2.getPlayer(p.getName()).haskit2(this)) {
-		  p.sendMessage(ChatColor.RED + "Espere " + HelixCooldown.getTime(p.getName(), "meteor") +  " para usar o boost do meteor novamente");
-		  return;
-	  }
-HelixCooldown.create(p.getName(), "meteor", TimeUnit.SECONDS, 15);
+usou.add(p);
 Bukkit.getScheduler().scheduleSyncDelayedTask(HelixPvP.getInstance() , new BukkitRunnable() {
     @Override
     public void run() {
-   	HelixCooldown.delete(p.getName(), "meteor");
+   	usou.remove(p);
         }
     }
 , 15 * 20);
@@ -264,11 +272,12 @@ Bukkit.getScheduler().scheduleSyncDelayedTask(HelixPvP.getInstance(), new Runnab
 
 /*     */         }
 /* 109 */       }, 200L);
-}
+
+	 }
 
 subiu.add(p);
 } else {
-	if (!KitManager2.getPlayer(p.getName()).haskit2()) {
+	if (!KitManager2.getPlayer(p.getName()).haskit2(this)) {
 		return;
 	}
 	

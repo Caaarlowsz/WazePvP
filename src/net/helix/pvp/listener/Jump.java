@@ -223,6 +223,34 @@ Bukkit.getConsoleSender().sendMessage(player.getName() + " Choosed pvp kit! (Pul
 		                	p.sendMessage(ChatColor.RED + "Você está com uma combinação de kits proibida e foi mandado de volta ao spawn!");
 		                	return;
 		                }
+		                if (KitManager.getPlayer(player.getName()).hasKit(HelixKit.TORNADO) && KitManager2.getPlayer(player.getName()).haskit2(HelixKit2.METEOR)) {
+		                	HelixWarp.SPAWN.send(player);
+		                	KitManager.getPlayer(player.getName()).removeKit();
+		            		KitManager2.getPlayer(player.getName()).removekit2();
+		                	p.sendMessage(ChatColor.RED + "Você está com uma combinação de kits proibida e foi mandado de volta ao spawn!");
+		                	return;
+		                }
+		                if (KitManager.getPlayer(player.getName()).hasKit(HelixKit.GRAPPLER) && KitManager2.getPlayer(player.getName()).haskit2(HelixKit2.METEOR)) {
+		                	HelixWarp.SPAWN.send(player);
+		                	KitManager.getPlayer(player.getName()).removeKit();
+		            		KitManager2.getPlayer(player.getName()).removekit2();
+		                	p.sendMessage(ChatColor.RED + "Você está com uma combinação de kits proibida e foi mandado de volta ao spawn!");
+		                	return;
+		                }
+		                if (KitManager.getPlayer(player.getName()).hasKit(HelixKit.METEOR) && KitManager2.getPlayer(player.getName()).haskit2(HelixKit2.GRAPPLER)) {
+		                	HelixWarp.SPAWN.send(player);
+		                	KitManager.getPlayer(player.getName()).removeKit();
+		            		KitManager2.getPlayer(player.getName()).removekit2();
+		                	p.sendMessage(ChatColor.RED + "Você está com uma combinação de kits proibida e foi mandado de volta ao spawn!");
+		                	return;
+		                }
+		                if (KitManager.getPlayer(player.getName()).hasKit(HelixKit.TORNADO) && KitManager2.getPlayer(player.getName()).haskit2(HelixKit2.WITHER)) {
+		                	HelixWarp.SPAWN.send(player);
+		                	KitManager.getPlayer(player.getName()).removeKit();
+		            		KitManager2.getPlayer(player.getName()).removekit2();
+		                	p.sendMessage(ChatColor.RED + "Você está com uma combinação de kits proibida e foi mandado de volta ao spawn!");
+		                	return;
+		                }
 		                if (KitManager.getPlayer(player.getName()).hasKit(HelixKit.JUMPER) && KitManager2.getPlayer(player.getName()).haskit2(HelixKit2.STOMPER)) {
 		                	HelixWarp.SPAWN.send(player);
 		                	KitManager.getPlayer(player.getName()).removeKit();
@@ -237,7 +265,63 @@ Bukkit.getConsoleSender().sendMessage(player.getName() + " Choosed pvp kit! (Pul
 		                	p.sendMessage(ChatColor.RED + "Você está com uma combinação de kits proibida e foi mandado de volta ao spawn!");
 		                	return;
 		                }
-		                if (KitManager.getPlayer(player.getName()).getKit().name() == KitManager2.getPlayer(player.getName()).getkit2().name() && KitManager.getPlayer(player.getName()).getKit().name() != "PvP") {
+		                if (KitManager.getPlayer(player.getName()).hasKit(HelixKit.METEOR) && KitManager2.getPlayer(player.getName()).haskit2(HelixKit2.ANCHOR)) {
+		                	HelixWarp.SPAWN.send(player);
+		                	KitManager.getPlayer(player.getName()).removeKit();
+		            		KitManager2.getPlayer(player.getName()).removekit2();
+		                	p.sendMessage(ChatColor.RED + "Você está com uma combinação de kits proibida e foi mandado de volta ao spawn!");
+		                	return;
+		                }
+		                if (KitManager.getPlayer(player.getName()).hasKit(HelixKit.KANGAROO) && KitManager2.getPlayer(player.getName()).haskit2(HelixKit2.METEOR)) {
+		                	HelixWarp.SPAWN.send(player);
+		                	KitManager.getPlayer(player.getName()).removeKit();
+		            		KitManager2.getPlayer(player.getName()).removekit2();
+		                	p.sendMessage(ChatColor.RED + "Você está com uma combinação de kits proibida e foi mandado de volta ao spawn!");
+		                	return;
+		                }
+		                if (KitManager.getPlayer(player.getName()).hasKit(HelixKit.METEOR) && KitManager2.getPlayer(player.getName()).haskit2(HelixKit2.KANGAROO)) {
+		                	HelixWarp.SPAWN.send(player);
+		                	KitManager.getPlayer(player.getName()).removeKit();
+		            		KitManager2.getPlayer(player.getName()).removekit2();
+		                	p.sendMessage(ChatColor.RED + "Você está com uma combinação de kits proibida e foi mandado de volta ao spawn!");
+		                	return;
+		                }
+		                if (KitManager.getPlayer(player.getName()).hasKit(HelixKit.ANCHOR) && KitManager2.getPlayer(player.getName()).haskit2(HelixKit2.METEOR)) {
+		                	HelixWarp.SPAWN.send(player);
+		                	KitManager.getPlayer(player.getName()).removeKit();
+		            		KitManager2.getPlayer(player.getName()).removekit2();
+		                	p.sendMessage(ChatColor.RED + "Você está com uma combinação de kits proibida e foi mandado de volta ao spawn!");
+		                	return;
+		                }
+		                if (KitManager.getPlayer(player.getName()).getKit().name() == KitManager2.getPlayer(player.getName()).getkit2().name() && KitManager.getPlayer(player.getName()).getKit() != HelixKit.PVP) {
+		                	HelixWarp.SPAWN.send(player);
+		                	KitManager.getPlayer(player.getName()).removeKit();
+		            		KitManager2.getPlayer(player.getName()).removekit2();
+		                	p.sendMessage(ChatColor.GOLD + "Você está com uma combinação de kits proibida e foi mandado de volta ao spawn!");
+		                	return;
+		                }
+		                if (KitManager.getPlayer(player.getName()).hasKit(HelixKit.SONIC) && KitManager2.getPlayer(player.getName()).haskit2(HelixKit2.METEOR)) {
+		                	HelixWarp.SPAWN.send(player);
+		                	KitManager.getPlayer(player.getName()).removeKit();
+		            		KitManager2.getPlayer(player.getName()).removekit2();
+		                	p.sendMessage(ChatColor.RED + "Você está com uma combinação de kits proibida e foi mandado de volta ao spawn!");
+		                	return;
+		                }
+		                if (KitManager.getPlayer(player.getName()).hasKit(HelixKit.METEOR) && KitManager2.getPlayer(player.getName()).haskit2(HelixKit2.DESHFIRE)) {
+		                	HelixWarp.SPAWN.send(player);
+		                	KitManager.getPlayer(player.getName()).removeKit();
+		            		KitManager2.getPlayer(player.getName()).removekit2();
+		                	p.sendMessage(ChatColor.RED + "Você está com uma combinação de kits proibida e foi mandado de volta ao spawn!");
+		                	return;
+		                }
+		                if (KitManager.getPlayer(player.getName()).hasKit(HelixKit.DESHFIRE) && KitManager2.getPlayer(player.getName()).haskit2(HelixKit2.METEOR)) {
+		                	HelixWarp.SPAWN.send(player);
+		                	KitManager.getPlayer(player.getName()).removeKit();
+		            		KitManager2.getPlayer(player.getName()).removekit2();
+		                	p.sendMessage(ChatColor.RED + "Você está com uma combinação de kits proibida e foi mandado de volta ao spawn!");
+		                	return;
+		                }
+		                if (KitManager.getPlayer(player.getName()).getKit().name() == KitManager2.getPlayer(player.getName()).getkit2().name() && KitManager.getPlayer(player.getName()).getKit() != HelixKit.PVP) {
 		                	HelixWarp.SPAWN.send(player);
 		                	KitManager.getPlayer(player.getName()).removeKit();
 		            		KitManager2.getPlayer(player.getName()).removekit2();
