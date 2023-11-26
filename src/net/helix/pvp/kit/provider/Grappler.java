@@ -5,6 +5,8 @@ import net.helix.pvp.kit.Ejectable;
 import net.helix.pvp.kit.KitHandler;
 import net.helix.pvp.kit.KitManager;
 import net.helix.pvp.kit.KitManager2;
+import net.helix.pvp.listener.Jump;
+import net.helix.pvp.warp.HelixWarp;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -54,6 +56,21 @@ public static int getDistance(Player e){
     }
     return distance;
 }
+@EventHandler
+public void usarbbf(PlayerMoveEvent e) {
+	Player p = e.getPlayer();
+	if ((p.getItemInHand().getType().equals(Material.LEASH))) {
+ 			if (KitManager.getPlayer(e.getPlayer().getName()).hasKit(this)) {
+ 				Player target = p;
+ 				for (ItemStack is : p.getInventory().getContents()) {
+ 				if (Jump.recebeu.containsKey(p.getName()) && EnderMageReal.isSpawn(p.getLocation()) && is.getAmount() > 1) {
+ 					HelixWarp.SPAWN.send(p , false);
+ 					p.sendMessage("§cNão volte de kit pro spawn por favor!");
+ 				}
+ 				}
+ 			}
+	}
+ 			}
 @EventHandler
 public void usarf(PlayerMoveEvent e) {
 	Player p = e.getPlayer();
