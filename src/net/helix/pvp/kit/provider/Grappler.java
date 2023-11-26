@@ -59,17 +59,19 @@ public static int getDistance(Player e){
 @EventHandler
 public void usarbbf(PlayerMoveEvent e) {
 	Player p = e.getPlayer();
-	if ((p.getItemInHand().getType().equals(Material.LEASH))) {
- 			if (KitManager.getPlayer(e.getPlayer().getName()).hasKit(this)) {
+	 
  				Player target = p;
  				for (ItemStack is : p.getInventory().getContents()) {
  				if (Jump.recebeu.containsKey(p.getName()) && EnderMageReal.isSpawn(p.getLocation()) && is.getAmount() > 1) {
- 					HelixWarp.SPAWN.send(p , false);
+ 					HelixWarp.SPAWN.send(p , true);
+ 					 KitManager.getPlayer(p.getName()).removeKit();
+                     KitManager2.getPlayer(target.getName()).removekit2();
  					p.sendMessage("§cNão volte de kit pro spawn por favor!");
+ 					p.playSound(p.getLocation(), Sound.GHAST_SCREAM, 10, 10);
  				}
  				}
- 			}
-	}
+ 			
+	
  			}
 @EventHandler
 public void usarf(PlayerMoveEvent e) {
