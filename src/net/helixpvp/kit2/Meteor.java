@@ -137,6 +137,7 @@ ArrayList<Player> usou = new ArrayList();
 /*  92 */         return;
 /*     */       }
 if (usou.contains(p)) {
+	e.setCancelled(true);
 	return;
 }
 if (HelixCooldown.has(p.getName(), "meteor") && KitManager2.getPlayer(p.getName()).haskit2(this)) {
