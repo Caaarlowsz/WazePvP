@@ -237,6 +237,13 @@ Bukkit.getConsoleSender().sendMessage(player.getName() + " Choosed pvp kit! (Pul
 		                	p.sendMessage(ChatColor.RED + "Você está com uma combinação de kits proibida e foi mandado de volta ao spawn!");
 		                	return;
 		                }
+		                if (KitManager.getPlayer(player.getName()).getKit().name() == KitManager2.getPlayer(player.getName()).getkit2().name()) {
+		                	HelixWarp.SPAWN.send(player);
+		                	KitManager.getPlayer(player.getName()).removeKit();
+		            		KitManager2.getPlayer(player.getName()).removekit2();
+		                	p.sendMessage(ChatColor.GOLD + "Você está com uma combinação de kits proibida e foi mandado de volta ao spawn!");
+		                	return;
+		                }
 		                if (KitManager.getPlayer(player.getName()).hasKit(HelixKit.ANCHOR) && KitManager2.getPlayer(player.getName()).haskit2(HelixKit2.BOXER)) {
 		                	HelixWarp.SPAWN.send(player);
 		                	KitManager.getPlayer(player.getName()).removeKit();
