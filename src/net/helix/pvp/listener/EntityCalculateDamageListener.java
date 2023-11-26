@@ -64,7 +64,7 @@ public class EntityCalculateDamageListener implements Listener {
 	        if (item != null) {
 	    
 	            if (item.getType().equals((Object)Material.WOOD_SWORD)) {
-	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() - 2.7) : (event.getDamage() - 3.0));
+	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() - 2.4) : (event.getDamage() - 2.7));
 	            }
 	            else if (item.getType().equals((Object)Material.STONE_SWORD)) {
 	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() - 2.7) : (event.getDamage() - 3.0));

@@ -123,9 +123,14 @@ ArrayList<Player> subiu = new ArrayList();
 /*  85 */     if (!KitManager.getPlayer(p.getName()).hasKit(this)) {
 	return;
 }
-/*     */     
+/*     */ 
 	if ((e.getPlayer().getItemInHand().getType() != Material.FIREBALL)) {
 		return;
+	}
+	if (HelixCooldown.has(p.getName(), "meteor") && KitManager.getPlayer(p.getName()).hasKit()) {
+		  p.sendMessage(ChatColor.BLUE + "Espere " + HelixCooldown.getTime(p.getName(), "meteor") +  " segundos para usar o boost do meteor novamente");
+		  p.sendMessage(ChatColor.RED + "APERTE SHIFT PARA DAR O IMPULSO!");
+		  return;
 	}
 /*  87 */     
 /*  88 */       p.updateInventory();
@@ -140,8 +145,8 @@ else if (p.getLocation().getY() > HelixPvP.getInstance().getConfig().getInt("Spa
  }
 e.setCancelled(true);
 if (!subiu.contains(p)) {
-	  if (HelixCooldown.has(p.getName(), "meteor") && KitManager.getPlayer(p.getName()).hasKit(this)) {
-		  p.sendMessage(ChatColor.RED + "Espere " + HelixCooldown.getTime(p.getName(), "meteor") +  " para usar o boost do meteor novamente");
+	 if (HelixCooldown.has(p.getName(), "meteor") && KitManager.getPlayer(p.getName()).hasKit()) {
+		  p.sendMessage(ChatColor.DARK_RED + "Espere " + HelixCooldown.getTime(p.getName(), "meteor") +  " para usar o boost do meteor novamente");
 		  return;
 	  }
 HelixCooldown.create(p.getName(), "meteor", TimeUnit.SECONDS, 15);
