@@ -679,6 +679,12 @@ public void Items(Player player) {
 					                .toStack()
 					        );
 							}
+							if (KitManager2.getPlayer(player.getName()).haskit2(HelixKit2.WITHER)) {
+								player.getInventory().setItem(2, new ItemBuilder("§8Wither Item", Material.SKULL_ITEM)
+						                .nbt("cancel-drop").nbt("wither")
+						                .toStack()
+						        );
+								}
 							if (KitManager2.getPlayer(player.getName()).haskit2(HelixKit2.FIREBENDER)) {
 							 player.getInventory().setItem(2, new ItemBuilder("§cFireBender!", Material.REDSTONE_BLOCK)
 						                .addEnchant(Enchantment.KNOCKBACK, 1)

@@ -61,6 +61,19 @@ public class KitsInventoryPageThree {
 							.toStack()
 					);
 			}
+		if (player.hasPermission("kombo.kit.wither")) {
+			inventory.setItem(13 , new ItemBuilder("§a" + HelixKit.WITHER.getName(), HelixKit.WITHER.getIcon())
+					.lore("§f" + HelixKit.WITHER.getDescription())
+							.addFlags(ItemFlag.HIDE_ATTRIBUTES,
+									ItemFlag.HIDE_DESTROYS,
+									ItemFlag.HIDE_ENCHANTS,
+									ItemFlag.HIDE_PLACED_ON,
+									ItemFlag.HIDE_POTION_EFFECTS,
+									ItemFlag.HIDE_UNBREAKABLE)
+							.nbt("kit-gui", HelixKit.WITHER.getName())
+							.toStack()
+					);
+			}
 			
 			
 				inventory.setItem(45, new ItemBuilder("§aRetornar", Material.ARROW).nbt("voltar")

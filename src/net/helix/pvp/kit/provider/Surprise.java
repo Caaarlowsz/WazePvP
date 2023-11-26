@@ -75,7 +75,7 @@ import net.helix.pvp.kit.*;
 	 public static HelixKit getRandomKit() {
          Random random = new Random();
          HelixKit kit = HelixKit.values()[random.nextInt(HelixKit.values().length)];
-         assert kit != HelixKit.NENHUM || kit != HelixKit.SURPRISE || kit != HelixKit.VACUUM;
+         assert kit != HelixKit.NENHUM && kit != HelixKit.SURPRISE && kit != HelixKit.VACUUM;
          return kit;
      }
 }

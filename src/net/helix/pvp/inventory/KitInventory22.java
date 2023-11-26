@@ -145,6 +145,20 @@ public class KitInventory22 {
 							.toStack()
 					);
 			}
+		if (player.hasPermission("kombo.kit2.wither")) {
+			inventory.setItem(21
+					, new ItemBuilder("§a" + HelixKit2.WITHER.getName(), HelixKit2.WITHER.getIcon())
+					.lore("§f" + HelixKit2.WITHER.getDescription())
+							.addFlags(ItemFlag.HIDE_ATTRIBUTES,
+									ItemFlag.HIDE_DESTROYS,
+									ItemFlag.HIDE_ENCHANTS,
+									ItemFlag.HIDE_PLACED_ON,
+									ItemFlag.HIDE_POTION_EFFECTS,
+									ItemFlag.HIDE_UNBREAKABLE)
+							.nbt("kit-gui2", HelixKit2.WITHER.getName())
+							.toStack()
+					);
+			}
 		inventory.setItem(45, new ItemBuilder("§aRetornar", Material.ARROW).nbt("voltar")
 				.toStack()
 		);
