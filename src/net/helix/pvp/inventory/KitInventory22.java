@@ -89,22 +89,8 @@ public class KitInventory22 {
 							.toStack()
 					);
 			}
-		if (player.hasPermission("kombo.kit2.meteor")) {
-			inventory.setItem(15
-					, new ItemBuilder("§a" + HelixKit2.METEOR.getName(), HelixKit2.METEOR.getIcon())
-					.lore("§f" + HelixKit2.METEOR.getDescription())
-							.addFlags(ItemFlag.HIDE_ATTRIBUTES,
-									ItemFlag.HIDE_DESTROYS,
-									ItemFlag.HIDE_ENCHANTS,
-									ItemFlag.HIDE_PLACED_ON,
-									ItemFlag.HIDE_POTION_EFFECTS,
-									ItemFlag.HIDE_UNBREAKABLE)
-							.nbt("kit-gui2", HelixKit2.METEOR.getName())
-							.toStack()
-					);
-			}
 		if (player.hasPermission("kombo.kit2.poseidon")) {
-			inventory.setItem(16
+			inventory.setItem(15
 					, new ItemBuilder("§a" + HelixKit2.POSEIDON.getName(), HelixKit2.POSEIDON.getIcon())
 					.lore("§f" + HelixKit2.POSEIDON.getDescription())
 							.addFlags(ItemFlag.HIDE_ATTRIBUTES,
@@ -118,7 +104,7 @@ public class KitInventory22 {
 					);
 			}
 		if (player.hasPermission("kombo.kit2.avatar")) {
-			inventory.setItem(19
+			inventory.setItem(16
 					, new ItemBuilder("§a" + HelixKit2.AVATAR.getName(), HelixKit2.AVATAR.getIcon())
 					.lore("§f" + HelixKit2.AVATAR.getDescription())
 							.addFlags(ItemFlag.HIDE_ATTRIBUTES,
@@ -132,7 +118,7 @@ public class KitInventory22 {
 					);
 			}
 		if (player.hasPermission("kombo.kit2.meteor")) {
-			inventory.setItem(20
+			inventory.setItem(19
 					, new ItemBuilder("§a" + HelixKit2.METEOR.getName(), HelixKit2.METEOR.getIcon())
 					.lore("§f" + HelixKit2.METEOR.getDescription())
 							.addFlags(ItemFlag.HIDE_ATTRIBUTES,
@@ -146,7 +132,7 @@ public class KitInventory22 {
 					);
 			}
 		if (player.hasPermission("kombo.kit2.wither")) {
-			inventory.setItem(21
+			inventory.setItem(20
 					, new ItemBuilder("§a" + HelixKit2.WITHER.getName(), HelixKit2.WITHER.getIcon())
 					.lore("§f" + HelixKit2.WITHER.getDescription())
 							.addFlags(ItemFlag.HIDE_ATTRIBUTES,

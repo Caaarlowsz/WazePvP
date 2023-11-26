@@ -85,7 +85,7 @@ public enum HelixKit2  {
 	FISHERMAN("Fisherman", 9000, 0, new Fisherman() , new ItemStack(Material.FISHING_ROD), "Puxe jogadores com sua vara de pesca.", 1),
 	SWITCHER("Switcher", 8000, 0, new Switcher() , new ItemStack(Material.SNOW_BALL), "Troque de lugar com o inimigo.",  1),
 	METEOR("Meteor", 8000, 0, new Meteor() , new ItemStack(Material.FIREBALL), "Seja um meteoro.",  1),
-    WITHER("Wither", 10000, 500, new net.helixpvp.kit2.Wither(), new ItemStack(Material.SKULL, 1 , (short)1), "Seja um wither", 2),
+    WITHER("Wither", 10000, 500, new net.helixpvp.kit2.Wither(), new ItemStack(Material.SKULL_ITEM, 1 , (short)1), "Seja um wither", 2),
 	GRAPPLER("Grappler", 10000, 0, new Grappler() , new ItemStack(Material.LEASH), "Voe por ai com sua cordinha", 1);
 	
 	private final String name;

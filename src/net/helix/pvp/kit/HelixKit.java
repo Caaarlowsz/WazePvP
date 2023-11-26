@@ -114,7 +114,7 @@ public enum HelixKit {
 	FLASH("Flash", 15000, 500, new Flash(), new ItemStack(Material.REDSTONE_TORCH_ON), "Teleporte para onde você clicar", 2),
     GLADIATOR("Gladiator", 15000, 500, new GladiatorListener(), new ItemStack(Material.IRON_FENCE), "Desafie seus inimigos para 1v1", 2),
     METEOR("Meteor", 15000, 500, new Meteor(), new ItemStack(Material.FIREBALL), "Seja um meteoro", 2),
-    WITHER("Wither", 10000, 500, new Wither(), new ItemStack(Material.SKULL, 1 , (short)1), "Seja um wither", 2),
+    WITHER("Wither", 10000, 500, new Wither(), new ItemStack(Material.SKULL_ITEM, 1 , (short)1), "Seja um wither", 2),
 	SONIC("Sonic", 15000, 500, new Sonic(), new ItemStack(Material.LAPIS_BLOCK), "De um desh e bote veneno", 2);
 	
 	private final String name;
