@@ -436,6 +436,14 @@ public void Items(Player player) {
         );
 		Bukkit.getConsoleSender().sendMessage(player.getName() + " Choosed FIREBENDER kit!");
 	}
+	if (KitManager.getPlayer(player.getName()).hasKit( HelixKit.WITHER)) {
+		player.getInventory().setItem(1, new ItemBuilder("§8Wither Item", Material.SKULL_ITEM)
+				.nbt("kit-handler", "wither")
+				.nbt("cancel-drop")
+				.toStack()
+		);
+		Bukkit.getConsoleSender().sendMessage(player.getName() + " Choosed wither kit!");
+		}
 	if (KitManager.getPlayer(player.getName()).hasKit(HelixKit.METEOR)) {
 		player.getInventory().setItem(1, new ItemBuilder("§cMeteoro", Material.FIREBALL)
                 .addEnchant(Enchantment.KNOCKBACK, 1)
@@ -603,6 +611,14 @@ public void Items(Player player) {
 								.toStack()
 						);
 						Bukkit.getConsoleSender().sendMessage(player.getName() + " Choosed kangaroo kit!");
+						}
+					if (KitManager.getPlayer(player.getName()).hasKit( HelixKit.WITHER)) {
+						player.getInventory().setItem(1, new ItemBuilder("§8Wither Item", Material.SKULL_ITEM)
+								.nbt("kit-handler", "wither")
+								.nbt("cancel-drop")
+								.toStack()
+						);
+						Bukkit.getConsoleSender().sendMessage(player.getName() + " Choosed wither kit!");
 						}
 					if (KitManager.getPlayer(player.getName()).hasKit( HelixKit.MILKMAN)) {
 						player.getInventory().setItem(1, new ItemBuilder(Material.MILK_BUCKET)
