@@ -295,7 +295,7 @@ subiu.add(p);
 /*     */       {
 /*     */         public void run()
 /*     */         {
-/* 106 */           if (KitManager.getPlayer(p.getName()).hasKit(this)) {
+/* 106 */           if (KitManager.getPlayer(p.getName()).hasKit()) {
     p.playSound(p.getLocation(), Sound.LEVEL_UP, 1.0F, 1.0F);
 /* 107 */           p.sendMessage(ChatColor.GREEN + "Você pode usar o meteor novamente");
 /*     */         }
