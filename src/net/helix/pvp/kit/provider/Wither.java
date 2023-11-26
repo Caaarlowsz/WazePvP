@@ -40,7 +40,7 @@ public class Wither extends KitHandler {
     public void execute(Player player) {
         super.execute(player);
 
-        player.getInventory().setItem(1, new ItemBuilder(Material.SKULL_ITEM)
+        player.getInventory().setItem(0, new ItemBuilder(Material.SKULL_ITEM)
                 .displayName("§8Wither Item")
                 .nbt("cancel-drop")
                 .nbt("kit-handler", "wither")
