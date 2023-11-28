@@ -78,6 +78,21 @@ public class EntityCalculateDamageListener implements Listener {
 	            else if (item.getType().equals((Object)Material.GOLD_SWORD)) {
 	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() - 2.7) : (event.getDamage() - 3.0));
 	            }
+	            else if (item.getType().equals((Object)Material.GOLD_AXE)) {
+	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() / 2) : (event.getDamage() / 2));
+	            }
+	            else if (item.getType().equals((Object)Material.WOOD_AXE)) {
+	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() / 2) : (event.getDamage() / 2));
+	            }
+	            else if (item.getType().equals((Object)Material.IRON_AXE)) {
+	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() / 2) : (event.getDamage() / 2));
+	            }
+	            else if (item.getType().equals((Object)Material.STONE_AXE)) {
+	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() / 2) : (event.getDamage() / 2));
+	            }
+	            else if (item.getType().equals((Object)Material.DIAMOND_AXE)) {
+	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() / 2) : (event.getDamage() / 2));
+	            }
 	        }
 	    }
 	    public static boolean isCritical(final LivingEntity e) {
