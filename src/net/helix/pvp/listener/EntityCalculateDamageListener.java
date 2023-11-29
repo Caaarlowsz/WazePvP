@@ -64,19 +64,19 @@ public class EntityCalculateDamageListener implements Listener {
 	        if (item != null) {
 	    
 	            if (item.getType().equals((Object)Material.WOOD_SWORD)) {
-	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() - 2.4) : (event.getDamage() - 2.7));
+	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() / 1.7) : (event.getDamage() / 2.0));
 	            }
 	            else if (item.getType().equals((Object)Material.STONE_SWORD)) {
-	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() - 2.7) : (event.getDamage() - 3.0));
+	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() / 1.8) : (event.getDamage() / 2.0));
 	            }
 	            else if (item.getType().equals((Object)Material.IRON_SWORD)) {
-	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() - 2.7) : (event.getDamage() - 3.0));
+	                event.setDamage(isCritical((LivingEntity)p) ?  (event.getDamage() / 1.7) : (event.getDamage() / 2.0));
 	            }
 	            else if (item.getType().equals((Object)Material.DIAMOND_SWORD)) {
-	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() - 2.7) : (event.getDamage() - 3.0));
+	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() / 1.7) : (event.getDamage() / 2.0));
 	            }
 	            else if (item.getType().equals((Object)Material.GOLD_SWORD)) {
-	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() - 2.7) : (event.getDamage() - 3.0));
+	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() / 1.8) : (event.getDamage() / 2.0));
 	            }
 	            else if (item.getType().equals((Object)Material.GOLD_AXE)) {
 	                event.setDamage(isCritical((LivingEntity)p) ? (event.getDamage() / 2) : (event.getDamage() / 2));
