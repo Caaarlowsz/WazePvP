@@ -207,6 +207,34 @@ public class ItemUtils {
         skull.setItemMeta(skullMeta);
         return skull;
     }
+    public static ItemStack getBOT(String url) {
+        ItemStack skull = new ItemStack(Material.SKULL_ITEM, 1, (short) 3);
+        if (url == null || url.isEmpty())
+            return skull;
+        SkullMeta skullMeta = (SkullMeta) skull.getItemMeta();
+
+
+
+        	GameProfile skin6999f662 = new GameProfile(UUID.fromString("173b29b4-b6fa-4e73-a839-87efb368bdfd"), "skin147439a6");
+        	skin6999f662.getProperties().put("textures", new Property("textures", "ewogICJ0aW1lc3RhbXAiIDogMTY3Mzg3OTg4NDA0MywKICAicHJvZmlsZUlkIiA6ICI4YTg3NGJhNmFiZDM0ZTc5OTljOWM1ODMwYWYyY2NmNSIsCiAgInByb2ZpbGVOYW1lIiA6ICJSZXphMTExIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzY4YjA3OTQwOGNlMzFmNjZjM2VjMmVhZDk1MjRkOGJmNzFhYTBmMWZlNTczYTg5MjZmYjQ5YWE1NmUzNjhlMzkiCiAgICB9CiAgfQp9"));
+        
+        byte[] encodedData = Base64.encodeBase64(String.format("{textures:{SKIN:{url:\"%s\"}}}", url).getBytes());
+        skin6999f662  .getProperties().put("textures", new Property("textures", new String(encodedData)));
+        Field profileField = null;
+        try {
+            profileField = skullMeta.getClass().getDeclaredField("profile");
+        } catch (NoSuchFieldException | SecurityException e) {
+            e.printStackTrace();
+        }
+        profileField.setAccessible(true);
+        try {
+            profileField.set(skullMeta,skin6999f662  );
+        } catch (IllegalArgumentException | IllegalAccessException e) {
+            e.printStackTrace();
+        }
+        skull.setItemMeta(skullMeta);
+        return skull;
+    }
     public static ItemStack getKB(String url) {
         ItemStack skull = new ItemStack(Material.SKULL_ITEM, 1, (short) 3);
         if (url == null || url.isEmpty())

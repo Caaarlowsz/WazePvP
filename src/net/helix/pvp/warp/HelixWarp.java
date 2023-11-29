@@ -15,6 +15,7 @@ import net.helix.pvp.HelixPvP;
 import net.helix.pvp.evento.ItemUtils;
 import net.helix.pvp.kit.Habilidade;
 import net.helix.pvp.kit.Habilidade2;
+import net.helix.pvp.warp.provider.BotPvP;
 import net.helix.pvp.warp.provider.Fisherman;
 import net.helix.pvp.warp.provider.Gladiator;
 import net.helix.pvp.warp.provider.Knockback;
@@ -29,6 +30,7 @@ public enum HelixWarp {
 	FPS("FPS", new net.helix.pvp.warp.provider.FPS(),new ItemStack(ItemUtils.getSkull("https://minesk.in/17147310ce1b44fe8eb6a401cde52978"))),
     LAVACHALLENGE("Lava", new LavaChallenge(), new ItemStack(ItemUtils.getSkullLAVA("https://minesk.in/ad3c5b5f8e45413b8966bae2d9735cec"))),
     SUMO("Sumo", new Sumo(),new ItemStack( ItemUtils.getSumo("https://mineskin.org/45077d608bb6450a9a6ec98e4a6eb279"))),
+    BOTPVP("BotPvP", new BotPvP(),new ItemStack( ItemUtils.getBOT("https://mineskin.org/147439a617ac44d3aaf0e96d122b4064"))),
     GLADIATOR("Gladiator", new Gladiator(),new ItemStack(ItemUtils.getSkullGLAD("https://minesk.in/1ca749bb94614c808d3d2c9b886fd99f"))),
     KNOCKBACK("Knockback", new Knockback(),new ItemStack( ItemUtils.getKB("https://mineskin.org/06bea19db77443b7b9369a64d10fa494"))),
     POTPVP("PotionPvP", new PotPvP(),new ItemStack( ItemUtils.getPOTGLAD("https://mineskin.org/0f24491650114553a7c2e663a17ec33b"))),
