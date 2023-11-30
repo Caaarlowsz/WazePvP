@@ -111,7 +111,6 @@ public class PlayerJoinListener implements Listener {
 		Player player = e.getPlayer();
 		Player p = e.getPlayer();
 		   TabAPI apitab = TabAPI.getInstance();
-		   Bukkit.broadcastMessage(ChatColor.GREEN + player.getName() + " entrou no Servidor!"); 
 		if (VanishUtil.has(player.getName())) {
 			VanishUtil.remove(player.getName());
 			player.sendMessage("§c§lVANISH §fVocê saiu do vanish.");
@@ -123,7 +122,7 @@ public class PlayerJoinListener implements Listener {
 		}
 		ScoreboardManager manager = Bukkit.getScoreboardManager();
         Scoreboard board = manager.getMainScoreboard();
-		informIfVip(player, player.getUniqueId());
+	
 		if (Jump.recebeu.containsKey(p.getName())) {
 			Jump.recebeu.remove(player.getName());
 		}
