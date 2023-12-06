@@ -22,11 +22,6 @@ import org.bukkit.scoreboard.DisplaySlot;
 import org.bukkit.scoreboard.NameTagVisibility;
 import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.scoreboard.Team;
-
-import me.neznamy.tab.api.TabAPI;
-import me.neznamy.tab.api.TabPlayer;
-import me.neznamy.tab.api.event.player.PlayerLoadEvent;
-import me.neznamy.tab.api.nametag.UnlimitedNameTagManager;
 import net.helix.core.bukkit.HelixBukkit;
 import net.helix.core.bukkit.account.HelixPlayer;
 import net.helix.core.util.HelixCooldown;
@@ -250,7 +245,7 @@ public class FakeAPI {
 public static void applyFake(String fake, Player playerData) {
       Player player = playerData.getPlayer();
       LuckPerms api = LuckPermsProvider.get();
-      TabAPI apitab = TabAPI.getInstance();
+     
       try {
           String prefix = api.getGroupManager().getGroup("default").getCachedData().getMetaData().getPrefix();
       	Fake.playerfakename.put(player, fake);
@@ -259,16 +254,8 @@ public static void applyFake(String fake, Player playerData) {
  		 Bukkit.getConsoleSender().sendMessage("" + player.getName() + " teve a nametag escondida!");
           // Get an OfflinePlayer object for the player
           player.getScoreboard().clearSlot(DisplaySlot.SIDEBAR);
-  		if (apitab.getNameTagManager() instanceof UnlimitedNameTagManager) {
-  			if (player != null) {
-  		    UnlimitedNameTagManager unm = (UnlimitedNameTagManager) TabAPI.getInstance().getNameTagManager();
-  		    unm.enableArmorStands(apitab.getPlayer(player.getUniqueId()));
-  		    unm.setPrefix(apitab.getPlayer(player.getUniqueId()), prefix);
-  		  apitab.getPlayer(player.getUniqueId()).setTemporaryGroup("default");
-  		 Bukkit.getConsoleSender().sendMessage("" + player.getName() + " teve o fake setado!");
-  		    //do stuff
-  		}  
-  		}
+  		 
+  		
           // Load, modify & save the user in LuckPerms.
           api.getUserManager().modifyUser(player.getUniqueId(), (User user) -> {
 
@@ -291,34 +278,9 @@ public static void applyFake(String fake, Player playerData) {
               Bukkit.getConsoleSender().sendMessage(player.getName() + " colocou o fake " + fake);
              
           });
-          Bukkit.getScheduler().scheduleSyncDelayedTask(HelixPvP.getInstance() , new BukkitRunnable() {
-              @Override
-              public void run() {
-            	 
-            		    TabPlayer tabPlayer = apitab.getPlayer(player.getName());
-            		    if (tabPlayer == null) {
-            		    Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "tab reload");
-              }
-            		    Bukkit.getScheduler().scheduleSyncDelayedTask(HelixPvP.getInstance() , new BukkitRunnable() {
-            	              @Override
-            	              public void run() {
-            	            	  TabAPI.getInstance().getEventBus().register(PlayerLoadEvent.class, event -> {
-            	            		    TabPlayer tabPlayer = event.getPlayer();
-            	            		    Bukkit.getConsoleSender().sendMessage("" + apitab.getPlayer(PlayerJoinListener.playerrealname.get(player)) + " foi organizado no tablist! (NICK)");
-            	                     	  Bukkit.getConsoleSender().sendMessage("PLAYER: " + apitab.getPlayer(PlayerJoinListener.playerrealname.get(player)));
-            	                     	tabPlayer.setTemporaryGroup("default");
-            	                     	  HelixWarp.SPAWN.send((Player) apitab.getPlayer(PlayerJoinListener.playerrealname.get(player)));
-            	            		});
-            	                  Bukkit.getConsoleSender().sendMessage("FAKES SETADOS");
-            		    //do something
-            	              }
-            		    }
-            	              , 20 * 5);
-            	
-                  }
-              }
+                      
           
-          , 20 * 3);
+ 
   } catch (NullPointerException e) {
   	player.sendMessage(ChatColor.RED + "§4§lFAKE: §cUm erro ocorreu!");
   	e.printStackTrace();

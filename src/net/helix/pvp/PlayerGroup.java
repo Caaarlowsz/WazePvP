@@ -6,28 +6,19 @@ import org.bukkit.entity.Player;
 
 public enum PlayerGroup {
 
-    DONO("DONO", 0, "Dono", "helix.tag.diretor", ChatColor.DARK_AQUA, 1),
-    GERENTE("SUBDONO2F", 1, "S-DonoBV", "helix.tag.gerente", ChatColor.DARK_RED, 2),
-    ADMIN("SUBDONO", 2, "S-DonoB", "helix.tag.admin", ChatColor.RED, 2),
-    COORD("DEVELOPERVF", 3, "DevVB", "helix.tag.coord", ChatColor.DARK_PURPLE, 3),
-    MOD("DEVELOPER4", 4, "DevV", "helix.tag.mod", ChatColor.DARK_GREEN, 3),
-   HELPER("DEVELOPER", 5, "DevA", "helix.tag.ajudante", ChatColor.LIGHT_PURPLE, 3),
-   ESTAGIO("DEVELOPER2", 6, "DevM", "helix.tag.estagiario", ChatColor.YELLOW, 3),
-    BUGHUNTER("BUG", 18, "Booster", "helix.tag.bughunter", ChatColor.DARK_GRAY, 4),
-    BOOSTER("BOOSTER", 18, "Booster", "helix.tag.booster", ChatColor.BLACK, 5),
-    TOP1("TOP1", 18, "Top1", "helix.tag.top1", ChatColor.BLUE, 5),
-    YT("YT", 18, "YT", "helix.tag.yt", ChatColor.AQUA, 6),
-    YT2("YT2", 18, "YT", "helix.tag.creator", ChatColor.AQUA, 7),
-    YT3("YT3", 18, "YT", "helix.tag.miniyt", ChatColor.AQUA, 8),
-    YT4("YT4", 18, "YT", "helix.tag.yt+", ChatColor.AQUA, 9),
-    YT5("YT4", 18, "YT", "helix.tag.miniyt", ChatColor.AQUA, 10),
-    STREAM("STREAM", 17, "EMERALD", "helix.tag.streamer", ChatColor.AQUA, 111),  
-    BETA("STREAM", 17, "EMERALD", "helix.tag.beta", ChatColor.GOLD, 111), 
-    EMERALD2("EMERALD2", 18, "EMERALD2", "helix.tag.diamond", ChatColor.GREEN, 11),
-    EMERALD("EMERALD", 18, "EMERALD", "helix.tag.emerald", ChatColor.GREEN, 11),
-    GOLD("GOLD", 18, "Gold", "helix.tag.gold", ChatColor.GREEN, 12),
-    IRON("IRON", 19, "Iron", "helix.tag.iron", ChatColor.GREEN, 13),
-    MEMBRO("MEMBRO", 20, "Membro", "helix.tag.membro", ChatColor.GRAY, 14);
+    DONO("DONO", 0, "Dono", "cornotop.vermelhoescuro", ChatColor.DARK_RED, 1),
+    ADMIN("ADMIN", 1, "ADMIN", "cornotop.vermelhoclaro", ChatColor.RED, 2),
+    MOD("MOD", 2, "MOD", "cornotop.roxo", ChatColor.DARK_PURPLE, 3),
+    TRIAL("TRIAL", 3, "TRIAL", "cornotop.rosa", ChatColor.LIGHT_PURPLE, 4),
+    HELPER("HELPER", 4, "HELPER", "cornotop.verde", ChatColor.DARK_GREEN, 5),
+   ESTAGIARIO("ESTAGIARIO", 5, "ESTAGIARIO", "cornotop.amarelo", ChatColor.YELLOW, 6),
+   YOUTUBER("YOUTUBER", 6, "YT", "cornotop.azulclaro", ChatColor.AQUA, 7),
+    BETA("BETA", 7, "BETA", "cornotop.azulescuro", ChatColor.DARK_BLUE, 8),
+    BOOSTER("BOOSTER", 8, "Booster", "cornotop.preto", ChatColor.BLACK, 9),
+    PRO("PRO", 9, "PRO", "cornotop.dourado", ChatColor.GOLD, 10),
+    MVP("MVP", 10, "MVP", "cornotop.azul", ChatColor.BLUE, 11),
+    VIP("VIP", 11, "VIP", "cornotop.verdeclaro", ChatColor.GREEN, 12),
+    MEMBRO("MEMBRO", 12, "YT", "cornotop.cinza", ChatColor.GRAY, 13);
 
     private final String name;
     private final String permission;

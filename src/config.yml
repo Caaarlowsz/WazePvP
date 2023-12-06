@@ -1,8 +1,8 @@
 #CONFIGURA��O DO SRKITPVP
 #DADOS DO MYSQL E AS TAGS DEVEM SER EDITADAS NA PASTA DO PLUGIN Core
-#PRECISA DO EazyNick , AjLeaderBoards, DecentHolograms e o Core
+#PRECISA DO PlaceHolderAPI, AjLeaderBoards, DecentHolograms e o Core
 #Sem eles o plugin n�o liga!
-#FEITO COM AMOR POR Rafael Auler
+#FEITO COM AMOR POR Auleriano
 #Discord de suporte: https://discord.gg/GyAzMB9cnp
 
 #PREFIXO DAS MENSAGENS
@@ -15,11 +15,21 @@ MotdWhitelist: '&cO Servidor est� em manuten��o'
 #Link do /discord
 DiscordLink: 'https://discord.gg/dhcFfghwRX'
 
+#COORDENADAS DE PROTEÇÃO DO SPAWN
+#PERGUNTE AO DESENVOLVEDOR PARA ELE TE AJUDAR COM ISSO
+SpawnProtecaoZ1: 6756
+SpawnProtecaoZ2: 6807
+SpawnProtecaoX1: 6254
+SpawnProtecaoX2: 6276
 
+#NOME DO MAPA PRINCIPAL
+MAPAMUNDO: 'spawn'
+
+
+#lista de pessoas que podem executar os comandos do luckperms
 Ops:
-  - Rafael_Melo
-  - LuanTresoldi
-  - Punishy
+  - Auleriano
+  - RemixedSxD
 Command: 'ban {playername} Você não tem autorização para ter OP'
 Command2: 'lp user {playername} clear'
 

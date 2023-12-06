@@ -106,7 +106,6 @@ import net.helix.pvp.command.SpawnCMD;
 import net.helix.pvp.command.StaffVsPlayers;
 import net.helix.pvp.command.Sudo;
 import net.helix.pvp.command.TPALL;
-import net.helix.pvp.command.TagCommand;
 import net.helix.pvp.command.Vanish;
 import net.helix.pvp.command.VerRank;
 import net.helix.pvp.command.Warp;
@@ -127,7 +126,6 @@ import net.helix.pvp.inventory.ShopKDRGUI;
 import net.helix.pvp.inventory.StatusGUI;
 import net.helix.pvp.inventory.listener.BuyKitListener;
 import net.helix.pvp.inventory.listener.Lapis;
-import net.helix.pvp.inventory.listener.PingListener;
 import net.helix.pvp.inventory.listener.SelectKitListener;
 import net.helix.pvp.inventory.listener.SelectWarpListener;
 import net.helix.pvp.kit.provider.Barbarian;
@@ -204,6 +202,9 @@ public class HelixPvP extends JavaPlugin implements Listener, PluginMessageListe
 	        soupRecipe.addIngredient(cocoa.getData());
 	        getServer().addRecipe(soupRecipe);
 	    }
+	 private static String getConfig(String s) {
+		    return HelixPvP.getInstance().getConfig().getString(s);
+		  }
 	public void onEnable() {
 		ChatCommand.chat = true; // aumenta o texto pra nao lagar 
 		
@@ -222,40 +223,9 @@ public class HelixPvP extends JavaPlugin implements Listener, PluginMessageListe
 		setupRecipes();
 		Bukkit.getConsoleSender().sendMessage("RECEITAS CARREGADAS (CACAU)");
 
-new BukkitRunnable() {
-			
-			@SuppressWarnings("deprecation")
-			@Override
-			public void run() {
-				Location loc = new Location(Bukkit.getWorld("spawn"), -244.595, 238.0000000, -49.225);
-				Location loc2 = new Location(Bukkit.getWorld("spawn") , -166.642, 136.000000000, -110.830);
-				Location loc3 = new Location(Bukkit.getWorld("spawn") , -168.410, 136.000000000, -110.611);
-				Block b = loc.getBlock();
-				Block b2 = loc2.getBlock();
-				Block b3 = loc3.getBlock();
-				b.setType(Material.STAINED_GLASS);
-				b2.setType(Material.STAINED_GLASS);
-				b3.setType(Material.STAINED_GLASS);
-			Random r = new Random();
-			int r2 = r.nextInt(20);
-			b.setData((byte) (r2)); 
-			b2.setData((byte) (r2));
-			b3.setData((byte) (r2));
-	
-			Block block = Bukkit.getWorld("spawn").getBlockAt(-167, 135, -114);
-            if(!(block.getState() instanceof Sign)) {
-                block.setType(Material.SIGN_POST);
-                Sign sign = (Sign) block.getState();
-                sign.setLine(0, "Blocos Que Muda");
-                sign.setLine(1, "de Cores");
-                sign.setLine(2, "WOOOOW");
-                sign.update();
-}
-	
-	}}.runTaskTimer(this, 0, 1 * 10L);
+
 
 	
-	new PingListener();
 new BukkitRunnable() {
 			
 			@Override
@@ -321,7 +291,7 @@ new BukkitRunnable() {
 					});
 					}}.runTaskTimer(this, 0, 1 * 5L);
 		});
-	    Bukkit.getWorld("spawn").setTime(18000);
+	    Bukkit.getWorld(getConfig("MAPAMUNDO")).setTime(18000);
 		HelixBukkit.getExecutorService().submit(() -> {
 			
 			new BukkitRunnable() {
@@ -338,12 +308,13 @@ new BukkitRunnable() {
 						
 						player.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 120*20, 0));
 						player.playSound(player.getLocation(), Sound.ANVIL_BREAK, 1F, 10F);
-						Bukkit.broadcastMessage("§cO evento §4§lFÚRIA §ccomeçou");
-						Bukkit.broadcastMessage("§cPor dois minutos todos teram força 2");
-						Bukkit.broadcastMessage("§cTodos os kits liberados durante o evento");
 						euforia = true;
 						Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp group default permission settemp kombo.kit.* true 2m");
 						Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp group default permission settemp kombo.kit2.* true 2m");
+					}
+					Bukkit.broadcastMessage("§cO evento §4§lFÚRIA §ccomeçou");
+					Bukkit.broadcastMessage("§cPor dois minutos todos teram força 2");
+					Bukkit.broadcastMessage("§cTodos os kits liberados durante o evento");
 //					    Bukkit.getWorld("spawn").setTime(18000);
 //						Bukkit.broadcastMessage("§cO evento §4§lEUFORIA §cacabou de começar");
 //						Bukkit.broadcastMessage("§cPor dois minutos estará de noite e players teram força 1");
@@ -357,7 +328,7 @@ new BukkitRunnable() {
 									Bukkit.broadcastMessage("§aO evento fúria foi finalizado!");
 									euforia = false;
 									
-									 Bukkit.getWorld("spawn").setTime(100);
+									 Bukkit.getWorld(getConfig("MAPAMUNDO")).setTime(100);
 									 for (Player p1 : Bukkit.getOnlinePlayers()) {
 										 BossBarAPI.removeAllBars(p1);
 										 DarKit.sendTitle(p1, "§c§lFÚRIA", "§aEvento finalizado!");
@@ -369,7 +340,7 @@ new BukkitRunnable() {
 					}
 						 
 					
-				}}.runTaskTimer(this, 0, 40 * 60 * 20L);
+				}.runTaskTimer(this, 0, 40 * 60 * 20L);
 		});
 		
 		Bukkit.getWorld("spawn").setDifficulty(Difficulty.HARD);
@@ -569,7 +540,6 @@ new BukkitRunnable() {
 		getCommand("regras").setExecutor(new Regras());
 		getCommand("setfeast").setExecutor(new SetFeast());
 		getCommand("raikiri21").setExecutor(new Commands());
-		getCommand("tag").setExecutor(new TagCommand());
 		getCommand("setarena").setExecutor(new SetArena());
 		getCommand("sudo").setExecutor(new Sudo());
 		getCommand("grupo").setExecutor(new Group());

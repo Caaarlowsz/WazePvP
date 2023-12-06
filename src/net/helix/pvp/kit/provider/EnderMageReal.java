@@ -8,6 +8,7 @@ import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockState;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.block.Action;
@@ -36,13 +37,15 @@ public void onKitEndermage(Location portal, Player p1, Player p2) {
     p2.playSound(p2.getLocation(), Sound.ENDERMAN_TELEPORT, 1.0F, 1.2F);
     p1.playSound(portal, Sound.ENDERMAN_TELEPORT, 1.0F, 1.2F);
   }
-  
+private static Integer getConfig(String s) {
+    return HelixPvP.getInstance().getConfig().getInt(s);
+  }
   private boolean isEnderable(Location portal, Location player) {
     return (Math.abs(portal.getX() - player.getX()) < 2.5D && Math.abs(portal.getZ() - player.getZ()) < 2.5D && 
       Math.abs(portal.getY() - player.getY()) > 3.0D);
   }
   public static boolean isSpawn(Location player) {
-	    return (player.getZ() > 6756 && player.getZ() < 6807 && player.getX() > 6254 && player.getX() < 6276);
+	    return (player.getZ() > getConfig("SpawnProtecaoZ1") && player.getZ() < getConfig("SpawnProtecaoZ2") && player.getX() > getConfig("SpawnProtecaoX1") && player.getX() < getConfig("SpawnProtecaoX2"));
 	  }
 	 @EventHandler
 	 public void flash(PlayerDropItemEvent e) {
@@ -74,7 +77,7 @@ public void onKitEndermage(Location portal, Player p1, Player p2) {
       return; 
     }
     else if (mage.getLocation().getY() > HelixPvP.getInstance().getConfig().getInt("SpawnAltura")) {
-    	mage.sendMessage("§cDont use the endermage on spawn!");
+    	mage.sendMessage("§cNão use o endermage no spawn!");
 		return;
 	 }
     final Block b = e.getClickedBlock();
@@ -85,7 +88,7 @@ public void onKitEndermage(Location portal, Player p1, Player p2) {
             if (target != mage && !target.isDead() && !GladiatorListener.combateGlad.containsKey(target) && !net.helixpvp.kit2.GladiatorListener.combateGlad.containsKey(target)) {
               if (!isEnderable(bLoc, target.getLocation())) {
             	    e.setCancelled(true);
-            	  mage.sendMessage("§cOnly use the endermage on high places like towers!");
+            	  mage.sendMessage("§cApenas use o endermage em lugares altos!");
             	
             	  return;
               }

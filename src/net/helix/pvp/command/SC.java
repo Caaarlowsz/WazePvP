@@ -87,19 +87,10 @@ public class SC
 		  HelixPlayer hp = HelixBukkit.getInstance().getPlayerManager().getPlayer(player.getName());
 		  Medals medal = Medals.getMedals(player);
 		  Ranking rank = Ranking.getRank(hp);
-		  if (Fake.playerfakename.get(player) != null) {
-			  event.setFormat("§7[" + rank.getColoredSymbol() + "§7] " + "§7" + Fake.playerfakename.get(player) + "§7: " + event.getMessage().replace("&", "§"));
-		  }	  
-		  else if (player.hasPermission("kombo.doublexp")) {
-			event.setFormat("§7[" + rank.getColoredSymbol() + "§7] " + api.getUserManager().getUser(player.getUniqueId()).getCachedData().getMetaData().getPrefix().replace("&", "§") + player.getName() + "§f: " + event.getMessage().replace("&", "§").replace("%", "%%"));
-		}
-		else {
-			event.setFormat("§7[" + rank.getColoredSymbol() + "§7] " + api.getUserManager().getUser(player.getUniqueId()).getCachedData().getMetaData().getPrefix().replace("&", "§") + player.getName() + "§7: " + event.getMessage().replace("%", "%%"));
-		}
 		if (staffchat.contains(player.getName())) {
 			for (Player staff : Bukkit.getOnlinePlayers()) {
 				if (staff.hasPermission("kombo.cmd.sc")) {
-					staff.sendMessage("§c§l[SC] §c- §f" +  api.getUserManager().getUser(player.getUniqueId()).getCachedData().getMetaData().getPrefix().replace("&", "§") + player.getName() + " §8> §f" + event.getMessage().replace("%", "%%").replace("&", "§"));
+					staff.sendMessage("§c§l[SC] §c- §f" +  "§6§l" + player.getName() + " §8> §f" + event.getMessage().replace("%", "%%").replace("&", "§"));
 					event.setCancelled(true);
 				}
 			}
