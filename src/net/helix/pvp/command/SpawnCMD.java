@@ -13,7 +13,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerMoveEvent;
-import org.inventivetalent.bossbar.BossBarAPI;
 
 import net.helix.core.bukkit.HelixBukkit;
 import net.helix.core.bukkit.account.HelixPlayer;
@@ -69,9 +68,7 @@ public class SpawnCMD extends WarpDuoBattleHandle implements Listener, CommandEx
 				p.setGameMode(GameMode.SURVIVAL);
 			    HelixCooldown2.removeCooldown(player, KitManager2.getPlayer(player.getName()).getkit2().getName());
 			    net.helix.pvp.cooldown1.HelixCooldown2.removeCooldown(player, KitManager.getPlayer(player.getName()).getKit().getName());
-				if (!HelixPvP.euforia) {
-				BossBarAPI.removeAllBars(p);
-				}
+				
 				if (!PlayerJoinListener.fall.contains(p)) {
 			    	PlayerJoinListener.fall.add(p);
 			    	p.sendMessage(ChatColor.GREEN + "Você recebeu a proteção do spawn");
@@ -126,7 +123,7 @@ public class SpawnCMD extends WarpDuoBattleHandle implements Listener, CommandEx
 				indo.remove(p.getName());
 				p.setLevel(0);
 				HelixCooldown2.removeCooldown(p , "Kit");
-				BossBarAPI.removeAllBars(p);
+			
 				p.setGameMode(GameMode.SURVIVAL);
 				return;
        } }}, 60L);
@@ -141,7 +138,7 @@ public class SpawnCMD extends WarpDuoBattleHandle implements Listener, CommandEx
 	    }
 	    HelixCooldown2.removeCooldown(player, KitManager2.getPlayer(player.getName()).getkit2().getName());
 	    net.helix.pvp.cooldown1.HelixCooldown2.removeCooldown(player, KitManager.getPlayer(player.getName()).getKit().getName());
-		BossBarAPI.removeAllBars(p);
+		
 		p.setGameMode(GameMode.SURVIVAL);
 		p.setLevel(0);
 		return true;

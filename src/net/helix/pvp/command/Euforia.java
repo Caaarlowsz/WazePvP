@@ -12,7 +12,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
-import org.inventivetalent.bossbar.BossBarAPI;
 
 import net.helix.pvp.HelixPvP;
 
@@ -52,7 +51,7 @@ public class Euforia implements CommandExecutor {
 						Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp group default permission unsettemp kombo.kit2.*");
 					 for (Player p1 : Bukkit.getOnlinePlayers()) {
 						 DarKit.sendTitle(p1, "§c§lFÚRIA", "§aFinalizado!");
-						 BossBarAPI.removeAllBars(p1);
+						 
 					      	p1.playSound(p1.getLocation(), Sound.LEVEL_UP, 1f, 1f);
 					        p1.getActivePotionEffects().forEach(potion -> p1.removePotionEffect(potion.getType()));
 					      }

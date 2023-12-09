@@ -40,8 +40,6 @@ import org.bukkit.plugin.messaging.PluginMessageListener;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitRunnable;
-import org.inventivetalent.bossbar.BossBar;
-import org.inventivetalent.bossbar.BossBarAPI;
 import eu.decentsoftware.holograms.api.DHAPI;
 import eu.decentsoftware.holograms.api.holograms.Hologram;
 import net.helix.core.bukkit.HelixBukkit;
@@ -153,7 +151,6 @@ import net.helix.pvp.listener.PlayerQuitListener;
 import net.helix.pvp.listener.PotePlaca;
 import net.helix.pvp.listener.RecraftGeral;
 import net.helix.pvp.listener.ServerEssentialsListener;
-import net.helix.pvp.listener.ShowPlayerInfoListener;
 import net.helix.pvp.listener.SignListener;
 import net.helix.pvp.listener.SoupHandlerListener;
 import net.helix.pvp.scoreboard.ScoreboardBuilder;
@@ -240,13 +237,6 @@ new BukkitRunnable() {
 					}
 				
 			
-					BossBar bossBar = BossBarAPI.addBar(player, // The receiver of the BossBar
-						      new TextComponent("§4§lFÚRIA §f" + "Kits Primários/Secundários liberados!"), // Displayed message
-						      BossBarAPI.Color.RED, // Color of the bar
-						      BossBarAPI.Style.NOTCHED_20, // Bar style
-						      1.0f, // Progress (0.0 - 1.0)
-						      120, // Timeout
-						      2);
 			}
 			} 
 			}}.runTaskTimer(this, 0, 3 * 20L);
@@ -330,7 +320,7 @@ new BukkitRunnable() {
 									
 									 Bukkit.getWorld(getConfig("MAPAMUNDO")).setTime(100);
 									 for (Player p1 : Bukkit.getOnlinePlayers()) {
-										 BossBarAPI.removeAllBars(p1);
+										 
 										 DarKit.sendTitle(p1, "§c§lFÚRIA", "§aEvento finalizado!");
 									      	p1.playSound(p1.getLocation(), Sound.LEVEL_UP, 1f, 1f);
 									        p1.getActivePotionEffects().forEach(potion -> p1.removePotionEffect(potion.getType()));
@@ -566,7 +556,7 @@ new BukkitRunnable() {
 	}
 	public void loadListeners() {
 		PluginManager pm = Bukkit.getPluginManager();
-		pm.registerEvents(new ShowPlayerInfoListener(), this);
+		
 		pm.registerEvents(new StatusGUI(), this);
 		pm.registerEvents(new Boxer(), this);
 		pm.registerEvents(new ALL(), this);

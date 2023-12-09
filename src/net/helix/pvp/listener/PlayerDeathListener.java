@@ -24,7 +24,6 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.event.player.PlayerRespawnEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.FireworkMeta;
-import org.inventivetalent.bossbar.BossBarAPI;
 
 import net.helix.core.bukkit.HelixBukkit;
 import net.helix.core.bukkit.account.HelixPlayer;
@@ -61,7 +60,7 @@ public class PlayerDeathListener implements Listener {
 	    	p.sendMessage(ChatColor.GREEN + "Você recebeu a proteção do spawn.");
 	    }
 		HelixCooldown2.removeCooldown(player , "Kit");
-		BossBarAPI.removeAllBars(player);
+		
 		player.getActivePotionEffects().forEach(it -> player.removePotionEffect(it.getType()));
 		if (RDMAutomatic.playersIN.contains(p.getName())) {
 		  RDMAutomatic.playersIN.remove(p.getName());
