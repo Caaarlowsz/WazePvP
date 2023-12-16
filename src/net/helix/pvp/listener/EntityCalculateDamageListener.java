@@ -101,9 +101,7 @@ public class EntityCalculateDamageListener implements Listener {
 	    @EventHandler
 		  public void onMove2ght(EntityDamageEvent e) {
 	    	if (e.getEntity().getLocation().getY() > HelixPvP.getInstance().getConfig().getInt("SpawnAltura") && EnderMageReal.isSpawn(e.getEntity().getLocation()) && !GladiatorListener.combateGlad.containsKey(e.getEntity()) && !net.helixpvp.kit2.GladiatorListener.combateGlad.containsKey(e.getEntity())) {
-	    		if (e.getEntity().getLocation().getZ() > -30) {
-	    			return;
-	    		}
+	    		
 	    		e.setCancelled(true);
 	    	}
 	    	}
@@ -115,9 +113,7 @@ public class EntityCalculateDamageListener implements Listener {
 	    		if (!(e.getEntity() instanceof Player)) {
 	    			return;
 	    		}
-	    		if (e.getEntity().getLocation().getZ() > -30) {
-	    			return;
-	    		}
+	    		
 		    	if (e.getEntity().getLocation().getY() > HelixPvP.getInstance().getConfig().getInt("SpawnAltura") && EnderMageReal.isSpawn(e.getEntity().getLocation()) && !GladiatorListener.combateGlad.containsKey(e.getEntity()) && !net.helixpvp.kit2.GladiatorListener.combateGlad.containsKey(e.getEntity())) {
 	    		e.setCancelled(true);
 		    } 
@@ -182,7 +178,7 @@ public class EntityCalculateDamageListener implements Listener {
 				return;
 			}
 			e.setCancelled(true);
-			p.sendMessage(ChatColor.RED + "Advertisiting is forbidden! ");
+			p.sendMessage(ChatColor.RED + "Divulgação é proibida! ");
 		}
 		
 	}
@@ -251,7 +247,7 @@ public class EntityCalculateDamageListener implements Listener {
 								
 									if (health != 20.0) {	
 										
-										shooter.sendMessage(ChatColor.AQUA + damagedPlayer.getName() + ChatColor.YELLOW + " is with " + health + " hearts!");									
+										shooter.sendMessage(ChatColor.AQUA + damagedPlayer.getName() + ChatColor.YELLOW + " está com " + health + " de vida!");									
 									}						
 																}							
 							}
