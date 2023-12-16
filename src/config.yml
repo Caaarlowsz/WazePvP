@@ -1,7 +1,7 @@
-#CONFIGURA��O DO SRKITPVP
+#CONFIGURAÇÃO DO SRKITPVP
 #DADOS DO MYSQL E AS TAGS DEVEM SER EDITADAS NA PASTA DO PLUGIN Core
 #PRECISA DO PlaceHolderAPI, AjLeaderBoards, DecentHolograms e o Core
-#Sem eles o plugin n�o liga!
+#Sem eles o plugin não liga!
 #FEITO COM AMOR POR Auleriano
 #Discord de suporte: https://discord.gg/GyAzMB9cnp
 
@@ -10,7 +10,7 @@ Prefix: '&6&lKITPVP:'
 
 #MOTD
 Motd: '&5&lZYRA &fVenha treinar! &b(1.8)'
-MotdWhitelist: '&cO Servidor est� em manuten��o'
+MotdWhitelist: '&cO Servidor está em manutenção'
 
 #Link do /discord
 DiscordLink: 'https://discord.gg/dhcFfghwRX'
@@ -40,26 +40,26 @@ LojaLink: 'zyramc.com/loja'
 #N�O USE CORES
 ScorePrefix: KITPVP
 
-#COR 1 DA ANIMA��O WAVE DO TITULO
+#COR 1 DA ANIMAÇÃO WAVE DO TITULO
 CorTituloScore1: '&b&l'
 
-#COR 2 DA ANIMA��O WAVE DO TITULO
+#COR 2 DA ANIMAÇÃO WAVE DO TITULO
 CorTituloScore2: '&f&l'
 
 #COR 3 DA ANIMA��O WAVE DO TITULO
 CorTituloScore3: '&c&l'
 
 #COLOQUE A ALTURA DO SEU SPAWN AQUI
-#ELA E USADA PARA N�O DEIXAR ALGUNS KITS SEREM UTILIZADOS COMO O THOR E O TORNADO
-#N�O ENTENDEU? ENTRE NO DISCORD PARA SUPORTE https://discord.gg/GyAzMB9cnp
+#ELA E USADA PARA NÃO DEIXAR ALGUNS KITS SEREM UTILIZADOS COMO O THOR E O TORNADO
+#NÃO ENTENDEU? ENTRE NO DISCORD PARA SUPORTE https://discord.gg/GyAzMB9cnp
 SpawnAltura: 142
 
 #ALTURA MAXIMA QUE PODE PUXAR PRO GLAD
 GladAltura: 142
 
 #ALTURA Y DA FPS QUE O CARA VAI RECEBER KIT
-#N�O ENTENDEU? FALE COM O RAFAEL MELO
-#PADRAO � A DO KOMBO
+#NÃO ENTENDEU? FALE COM O RAFAEL MELO
+#PADRAO É A DO KOMBO
 FPSAlturaDeReceberKit: 92
 
 #Nome do vidro da loja de kits
@@ -191,7 +191,7 @@ TornadoCooldown: 60
 
 #EDITE NOME DOS RANKS SE QUISER
 GodRank: 'GOD'
-LendarioRank: 'Lend�rio'
+LendarioRank: 'Lendário'
 RubyRank: 'Ruby'
 SafiraRank: 'Safira'
 CristalRank: 'Cristal'
@@ -201,7 +201,7 @@ OuroRank: 'Ouro'
 PrataRank: 'Prata'
 VeteranoRank: 'Veterano'
 ExperienteRank: 'Experiente'
-AvancadoRank: 'Avan�ado'
+AvancadoRank: 'Avançado'
 InicianteRank: 'Iniciante'
 UnrankedRank: 'Unranked'
 
@@ -257,9 +257,9 @@ ReportAtivado: true
 StaffChatAtivado: true
 
 #MENSAGEM DO REQ DE YOUTUBER MENU DO /youtuber
-MSGYT1: '&f* 100 visualiza��es'
+MSGYT1: '&f* 100 visualizações'
 MSGYT2: '&f* 10 likes'
-MSGYT3: '&f* V�deo no Servidor'
+MSGYT3: '&f* Vídeo no Servidor'
 
 #MENSAGEM DO REQ DE STREAMER DO MENU DO /youtuber
 MSGSTREAMER1: '&f* 50 seguidores'
@@ -269,7 +269,7 @@ MSGSTREAMER3: '&f* Fazer live a cada 15 dias'
 #REGRAS
 REGRA1: '&e* &cProibido usar trapa�as ou cheats.'
 REGRA2: '&e* &cProibido Divulgar outros Servidores.'
-REGRA3: '&e* &cProibido Ass�dio.'
+REGRA3: '&e* &cProibido Assédio.'
 REGRA4: '&e* &cProibido Abusar de Erros ou Bugs.'
 REGRA5: '&e* &cProibido Xingar jogadores.'
 REGRA6: '&e* &cProibido Xingar a Staff ou Servidor.'
@@ -287,7 +287,7 @@ NeoLore: 'Imune a varios kits'
 QuickDropperLore: 'Drope potes automaticamente'
 StomperLore: 'Esmague seus inimigos'
 FishermanLore: 'Pesque players'
-AnchorLore: 'N�o de nem receba KB'
+AnchorLore: 'Não de nem receba KB'
 TornadoLore: 'Crie um tornado'
 ViperLore: 'De veneno ao hitar'
 SnailLore: 'De lentidao ao hitar'
@@ -312,7 +312,7 @@ SwitcherLore: 'Troque de lugar com o inimigo'
 GladiatorLore: 'Puxe seu inimigo para uma arena particular'
 
 
-Anchor2Lore: 'N�o de nem receba KB'
+Anchor2Lore: 'Não de nem receba KB'
 Kangaroo2Lore: 'De pulos duplos'
 Grappler2Lore: 'Corra por ai com sua corda'
 
